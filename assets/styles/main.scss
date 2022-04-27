@@ -1,0 +1,129 @@
+@import '~styles/vars.scss';
+
+// Fonts
+
+*, :before, :after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #__nuxt {
+  min-height: 100vh;
+}
+
+#__nuxt {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  color: $black;
+  font-size: $fzMain;
+  font-family: $ffMain;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  font-weight: 400;
+  -webkit-touch-callout: none;
+}
+
+
+ol, ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+li {
+  display: block;
+  list-style-image: none;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+  outline: none;
+  transition: .3s;
+  border-bottom: 1px solid transparent;
+}
+
+input, textarea, button {
+  outline: none;
+  appearance: none;
+}
+
+var {
+  font-style: normal;
+}
+
+strong {
+  font-weight: 700;
+}
+
+i {
+  font-style: normal;
+}
+
+u {
+  text-decoration: none;
+}
+
+picture {
+  display: block;
+}
+
+img {
+  display: block;
+  -webkit-user-select: none;
+  user-select: none;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  pointer-events: none;
+}
+
+svg {
+  display: block;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+img, svg, path, circle, rect, line {
+  transition: .3s;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bgw {
+  z-index: 1;
+  position: relative;
+}
+
+.bg {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.img {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
