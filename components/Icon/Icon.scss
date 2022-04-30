@@ -1,0 +1,8 @@
+@import '~styles/vars';
+
+.icon {
+  fill: $black;
+  &.f-red {
+    fill: $red;
+  }
+}

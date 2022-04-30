@@ -1,0 +1,33 @@
+@import '~styles/vars';
+
+.panel {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #F1F1F1;
+  &__wrap {
+    align-items: center;
+  }
+  &__phone {
+    align-items: center;
+    border-bottom: none;
+    margin-left: auto;
+    border-bottom: none;
+    cursor: default;
+    &:after {
+      content: '';
+      width: 1px;
+      height: 28px;
+      background: $black;
+      margin-left: 22px;
+      margin-right: 18px;
+    }
+    svg {
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+}

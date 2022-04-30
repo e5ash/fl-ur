@@ -1,3 +1,14 @@
 export default {
-  name: 'Intro'
+  name: 'Intro',
+  data() {
+    return {
+      list: [
+        {
+          title: '',
+          mods: '',
+          bg: ''
+        }
+      ]
+    }
+  }
 }

@@ -1,0 +1,53 @@
+@import '~styles/vars';
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: $fzMain;
+  font-family: $ffMain;
+  background: transparent;
+  cursor: pointer;
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: .3s;
+    width: 100%;
+  }
+  &_md {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    .button {
+      &__text {
+        min-height: 52px;
+        padding: 0 15px;
+        border-radius: 4px;
+      }
+    }
+  }
+  &_bg-red {
+    .button {
+      &__text {
+        color: #fff;
+        background: $red;
+      }
+    }
+    &:hover {
+      .button {
+        &__text {
+          background: #E35050;
+        }
+      }
+    }
+    &:active {
+      .button {
+        &__text {
+          background: #B93E3E;
+        }
+      }
+    }
+  }
+}

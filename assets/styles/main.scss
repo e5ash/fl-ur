@@ -1,6 +1,7 @@
 @import '~styles/vars.scss';
 
 // Fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 *, :before, :after {
   padding: 0;
@@ -127,3 +128,8 @@ img, svg, path, circle, rect, line {
     object-fit: cover;
   }
 }
+
+.c-red {
+  color: $red;
+}
+
