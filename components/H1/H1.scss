@@ -1,0 +1,10 @@
+@import '~styles/vars';
+
+.h1 {
+  font-size: 60px;
+  line-height: 73px;
+  font-weight: 700;
+  u {
+    color: $red;
+  }
+}

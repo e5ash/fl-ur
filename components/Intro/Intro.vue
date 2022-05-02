@@ -1,7 +1,7 @@
 <template>
   <div class="intro">
     <Case>
-      <div class="intro__wrap">
+      <div class="intro__wrap row">
         <div class="intro__content">
           <H1 class="intro__title">URBAN <u>RACERS</u></H1>
           <T1 class="intro__text">
@@ -10,21 +10,27 @@
           <Button class="intro__button" href="/catalog" mods="md, bg-red">Перейти в каталог</Button>
         </div>
         <div class="intro__slides">
-          <div class="intro__list">
-            <div class="intro__item bgw">
+          <Swiper 
+            class="intro__list" 
+            :modules="modules" 
+            :pagination="{ clickable: true }"
+            :slidesPerView="1"
+            :autoplay="{ delay: 5000 }"
+            :loop="true"
+            :loopAdditionalSlides="5">
+            <SwiperSlide v-for="item in list" :key="item.title" class="intro__item bgw" :class="item.mods">
               <div class="intro__item-content">
-                <div class="intro__item-title"></div>
+                <div class="intro__item-title">{{ item.title }}</div>
                 <div class="intro__item-group">
                   <Logo class="intro__item-logo" isIconHide="true" />
-                  <div class="intro__item-desc"></div>
+                  <div class="intro__item-desc">до 60%</div>
                 </div>
               </div>
               <div class="intro__item-bg bg">
-                <img src="" alt="">
+                <img :src="item.bg" alt="">
               </div>
-            </div>
-          </div>
-          <div class="intro__dots"></div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
     </Case>

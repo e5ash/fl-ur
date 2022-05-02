@@ -2,8 +2,17 @@ import { toLink } from '~/utils';
 
 export default {
   name: 'Nav',
+  setup() {
+    let isNavShow = useState('isNavShow');
+    return {
+      isNavShow
+    }
+  },
   data() {
     return {
+      classNavShow: 'nav_show',
+      classNavItemCurrent: 'nav__item_current',
+      current: null,
       list: [
         {
           title: 'Каталог',
@@ -108,13 +117,13 @@ export default {
         {
           title: 'Подбор по авто',
           text: 'Подберите для вашего авто',
-          icon: '',
+          icon: 'filter-color',
           href: '/selection'
         },
         {
           title: 'Войти',
           text: 'Войти или зарегистрироваться',
-          icon: '',
+          icon: 'settings-color',
           href: '/auth'
         }
       ]

@@ -1,0 +1,28 @@
+.selection {
+  position: relative;
+  padding-top: 124px;
+  padding-bottom: 93px;
+  &__content {
+    width: 570px;
+  }
+  &__title {
+    margin-bottom: 25px;
+  }
+  &__form {
+    width: 710px;
+  }
+  &__list {
+    align-items: center;
+    margin: 0 -7.5px -20px;
+  }
+  &__select, &__button {
+    width: calc(100% / 2 - 15px);
+    margin: 0 7.5px 20px;
+  }
+  &__img {
+    z-index: -1;
+    position: absolute;
+    top: -67px;
+    right: -190px;
+  }
+}

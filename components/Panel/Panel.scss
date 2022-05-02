@@ -1,6 +1,8 @@
 @import '~styles/vars';
 
 .panel {
+  z-index: 100;
+  position: relative;
   padding-top: 10px;
   padding-bottom: 10px;
   background: #F1F1F1;

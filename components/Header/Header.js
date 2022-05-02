@@ -2,6 +2,14 @@ import { toLink } from '~/utils';
 
 export default {
   name: 'Header',
+  setup() {
+    let isSearchOpen = useState('isSearchOpen', ()=> false);
+    let isNavShow = useState('isNavShow', ()=> false);
+    return {
+      isSearchOpen,
+      isNavShow
+    }
+  },
   data() {
     return {
       links: [

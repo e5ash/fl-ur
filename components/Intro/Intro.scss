@@ -1,0 +1,144 @@
+@import '~styles/vars';
+
+.intro {
+  padding-top: 63px;
+  overflow: hidden;
+  &__content {
+    position: relative;
+    z-index: 3;
+    width: 595px;
+    padding-right: 23px;
+  }
+  &__title {
+    margin-bottom: 40px;
+  }
+  &__button {
+    width: 355px;
+    margin-top: 20px;
+  }
+  &__slides {
+    width: 790px;
+    .swiper {
+      &-pagination {
+        display: flex;
+        margin-left: -2px;
+        margin-right: -2px;
+        .swiper-pagination-bullet {
+          display: block;
+          border-radius: 50px;
+          width: 11px;
+          height: 11px;
+          background: $red;
+          transition: .3s;
+          margin-left: 2px;
+          margin-right: 2px;
+          &-active {
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: visible;
+    &:before {
+      z-index: 2;
+      content: '';
+      position: absolute;
+      left: -1000%;
+      width: 1000%;
+      top: 0;
+      bottom: 0;
+      background: #fff;
+    }
+    .swiper {
+      &-wrapper {
+        height: 405px;
+        align-items: center;
+      }
+      &-pagination {
+        order: 2;
+        margin-top: 15px;
+      }
+    }
+  }
+  &__item {
+    display: flex;
+    height: 366px;
+    transition: .5s;
+    border-radius: 4px;
+    padding: 32px 36px;
+    overflow: hidden;
+    &_center {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      .intro__item-group {
+        justify-content: center;
+      }
+    }
+    &_bottom {
+      align-items: flex-end;
+    }
+    &_right {
+      text-align: right;
+      justify-content: flex-end;
+      .intro__item-group {
+        justify-content: flex-end;
+      }
+    }
+    &-content {
+      width: 270px;
+      color: #fff;
+      opacity: 0;
+      transition: .3s;
+    }
+    &-title {
+      font-size: 18px;
+      margin-bottom: 11px;
+    }
+    &-logo {
+      .logo__icon {
+        width: 100px;
+        height: 50px;
+        svg {
+          width: 100px;
+          height: 50px;
+        }
+      }
+    }
+    &-group {
+      display: flex;
+      align-items: center;
+    }
+    &-desc {
+      font-size: 28px;
+      font-weight: 600;
+      margin-left: 15px;
+    }
+    &-bg {
+      transition: .3s;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.2);
+      }
+    }
+    &.swiper-slide-active {
+      height: 405px;
+      .intro {
+        &__item-content {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+}

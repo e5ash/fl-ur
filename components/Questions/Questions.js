@@ -1,3 +1,9 @@
 export default {
-  name: 'Questions'
+  name: 'Questions',
+  data() {
+    return {
+      email: '',
+      phone: ''
+    }
+  }
 }

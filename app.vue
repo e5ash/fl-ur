@@ -3,22 +3,37 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
-<script setup>
+<script>
+export default {
+  setup() {
+    const route = useRoute();
+    const title = route.meta.title;
+    const isSelectOpen = useState('isSelectOpen', () => null);
 
-const route = useRoute();
-const title = route.meta.title;
+    useHead({
+      title: `${title}`,
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+      charset: 'utf-8',
+      meta: [
+        { name: 'description', content: '' }
+      ],
+    });
 
-useState('totalCount', () => 0);
-useState('totalSum', () => 0);
-useState('cart', () => []);
-useState('isMapLoaded', () => false)
 
-useHead({
-  title: `${title}`,
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
-  charset: 'utf-8',
-  meta: [
-    { name: 'description', content: '' }
-  ],
-})
+    return {
+      isSelectOpen
+    }
+
+  },
+  mounted() {
+    document.addEventListener('click', (event)=>{
+      if (!event.target.closest('.select')) {
+        if (this.isSelectOpen) {
+          this.isSelectOpen.isOpen = false;
+        }
+        this.isSelectOpen = null;
+      }
+    });
+  }
+}
 </script>

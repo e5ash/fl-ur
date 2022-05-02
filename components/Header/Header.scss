@@ -3,18 +3,26 @@
 .header {
   z-index: 100;
   position: relative;
+  transition: .3s;
   &__panel {
     margin-bottom: 25px;
   }
   &__inner {
+    z-index: 10;
+    position: relative;
     padding: 14px 21px 14px 30px;
     align-items: center;
     background: #FFFFFF;
     box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.04), 0px 0px 12px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
+    transition: .3s;
+    &_shadow-hide {
+      box-shadow: none;
+    }
   }
   &__links {
     margin-left: 20px;
+    margin-right: auto;
     &-item {
       line-height: 20px;
       font-weight: 600;
@@ -27,8 +35,37 @@
       }
     }
   }
+  &__button-search {
+    margin-right: 28px;
+    &:hover {
+      circle {
+        stroke: #E35050;
+      }
+      rect {
+        fill: #E35050;
+      }
+    }
+    &:active {
+      circle {
+        stroke: #B93E3E;
+      }
+      rect {
+        fill: #B93E3E;
+      }
+    }
+  }
   &__button-selection {
+    z-index: 10;
     width: 355px;
-    margin-left: auto;
+  }
+  &__search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 14px 21px 14px 14px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.04), 0px 0px 12px rgba(0, 0, 0, 0.04);
   }
 }

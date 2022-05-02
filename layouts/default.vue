@@ -1,6 +1,6 @@
-<template>
+<template >
   <Icons />
-  <Header />
+  <Header/>
   <slot />
   <Footer />
 </template>
