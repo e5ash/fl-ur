@@ -1,14 +1,8 @@
-import { Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import Swiper, { Pagination } from 'swiper';
 import 'swiper/css';
 
 export default {
   name: 'Intro',
-  setup() {
-    return {
-      modules: [ Pagination ]
-    }
-  },
   data() {
     return {
       list: [
@@ -40,8 +34,16 @@ export default {
       ]
     }
   }, 
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
+  mounted() {
+    console.log(this.$refs.pagination)
+    new Swiper(this.$refs.slider, {
+      loop: true,
+      loopAdditionalSlides: 5,
+      pagination: {
+        el: this.$refs.pagination,
+        clickable: true
+      },
+      modules: [Pagination]
+    });
+  }
 }

@@ -2,6 +2,13 @@ import { toLink } from '~/utils';
 
 export default {
   name: 'lkp',
+  setup() {
+    let currentDD = useState('currentDD');
+
+    return {
+      currentDD
+    }
+  },
   data() {
     return {
       isOpen: false,
@@ -38,6 +45,12 @@ export default {
     },
     toggleOpen() {
       this.isOpen = !this.isOpen;
+      
+      if (this.currentDD && this.currentDD.isOpen) {
+        this.currentDD.isOpen = false;
+      }
+
+      this.currentDD = this;
     }
   }
 }

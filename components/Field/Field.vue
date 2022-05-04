@@ -1,6 +1,6 @@
 <template>
   <div class="field" :class="[modsBEM, validation ? (isValid ? classValid : classError) : null]">
-    <div class="field__title">{{ title }}</div>
+    <div class="field__title" v-if="title">{{ title }}</div>
     <div class="field__wrap">
       <div v-if="$slots.iconLeft" class="field__icon field__icon-left"><slot name="iconLeft" /></div>
       <input :type="type ? type : 'text'" class="field__area" :placeholder="placeholder" v-model="value" @input="$emit('update:val', value)">
@@ -14,4 +14,4 @@
   </div>
 </template>
 <script src="./Field.js"></script>
-<style src='./Field.scss'></style>
+<!-- <style src='./Field.scss'></style> -->

@@ -18,6 +18,19 @@
     width: 100%;
     height: 100%;
   }
+  &_sm {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    .button {
+      &__text {
+        height: 36px;
+        padding: 0 15px;
+        border-radius: 4px;
+      }
+    }
+  }
   &_md {
     font-size: 16px;
     line-height: 22px;
@@ -39,6 +52,33 @@
         height: 60.5px;
         padding: 0 15px;
         border-radius: 4px;
+      }
+    }
+  }
+  &_c-red {
+    color: $red;
+    &:hover {
+      .button {
+        &__text {
+          color: #fff;
+          background: $red;
+        }
+      }
+    }
+  }
+  &_b-red {
+    color: $red;
+    .button {
+      &__text {
+        border: 1px solid $red;
+      }
+    }
+    &:hover {
+      .button {
+        &__text {
+          color: #fff;
+          background: $red;
+        }
       }
     }
   }

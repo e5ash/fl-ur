@@ -1,5 +1,5 @@
 <template>
-  <div class="lkp" @click="toggleOpen" :class="isOpen ? classOpen : null">
+  <div class="lkp dd" @click="toggleOpen" :class="isOpen ? classOpen : null">
     <div class="lkp__inner row">
       <div class="lkp__ava">
         <Icon name="user" />

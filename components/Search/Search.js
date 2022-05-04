@@ -31,7 +31,6 @@ export default {
     toLink,
     toPriceFormat,
     sortResults() {
-      console.log(this.value);
       let value = String(this.value).toLowerCase();
       this.sortedResults = [];
       this.length = 0;

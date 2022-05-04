@@ -1,5 +1,5 @@
 <template>
-  <div class="nav" :class="isNavShow ? classNavShow : null">
+  <div class="nav dd" :class="isNavShow ? classNavShow : null">
     <Case>
       <div class="nav__wrap row">
         <div class="nav__left">

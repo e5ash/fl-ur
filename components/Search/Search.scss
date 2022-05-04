@@ -97,3 +97,11 @@
     visibility: visible;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .search {
+    &__area {
+      padding-right: 255px;
+    }
+  }
+}

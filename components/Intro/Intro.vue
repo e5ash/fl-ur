@@ -9,16 +9,9 @@
           </T1>
           <Button class="intro__button" href="/catalog" mods="md, bg-red">Перейти в каталог</Button>
         </div>
-        <div class="intro__slides">
-          <Swiper 
-            class="intro__list" 
-            :modules="modules" 
-            :pagination="{ clickable: true }"
-            :slidesPerView="1"
-            :autoplay="{ delay: 5000 }"
-            :loop="true"
-            :loopAdditionalSlides="5">
-            <SwiperSlide v-for="item in list" :key="item.title" class="intro__item bgw" :class="item.mods">
+        <div ref="slider" class="intro__slides swiper">
+          <div class="intro__list swiper-wrapper">
+            <div v-for="item in list" :key="item.title" class="intro__item swiper-slide bgw" :class="item.mods">
               <div class="intro__item-content">
                 <div class="intro__item-title">{{ item.title }}</div>
                 <div class="intro__item-group">
@@ -29,8 +22,9 @@
               <div class="intro__item-bg bg">
                 <img :src="item.bg" alt="">
               </div>
-            </SwiperSlide>
-          </Swiper>
+            </div>
+          </div>
+          <div ref="pagination" class="intro__pagination swiper-pagination"></div>
         </div>
       </div>
     </Case>

@@ -3,6 +3,9 @@
     <Intro />
     <Selection />
     <Questions />
+    <Cats />
+    <Actual class="actual_mt-minus" />
+    <Questions class="questions_mt-minus"/>
   </main>
 </template>
 <script>

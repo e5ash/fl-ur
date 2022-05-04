@@ -3,13 +3,14 @@
   padding-top: 124px;
   padding-bottom: 93px;
   &__content {
-    width: 570px;
+    width: 595px;
+    padding-right: 20px;
   }
   &__title {
-    margin-bottom: 25px;
+    margin-bottom: 45px;
   }
   &__form {
-    width: 710px;
+    width: 725px;
   }
   &__list {
     align-items: center;
@@ -22,7 +23,8 @@
   &__img {
     z-index: -1;
     position: absolute;
-    top: -67px;
-    right: -190px;
+    top: -75px;
+    right: -217px;
+    width: 972px;
   }
 }

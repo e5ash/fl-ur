@@ -162,6 +162,9 @@ export default {
       if (!this.currentMark) {
         $event.preventDefault();
       }
+    },
+    scrollToBlock() {
+      this.$refs.selection.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
   }
 }

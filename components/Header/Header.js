@@ -4,7 +4,8 @@ export default {
   name: 'Header',
   setup() {
     let isSearchOpen = useState('isSearchOpen', ()=> false);
-    let isNavShow = useState('isNavShow', ()=> false);
+    let isNavShow = useState('isNavShow');
+
     return {
       isSearchOpen,
       isNavShow
@@ -32,15 +33,11 @@ export default {
         {
           title: 'еще...',
           href: null,
-          action: this.openNav
         },
       ]
     }
   },
   methods: {
     toLink,
-    openNav() {
-      console.log(1);
-    }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="location" @click="toggleOpen" :class="isOpen ? classOpen : null">
+  <div class="location dd" @click="toggleOpen" :class="isOpen ? classOpen : null">
     <div class="location__inner row">
       <div class="location__title">Регион: </div>
       <div class="location__value">{{ current }}</div>

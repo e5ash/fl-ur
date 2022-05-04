@@ -21,7 +21,7 @@
     }
   }
   &__links {
-    margin-left: 20px;
+    margin-left: 12px;
     margin-right: auto;
     &-item {
       line-height: 20px;
@@ -68,4 +68,25 @@
     border-radius: 4px;
     box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.04), 0px 0px 12px rgba(0, 0, 0, 0.04);
   }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    &__inner {
+      padding: 12px;
+    }
+    &__links {
+      &-item {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+    &__button-selection {
+      width: 255px;
+    }
+    &__search {
+      padding: 12px;
+    }
+  }
+
 }

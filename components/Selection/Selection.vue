@@ -1,5 +1,5 @@
 <template>
-  <div class="selection">
+  <div ref="selection" class="selection">
     <Case>
       <div class="selection__wrap row">
         <div class="selection__content">
@@ -9,7 +9,7 @@
           </T1>
         </div>
         <form class="selection__form">
-          <div class="selection__list row">
+          <div class="selection__list row" @click="scrollToBlock">
             <Select ref="selectMarks" class="selection__select" mods="md, b-gray" classesDrop="select__drop_mt" :options="marks" v-model:val="currentMark" placeholder="Выберите марку автомобиля" :clear="true" :disabled="false" :bg="true" />
             <Select ref="selectModels" class="selection__select" mods="md, b-gray" classesDrop="select__drop_mt" :options="currentMark.models" v-model:val="currentModel" placeholder="Выберите модель автомобиля" :clear="true" :disabled="true" :bg="true" @click="clickToModels"/>
             <Select ref="selectMods" class="selection__select" mods="md, b-gray" classesDrop="select__drop_mt" :options="currentModel.mods" v-model:val="currentMode" placeholder="Выберите модификацию " :clear="true" :disabled="true" :bg="true"/>
