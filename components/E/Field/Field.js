@@ -40,11 +40,9 @@ export default {
       }
 
       this.isFocus = true;
-      BEM.mods.add(this, this.cls.focus);
     },
     handleFocusout() {
       this.isFocus = false;
-      BEM.mods.remove(this, this.cls.focus);
 
       if (this.validation) {
         this.validate();
@@ -52,15 +50,17 @@ export default {
     },
     handleInput() {
       if (this.value.length > 0) {
-        BEM.mods.add(this, this.cls.filled);
+        this.isFilled = true;
       } else {
-        BEM.mods.remove(this, this.cls.filled);
+        this.isFilled = false;
       }
 
       if (this.validation) {
         this.validate();
       }
-      if (this.validation == 'phone' && this.value.length == 18) {
+    },
+    handleKeywdown(event) {
+      if (this.validation == 'phone' && this.value.length >= 18 && event.keyCode != 8) {
         event.preventDefault();
       }
     },
