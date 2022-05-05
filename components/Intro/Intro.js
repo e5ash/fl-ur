@@ -35,7 +35,6 @@ export default {
     }
   }, 
   mounted() {
-    console.log(this.$refs.pagination)
     new Swiper(this.$refs.slider, {
       loop: true,
       loopAdditionalSlides: 5,

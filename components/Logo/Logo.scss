@@ -16,3 +16,13 @@
     max-width: 60px;
   }
 }
+
+
+@media screen and (max-width: 767px) {
+  .logo {
+    flex-direction: column;
+    &__title {
+      padding-left: 4px;
+    }
+  }
+}

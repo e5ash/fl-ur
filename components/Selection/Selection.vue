@@ -13,7 +13,7 @@
             <Select ref="selectMarks" class="selection__select" mods="md, b-gray" classesDrop="select__drop_mt" :options="marks" v-model:val="currentMark" placeholder="Выберите марку автомобиля" :clear="true" :disabled="false" :bg="true" />
             <Select ref="selectModels" class="selection__select" mods="md, b-gray" classesDrop="select__drop_mt" :options="currentMark.models" v-model:val="currentModel" placeholder="Выберите модель автомобиля" :clear="true" :disabled="true" :bg="true" @click="clickToModels"/>
             <Select ref="selectMods" class="selection__select" mods="md, b-gray" classesDrop="select__drop_mt" :options="currentModel.mods" v-model:val="currentMode" placeholder="Выберите модификацию " :clear="true" :disabled="true" :bg="true"/>
-            <Button class="selection__button" mods="md, bg-red">Подобрать</Button>
+            <Button class="selection__button" mods="md, bg-red, shadow-black">Подобрать</Button>
           </div>
         </form>
       </div>

@@ -1,0 +1,65 @@
+@import '~styles/vars';
+
+.product {
+  padding: 20px 18px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 45px rgba(41, 41, 41, 0.15);
+  border-radius: 4px;
+  &__img {
+    height: 221px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow:         0px 10px 13px 0px rgba(50, 50, 50, 0.35);
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.005em;
+    margin-top: 22px;
+    color: $black-dark;
+  }
+  &__desc {
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    margin-top: 8px;
+    height: 40px;
+    color: #8A8E85;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &__foot {
+    display: flex;
+    margin-top: 17px;
+  }
+  &__price {
+    display: flex;
+    align-items: center;
+    &-current {
+      font-size: 16px;
+      line-height: 1.375;
+      color: $black-dark;
+    }
+    &-old {
+      position: relative;
+      font-size: 12px;
+      color: rgba(79,79,79,.6);
+      margin-left: 12px;
+      &:before {
+        opacity: .5;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: rgba(79,79,79,.6);
+      }
+    }
+  }
+  &__button-add {
+    width: 21px;
+    height: 21px;
+    margin-left: auto;
+  }
+}

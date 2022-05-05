@@ -22,6 +22,7 @@
           :type="typeArea"
           v-model="value"
           name="name"
+          :readonly="readonly"
         >
         <textarea 
           v-else
@@ -33,6 +34,7 @@
           :type="typeArea"
           v-model="value"
           name="name"
+          :readonly="readonly"
         ></textarea>
       </div>
       <div v-if="clear == true" class="field__clear field__icon field__icon_right" :class="isEmpty ? cls.iconHidden : null" @click="clearValue">

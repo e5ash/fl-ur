@@ -11,6 +11,11 @@ export default {
   data() {
     return {
       value: '',
+      popular: [
+        'VW тубина 123412',
+        'Супер кит для моего тигуана',
+        'REVO',
+      ],
       results: [
         'GAZ 311055',
         'BWM model 3321',

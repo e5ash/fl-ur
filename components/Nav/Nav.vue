@@ -37,6 +37,17 @@
             </a>
           </div>
         </div>
+        <div class="nav__controls row">
+          <Button class="nav__control nav__control_bg">
+            <template #iconMain><Icon name="cart"/></template>
+          </Button>
+          <Button class="nav__control">
+            <template #iconMain><Icon name="user"/></template>
+          </Button>
+          <Button class="nav__control">
+            <template #iconMain><Icon name="phone"/></template>
+          </Button>
+        </div>
       </div>
     </Case>
     <div class="nav__bg" @click="isNavShow = false"></div>

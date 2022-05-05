@@ -1,7 +1,7 @@
 <template>
   <div class="actual bgw">
     <Case>
-      <H2 class="actual__title">Актуальное</H2>
+      <Btop class="actual__btop" :link="{ title: 'Показать все', href: '#' }" >Актуальное</Btop>
       <div class="actual__wrap">
         <div class="actual__nav">
           <div class="actual__nav-list row">
@@ -12,7 +12,7 @@
           <div class="actual__tab" v-for="tab in tabs" v-show="currentTab == tab" :key="tab.title">
             <div class="actual__slider swiper" :ref="tab.ref">
               <div class="actual__list swiper-wrapper">
-                <a class="actual__item swiper-slide" v-for="item in tab.list" :key="item.title" href="/actual" @click.prevent="toLink('/actual')">
+                <a class="actual__item swiper-slide" :class="index < tab.showIndex ? 'actual__item_show': null" v-for="(item, index) in tab.list" :key="item.title" href="/actual" @click.prevent="toLink('/actual')">
                   <div class="actual__item-img img">
                     <img :src="item.img" alt="">
                   </div>
@@ -24,6 +24,10 @@
                   </div>
                 </a>
               </div>
+            </div>
+            <div class="actual__more" @click="tab.showIndex++" v-show="tab.showIndex <= tab.list.length">
+              <span>Показать еще</span>
+              <Icon name="chevron" class="f-red" />
             </div>
           </div>
         </div>

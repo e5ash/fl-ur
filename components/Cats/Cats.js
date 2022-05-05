@@ -4,19 +4,25 @@ export default {
   name: 'Cats',
   data() {
     return {
+      isModalShow: false,
+      cls: {
+        modalShow: 'cats__modal_show'
+      },
       actions: [
         {
           title: 'Показать все товары',
           desc: 'Перейти в каталог',
           href: '/cat',
           bg: '/assets/images/cats/actions/1-bg.png',
+          cls: 'hidden-xs'
         },
         {
-          title: 'Не знаете что выбрать ?',
+          title: 'Не знаете что выбрать?',
           desc: 'Получить консультацию',
           href: '/cat',
           img: '/assets/images/cats/actions/2.png',
           bg: '/assets/images/cats/actions/2-bg.png',
+          cls: ''
         },
       ],
       list: [
@@ -76,10 +82,36 @@ export default {
           title: 'Впускные системы',
           img: '/assets/images/cats/list/12.png'
         },
+      ],
+      links: [
+        'Двигатель',
+        'Турбо',
+        'Трансмиссия',
+        'Выпускная система',
+        'Впускная система',
+        'Охлаждение',
+        'Тормозная система',
+        'Подвеска',
+        'Топливная система',
+        'Интерьер и экстерьер',
+        'Шины и диски',
+        'Электрика',
+        'Оригинальные запчасти',
+        'Подарки и мерч',
       ]
+
     }
   },
   methods: {
-    toLink
+    toLink,
+    openModal() {
+      this.isModalShow = !this.isModalShow;
+
+      if (this.isModalShow) {
+        document.body.classList.add('body-cats-open');
+      } else {
+        document.body.classList.remove('body-cats-open');
+      }
+    }
   }
 }

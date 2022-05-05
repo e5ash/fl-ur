@@ -1,0 +1,8 @@
+.text {
+  z-index: 2;
+  position: relative;
+  margin-bottom: 25px;
+  &__btop {
+    margin-bottom: 16px;
+  }
+}

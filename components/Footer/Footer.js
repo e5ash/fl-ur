@@ -4,6 +4,32 @@ export default {
   name: 'Footer',
   data() {
     return {
+      links: [
+        {
+          title: 'главная',
+          href: '/'
+        },
+        {
+          title: 'каталог',
+          href: '/'
+        },
+        {
+          title: 'новости',
+          href: '/'
+        },
+        {
+          title: 'информация',
+          href: '/'
+        },
+        {
+          title: 'Связаться с нами',
+          href: '/'
+        },
+        {
+          title: 'контакты',
+          href: '/'
+        },
+      ],
       navs: [
         {
           title: 'Страницы',

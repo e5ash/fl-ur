@@ -3,13 +3,13 @@
     <Case>
       <div class="cats__wrap row">
         <div class="cats__content">
-          <H2 class="cats__title c-red">Категории товаров</H2>
-          <T1 class="cats__text">
+          <H2 class="cats__title c-red hidden-xs">Категории товаров</H2>
+          <T1 class="cats__text hidden-xs">
             <p>Выберите категорию котоаря вас интересует. Тут есть все – от ГБЦ до футболки с логотипом БМВ М повер-рейнджерс</p>
           </T1>
           <div class="cats__actions">
             <div class="cats__actions-list">
-              <a v-for="action in actions" :key="action.title" class="cats__action" :href="action.href" @click.prevent="toLink(action.href)">
+              <a v-for="action in actions" :key="action.title" class="cats__action" :class="action.cls" :href="action.href" @click.prevent="toLink(action.href)">
                 <div class="cats__action-text">
                   <div class="cats__action-title">{{ action.title }}</div>
                   <div class="cats__action-desc">
@@ -30,16 +30,39 @@
             </div>
           </div>
         </div>
-        <div class="cats__list row">
-          <a v-for="cat in list" :key="cat.title" class="cats__item" href="/cat" @click.prevent="toLink('/cat')">
-            <div class="cats__item-img">
-              <img :src="cat.img" :alt="cat.title">
-            </div>
-            <div class="cats__item-title">{{ cat.title }}</div>
-          </a>
+        <div class="cats__inner">
+          <Btop class="cats__btop hidden show-xs-flex" @click="openModal" :link="{ title: 'Показать все', href: '#', event: openModal}">Категории</Btop>
+          <div class="cats__list cats__list_hidden-xs row">
+            <a v-for="cat in list" :key="cat.title" class="cats__item" href="/cat" @click.prevent="toLink('/cat')">
+              <div class="cats__item-img">
+                <img :src="cat.img" :alt="cat.title">
+              </div>
+              <div class="cats__item-title">{{ cat.title }}</div>
+            </a>
+          </div>
         </div>
       </div>
     </Case>
+    <div class="cats__modal" :class="isModalShow ? cls.modalShow : null">
+      <div class="cats__controls row">
+        <div class="cats__back" @click="openModal">
+          <Icon name="chevron" class="f-red" />
+          <span class="c-red">Назад</span>
+        </div>
+        <div class="cats__close" @click="openModal">
+          <Icon name="cross" class="f-red" />
+        </div>
+      </div>
+      <div class="cats__links">
+        <a v-for="link in links" :key="link.id" class="cats__link" href="/cat" @click.prevent="toLink('/cat')">
+          <div class="cats__link-title">{{ link }}</div>
+          <div class="cats__link-icon">
+            <Icon name="arrow" />
+          </div>
+        </a>
+      </div>
+      <Button class="cats__button" mods="md, bg-red, shadow-black">Продолжить</Button>
+    </div>
   </div>
 </template>
 <script src="./Cats.js"></script>

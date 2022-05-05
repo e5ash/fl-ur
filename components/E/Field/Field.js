@@ -35,6 +35,10 @@ export default {
       this.$refs.area.focus();
     },
     handleFocusin() {
+      if (this.readonly) {
+        return false;
+      }
+
       this.isFocus = true;
       BEM.mods.add(this, this.cls.focus);
     },
@@ -56,9 +60,9 @@ export default {
       if (this.validation) {
         this.validate();
       }
-      // if (this.validation == 'phone' && this.value == 18) {
-      //   event.preventDefault();
-      // }
+      if (this.validation == 'phone' && this.value.length == 18) {
+        event.preventDefault();
+      }
     },
     clearValue() {
       this.value = '';
@@ -120,9 +124,9 @@ export default {
   mounted() {
     if (this.validation) {
       if (this.validation == 'phone') {
-        // IMask(this.$refs.area, {
-        //   mask: '+7 (000) 000-00-00'
-        // })
+        IMask(this.$refs.area, {
+          mask: '+7 (000) 000-00-00'
+        })
       }
     }
   },
@@ -140,7 +144,8 @@ export default {
     placeholder: String,
     required: Boolean,
     clear: Boolean,
-    validation: String
+    validation: String,
+    readonly: Boolean
   },
   emits: ['update:val']
 }
