@@ -46,9 +46,9 @@ export default {
     toggleOpen() {
       this.isOpen = !this.isOpen;
       
-      if (this.currentDD && this.currentDD.isOpen) {
-        this.currentDD.isOpen = false;
-      }
+      // if (this.currentDD && this.currentDD.isOpen) {
+      //   this.currentDD.isOpen = false;
+      // }
 
       this.currentDD = this;
     }
