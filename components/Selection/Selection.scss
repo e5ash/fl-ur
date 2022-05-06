@@ -2,12 +2,16 @@
   position: relative;
   padding-top: 124px;
   padding-bottom: 93px;
+  .case {
+    position: relative;
+  }
   &__content {
     width: 595px;
     padding-right: 20px;
   }
   &__title {
-    margin-bottom: 45px;
+    margin-top: 5px;
+    margin-bottom: 40px;
   }
   &__form {
     width: 725px;
@@ -23,8 +27,8 @@
   &__img {
     z-index: -1;
     position: absolute;
-    top: -75px;
-    right: -217px;
+    top: -200px;
+    right: -317px;
     width: 972px;
   }
 }

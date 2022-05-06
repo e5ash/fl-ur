@@ -1,6 +1,7 @@
 @import '~styles/vars';
-
+//
 .select {
+  // z-index: 5;
   position: relative;
   cursor: pointer;
   select {
@@ -54,7 +55,7 @@
   &__drop {
     opacity: 0;
     visibility: hidden;
-    z-index: 1;
+    z-index: 100;
     position: absolute;
     top: 100%;
     left: 0;
@@ -172,11 +173,11 @@
     }
   }
   &_open {
-    z-index: 10;
+    z-index: 110;
     .select {
       &__area {
         position: relative;
-        z-index: 7;
+        // z-index: 7;
         border: 1px solid rgba(17, 17, 17, 0.64);
       }
       &__chevron {

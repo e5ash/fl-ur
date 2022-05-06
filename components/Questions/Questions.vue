@@ -10,7 +10,7 @@
           <EField class="questions__field" mode="sm, b-gray" validation="phone" placeholder="+7 888 888 88 88" v-model:val="phone">
             <template #title>Телефон</template>
           </EField>
-          <Button class="questions__button" mods="lg, bg-red, shadow-red">Задать вопрос</Button>
+          <Button class="questions__button" mods="lg, bg-red, shadow-black">Задать вопрос</Button>
         </form>
       </div>
     </Case>

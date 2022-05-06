@@ -1,7 +1,7 @@
 @import '~styles/vars';
 
 .cats {
-  z-index: 2;
+  // z-index: 2;
   position: relative;
   padding-top: 92px;
   &__wrap {
@@ -26,6 +26,7 @@
       top: -655px;
       left: -595px;
       width: 814px;
+      pointer-events: none;
     }
   }
   &__action {
