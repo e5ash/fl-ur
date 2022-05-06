@@ -12,6 +12,7 @@ export default {
       isVisible: false,
       isValid: 3,
       isFocus: false,
+      isFilled: false,
       errorValue: 0,
       mods: [],
       cls: {
