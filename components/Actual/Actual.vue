@@ -1,7 +1,7 @@
 <template>
   <div class="actual bgw">
     <Case>
-      <Btop class="actual__btop" :link="{ title: 'Показать все', href: '#' }" >Актуальное</Btop>
+      <Btop class="actual__btop" :link="{ title: 'Показать все', href: '#' }">Актуальное</Btop>
       <div class="actual__wrap">
         <div class="actual__nav">
           <div class="actual__nav-list row">
@@ -25,7 +25,7 @@
                 </a>
               </div>
             </div>
-            <div class="actual__more" @click="tab.showIndex++" v-show="tab.showIndex <= tab.list.length">
+            <div class="actual__more" @click="tab.showIndex = tab.showIndex + 4" v-show="tab.showIndex <= tab.list.length">
               <span>Показать еще</span>
               <Icon name="chevron" class="f-red" />
             </div>

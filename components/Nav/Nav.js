@@ -12,7 +12,9 @@ export default {
     return {
       classNavShow: 'nav_show',
       classNavItemCurrent: 'nav__item_current',
+      classNavItemOpen: 'nav__item_open',
       current: null,
+      openItem: null,
       list: [
         {
           title: 'Каталог',
@@ -130,6 +132,15 @@ export default {
     }
   },
   methods: {
-    toLink
+    toLink,
+    toggleNavItem(item) {
+      this.current = item;
+
+      if (this.openItem == item) {
+        this.openItem = null;
+      } else {
+        this.openItem = item;
+      }
+    }
   }
 }

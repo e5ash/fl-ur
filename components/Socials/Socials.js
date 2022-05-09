@@ -17,5 +17,8 @@ export default {
         },
       ]
     }
+  },
+  props: {
+    classItem: String
   }
 }

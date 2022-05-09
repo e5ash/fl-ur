@@ -195,6 +195,16 @@ export default {
     close() {
       this.isOpen = false;
     },
+    clickToButton() {
+      if (this.filterList.length == 0) {
+        this.searchValue = ''
+
+        this.$refs.area.value = '';
+        this.$refs.area.handleFocusout();
+        // this.$refs.area.handleInput();
+      }
+
+    }
   },
   computed: {
     filterList() {
@@ -217,15 +227,19 @@ export default {
       this.$refs.area.handleFocusout();
       this.$refs.area.handleInput();
 
+
       switch(this.level) {
         case 0:
           this.searchList = this.marks;
+          this.buttonTextCurrent = this.buttonTexts.next;
           break;
         case 1:
           this.searchList = this.currentMark.models;
+          this.buttonTextCurrent = this.buttonTexts.next;
           break;
         case 2:
           this.searchList = this.currentModel.mods;
+          this.buttonTextCurrent = this.buttonTexts.skip;
           break;
       }
     }

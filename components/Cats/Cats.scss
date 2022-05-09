@@ -191,9 +191,17 @@
       &-bg {
         display: none;
       }
+      &-img {
+        margin-right: -18px;
+        margin-top: 22px;
+        transform: translateY(-50%) scale(1.15);
+      }
     }
     &__btop {
       margin-bottom: 15px;
+    }
+    &__inner {
+      margin-top: 28px;
     }
     &__list_hidden-xs {
       .cats {
@@ -248,9 +256,15 @@
 
     &__close {
       margin-left: auto;
+      margin-right: 13px;
       width: 17px;
       height: 17px;
       cursor: pointer;
+    }
+    &__links {
+      overflow-y: auto;
+      height: calc(100% - 37px);
+      padding-bottom: 76px;
     }
     &__link {
       display: flex;

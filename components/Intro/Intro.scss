@@ -173,6 +173,7 @@
 
 @media screen and (max-width: 767px) {
   .intro {
+    padding-top: 75px;
     &__wrap {
       padding-left: 15px;
       padding-right: 15px;
@@ -191,7 +192,7 @@
       height: 190px;
     }
     &__item {
-      padding: 13px 17px;
+      padding: 10px 12px;
       height: 168px;
       &.swiper-slide-active {
         height: 190px;
@@ -203,7 +204,7 @@
         left: 10px;
       }
       &-title {
-        margin-bottom: 5px;
+        margin-bottom: 0px;
       }
       &-logo {
         .logo__icon {
@@ -213,6 +214,20 @@
       }
       &-desc {
         margin-left: 12px;
+      }
+    }
+    &__pagination {
+      margin-top: 12px;
+      margin-left: -12.5px;
+      margin-right: -12px;
+      .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        margin-left: 2px;
+        margin-right: 2px;
+        &.swiper-pagination-bullet-active {
+          width: 28px;
+        }
       }
     }
   }

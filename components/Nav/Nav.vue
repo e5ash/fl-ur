@@ -4,8 +4,8 @@
       <div class="nav__wrap row">
         <div class="nav__left">
           <div class="nav__list">
-            <div v-for="item in list" :key="item.title" class="nav__item" :class="current == item ? classNavItemCurrent : null">
-              <a class="nav__item-link" :href="item.href" @click.prevent="!item.sub ? toLink(item.href) : current = item">
+            <div v-for="item in list" :key="item.title" class="nav__item" :class="[current == item ? classNavItemCurrent : null, openItem == item ? classNavItemOpen : null]">
+              <a class="nav__item-link" :href="item.href" @click.prevent="!item.sub ? toLink(item.href) : toggleNavItem(item)">
                 <div class="nav__item-name">{{ item.title }}</div>
                 <div class="nav__item-arrow" v-if="item.sub"><Icon name="arrow" /></div>
               </a>
@@ -47,6 +47,15 @@
           <Button class="nav__control">
             <template #iconMain><Icon name="phone"/></template>
           </Button>
+        </div>
+      </div>
+      <div class="nav__foot">
+        <div class="nav__foot-left">
+          <div class="nav__phone"><a href="tel:+78126484385">+7 (812) 648-43-85</a></div>
+          <Socials class="nav__socials" classItem="socials__item_gray" />
+        </div>
+        <div class="nav__foot-right">
+          <Logo class="nav__logo logo_md" />
         </div>
       </div>
     </Case>

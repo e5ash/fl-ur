@@ -8,7 +8,7 @@
             mode="md, b-gray"
             type="text"
             name="field"
-            placeholder="Поиск по списку авто"
+            placeholder="Выбрать марку и модель"
             :readonly="true">
             <template #iconBefore>
               <Icon name="car" class="f-red" />
@@ -96,7 +96,7 @@
           <div class="choiser__empty-title">Ой, а тут пусто...</div>
         </div>
       </div>
-      <Button class="choiser__button" mods="md, bg-red" @click="true">{{ buttonTextCurrent }}</Button>
+      <Button class="choiser__button" mods="md, bg-red" @click="clickToButton">{{ filterList.length > 0 ? buttonTextCurrent : buttonTexts.reset }}</Button>
     </div>
   </div>
 </template>

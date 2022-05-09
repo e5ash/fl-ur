@@ -173,14 +173,16 @@
     padding-bottom: 8px;
     background: #fff;
     &__inner {
-      padding: 7px 11px;
+      padding: 10px;
     }
     &__button-search {
+      margin-right: 27px;
 
     }
     &__ham {
       width: 24px;
       height: 24px;
+      margin-right: 6px;
     }
     &__search {
       padding: 15px 11px;
