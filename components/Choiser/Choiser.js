@@ -181,6 +181,10 @@ export default {
       this.level--;
     },
     setItem(type, value, addLevel = true, go = false) {
+      if (this[type] == value) {
+        return false;
+      }
+
       this[type] = value;
       if (addLevel) {
         this.nextLevel();
