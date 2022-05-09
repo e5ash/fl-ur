@@ -3,7 +3,7 @@
     <Panel class="header__panel" />
     <Case>
       <div class="header__inner row" :class="[isSearchOpen ? 'header__inner_shadow-hide' : null]">
-        <Logo class="header__logo" />
+        <Logo class="header__logo" :toMain="true" />
         <nav class="header__links">
           <a v-for="item in links" :key="item.id" :href="item.href ? item.href : 'javascript:;'" class="header__links-item" @click.prevent="item.href ? toLink(item.href) : isNavShow = !isNavShow">{{ item.title }}</a>
         </nav>

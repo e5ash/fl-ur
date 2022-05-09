@@ -3,7 +3,7 @@
     <Case>
       <div class="footer__mid row">
         <div class="footer__data">
-          <Logo class="footer__logo" />
+          <Logo class="footer__logo" :toMain="true" />
           <Socials class="footer__socials" />
           <div class="footer__desc"><u>URBAN</u> RACE <b>- МАГАЗИН АВТОТЮНИНГА</b></div>
           <div class="footer__info">Интернет-магазин тюнинг-комплектующих для современных автомобилей Audi, Skoda, Seat, Skoda, Porsche, BMW, Mercedes-Benz и др.Мы предлагаем только лучшие товары из Европы и США. Работаем напрямую с заводами, тем самым гарантируя отличные цены и сроки доставки.</div>
