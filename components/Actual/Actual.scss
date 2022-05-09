@@ -1,6 +1,7 @@
 @import '~styles/vars';
 
 .actual {
+  z-index: 1;
   padding-top: 55px;
   padding-bottom: 157px;
   &_mt-minus {
