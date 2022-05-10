@@ -16,8 +16,7 @@
       align-items: center;
       justify-content: center;
       line-height: 19px;
-      padding: 12px 14px;
-      width: 100%;
+      padding: 12px 24px;
       margin: 0 #{$margin};
       border-radius: 4px;
       transition: .3s;
@@ -57,5 +56,12 @@
   }
   &__item {
     width: 261px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .group__nav-item {
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }

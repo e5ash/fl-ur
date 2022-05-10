@@ -239,7 +239,7 @@ export default {
           break;
         case 1:
           this.searchList = this.currentMark.models;
-          this.buttonTextCurrent = this.buttonTexts.next;
+          this.buttonTextCurrent = this.buttonTexts.skip;
           break;
         case 2:
           this.searchList = this.currentModel.mods;
