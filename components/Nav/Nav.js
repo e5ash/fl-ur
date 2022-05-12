@@ -18,7 +18,7 @@ export default {
       list: [
         {
           title: 'Каталог',
-          href: '',
+          href: '/categories',
           subtitle: 'Выберите категорию',
           sub: [
             {

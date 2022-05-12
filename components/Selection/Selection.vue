@@ -1,6 +1,7 @@
 <template>
   <div ref="selection" class="selection">
     <Case>
+      <Breadcrumb v-if="isPage" class="selection__breadcrumb" />
       <div class="selection__wrap row">
         <div class="selection__content">
           <H2 class="selection__title c-red">Подбор по автомобилю</H2>

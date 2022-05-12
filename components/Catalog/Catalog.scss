@@ -1,0 +1,16 @@
+.catalog {
+  padding-top: 20px;
+  &__breadcrumb {
+    margin-bottom: 16px;
+  }
+  &__title {
+    margin-bottom: 35px;
+  }
+  &__filter {
+    width: 375px;
+  }
+  &__inner {
+    width: calc(100% - 375px);
+    padding-left: 80px;
+  }
+}

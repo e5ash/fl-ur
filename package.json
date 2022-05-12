@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "imask": "^6.4.2",
+    "nouislider": "^15.6.0",
     "swiper": "^8.1.4"
   }
 }

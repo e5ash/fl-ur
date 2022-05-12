@@ -1,3 +1,5 @@
+import { toLink } from "~/utils"; 
+
 export default {
   name: 'Button',
   data() {
@@ -13,6 +15,14 @@ export default {
       mods.forEach((mod)=>{
         this.modsBEM.push(this.name + '_' + mod);
       });
+    }
+  },
+  methods: {
+    toLink,
+    handleClick() {
+      if (this.href) {
+        this.toLink(this.href);
+      }
     }
   },
   props: {

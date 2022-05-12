@@ -113,5 +113,8 @@ export default {
         document.body.classList.remove('body-cats-open');
       }
     }
+  },
+  props: {
+    isPage: Boolean
   }
 }

@@ -15,7 +15,7 @@
           <div></div>
           <div></div>
         </div>
-        <Button class="header__button-selection" href="/selection" mods="md, bg-red">Подбор по автомобилю</Button>
+        <Button class="header__button-selection" href="/select" mods="md, bg-red">Подбор по автомобилю</Button>
         <Search class="header__search"  />
       </div>
     </Case>

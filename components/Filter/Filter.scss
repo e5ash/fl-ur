@@ -1,0 +1,23 @@
+@import '~styles/vars';
+
+.filter {
+  padding: 22px 10px;
+  background: #fff;
+  border-radius: 4px;
+  &__main-title {
+    color: $red;
+    margin-bottom: 6px;
+  }
+  &__item {
+    margin-bottom: 25px;
+  }
+  &__title {
+    margin-bottom: 11px;
+  }
+  &__pluses {
+    margin: 0 -3px -6px;
+  }
+  &__plus {
+    margin: 0 3px 6px;
+  }
+}

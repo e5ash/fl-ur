@@ -2,8 +2,15 @@
   position: relative;
   padding-top: 124px;
   padding-bottom: 93px;
+  &_pb-more {
+    padding-bottom: 250px;
+  }
   .case {
     position: relative;
+  }
+  &__breadcrumb {
+    margin-top: -100px;
+    margin-bottom: 63px;
   }
   &__content {
     width: 595px;

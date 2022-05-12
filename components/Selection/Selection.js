@@ -166,5 +166,9 @@ export default {
     scrollToBlock() {
       this.$refs.selection.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
+  },
+  props: {
+    isPage: Boolean
   }
+
 }
