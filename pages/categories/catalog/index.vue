@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <Catalog />
-    <Actual class="actual_mt-minus" />
+    <Group class="group_sm" title="Специальное предложение" />
     <Questions class="questions_mt-minus hidden-xs"/>
   </main>
 </template>

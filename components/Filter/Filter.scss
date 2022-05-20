@@ -20,4 +20,51 @@
   &__plus {
     margin: 0 3px 6px;
   }
+  &__selects {
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: -16px;
+  }
+  &__select {
+    width: calc(100% - 16px);
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 16px;
+    &_w2 {
+      width: calc(100% / 2 - 16px);
+    }
+    &_w3 {
+      width: calc(100% / 3 - 16px);
+    }
+    
+  }
+  &__auto {
+    &-select {
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__myauto {
+    cursor: pointer;
+    &_current {
+      border-color: #d9d9d9;
+    }
+  }
+  &__radios {
+    margin-bottom: -12px;
+  }
+  &__radio {
+    width: calc(100% / 2);
+    margin-bottom: 12px;
+  }
+  &__buttons {
+    margin: 0 -2px -10px;
+  }
+  &__button {
+    width: calc(100% / 2 - 4px);
+    margin: 0 2px 10px;
+  }
+
 }

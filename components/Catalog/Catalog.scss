@@ -1,5 +1,9 @@
 .catalog {
   padding-top: 20px;
+  padding-bottom: 100px;
+  .case {
+    position: relative;
+  }
   &__breadcrumb {
     margin-bottom: 16px;
   }
@@ -12,5 +16,23 @@
   &__inner {
     width: calc(100% - 375px);
     padding-left: 80px;
+    padding-right: 120px;
+  }
+  &__list {
+    margin: 0 -10px -20px;
+  }
+  &__item {
+    width: calc(100% / 4 - 20px);
+    margin: 0 10px 20px;
+  }
+  &__pagination {
+    margin-top: 20px;
+  }
+  &__bg {
+    z-index: -1;
+    position: absolute;
+    right: -240px;
+    top: -166px;
+    pointer-events: none;
   }
 }

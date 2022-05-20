@@ -41,7 +41,7 @@
         transform: translate(-50%, -50%);
         display: inline;
         transition: .3s;
-}
+      }
       &_current {
         background: $red;
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
@@ -60,7 +60,7 @@
   &__slider {
     overflow: visible;
   }
-  &__item {
+  .actual__item {
     background: #FFFFFF;
     box-shadow: 0px 28px 104px rgba(41, 41, 41, 0.15);
     border-radius: 4px;

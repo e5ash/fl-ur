@@ -1,5 +1,6 @@
 <template>
   <main class="main">
+    <Cart />
   </main>
 </template>
 <script>

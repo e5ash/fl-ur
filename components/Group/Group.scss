@@ -54,8 +54,53 @@
   &__slider {
     overflow: visible;
   }
-  &__item {
+  .group__item {
     width: 261px;
+  }
+  &__bg {
+    display: none;
+    transform: rotate(3deg);
+    left: -2%;
+    right: -2%;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #4F4F4F;
+    }
+    img {
+      opacity: 0.15;
+      // transform: rotate(-3deg);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .group {
+    color: #fff;
+    padding-top: 55px;
+    padding-bottom: 157px;
+    &__nav {
+      display: inline-block;
+      background: #FCFCFC;
+      border-radius: 4px;
+    }
+    &__bg {
+      display: block;
+    }
+    &_sm {
+      .case {
+        padding-left: 466px;
+      }
+      .group {
+        &__inner {
+          max-width: 1120px;
+        }
+      }
+    }
   }
 }
 

@@ -119,6 +119,27 @@
       }
     }
   }
+  &_bg-white {
+    .button {
+      &__text {
+        background: #fff;
+      }
+    }
+    &:hover {
+      .button {
+        &__text {
+          background: #E35050;
+        }
+      }
+    }
+    &:active {
+      .button {
+        &__text {
+          background: #B93E3E;
+        }
+      }
+    }
+  }
   &_bg-red {
     .button {
       &__text {

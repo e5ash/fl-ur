@@ -1,0 +1,45 @@
+.check {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &__input {
+    display: none;
+  }
+  &__box {
+    border-radius: 4px;
+    svg {
+      transition: .3s;
+      transform: scale(0);
+    }
+  }
+  &_md {
+    .check {
+      &__box {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        padding: 3px;
+      }
+      &__wrap {
+        line-height: 19px;
+      }
+    }
+  }
+  &_gray {
+    .check {
+      &__box {
+        border: 1px solid #D1D1D6;
+      }
+    }
+  }
+  &_checked {
+    .check {
+      &__box {
+        svg {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="product">
+  <a class="product" :href="href" @click.prevent="handleClick">
     <div class="product__img img">
       <img :src="img" :alt="title">
     </div>
@@ -10,11 +10,11 @@
         <div class="product__price-current">{{ toPriceFormat(price.current) }} ₽</div>
         <div class="product__price-old">{{ toPriceFormat(price.old) }} ₽</div>
       </div>
-      <Button class="product__button-add">
-        <template #iconMain><Icon name="cart-add" class="f-red" /></template>
-      </Button>
+      <div class="product__button-add">
+        <Icon name="cart-add" class="f-red" />
+      </div>
     </div>
-  </div>
+  </a>
 </template>
 <script src="./Product.js"></script>
 <style src='./Product.scss'></style>

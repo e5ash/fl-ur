@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import { Products } from '~/data/products';
 
 export default {
   name: 'group',
@@ -22,26 +23,7 @@ export default {
         },
       ],
       currentTab: null,
-      items: [
-        {
-          title: 'Винтовая подвеска BCR',
-          desc: 'Уникальное решение для точной настройки хода подвела меня тут',
-          price: {
-            current: 12325,
-            old: 22759
-          },
-          img: '/assets/images/actual/1.png'
-        },
-        {
-          title: 'Даунпайп для',
-          desc: '7880 collection for the earth and human environment',
-          price: {
-            current: 25940,
-            old: 52499,
-          },
-          img: '/assets/images/actual/2.png'
-        },
-      ]
+      items: Products
     }
   },
   created() {
@@ -58,5 +40,8 @@ export default {
         spaceBetween: 20
       });
     });
+  },
+  props: {
+    title: String,
   }
 }

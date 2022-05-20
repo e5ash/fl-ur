@@ -1,7 +1,7 @@
 <template>
-  <div class="group">
+  <div class="group bgw">
     <Case>
-      <Btop class="group__btop" :link="{ title: 'Показать все', href: '#' }" >Главное</Btop>
+      <Btop class="group__btop" :link="{ title: 'Показать все', href: '#' }" >{{ title ? title : 'Главное' }}</Btop>
       <div class="group__inner">
         <div class="group__nav">
           <div class="group__nav-list">
@@ -26,6 +26,9 @@
         </div>
       </div>
     </Case>
+    <div class="group__bg bg">
+      <img src="~/assets/images/actual.jpg" alt="">
+    </div>
   </div>
 </template>
 <script src="./Group.js"></script>
