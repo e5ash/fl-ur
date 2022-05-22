@@ -7,7 +7,7 @@
           <T1 class="intro__text">
             <p>Интернет-магазин тюнинг-комплектующих для современных автомобилей Audi, Skoda, Seat, Skoda, Porsche, BMW, Mercedes-Benz и др.Мы предлагаем только лучшие товары из Европы и США. Работаем напрямую с заводами, тем самым гарантируя отличные цены и сроки доставки.</p>
           </T1>
-          <Button class="intro__button" href="/catalog" mods="md, bg-red, shadow-black">Перейти в каталог</Button>
+          <Button class="intro__button" href="/categories/catalog" mods="md, bg-red, shadow-black">Перейти в каталог</Button>
         </div>
         <div ref="slider" class="intro__slides swiper">
           <div class="intro__list swiper-wrapper">
