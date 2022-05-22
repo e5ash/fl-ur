@@ -63,6 +63,7 @@ export default {
   },
   props: {
     mods: String,
+    title: String,
     placeholder: String,
     options: Array,
     val: String,

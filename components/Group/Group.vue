@@ -15,7 +15,7 @@
                 <Product 
                   v-for="item in tab.list"
                   :key="item.title"
-                  class="group__item swiper-slide"
+                  class="product_col group__item swiper-slide"
                   :img="item.img"
                   :title="item.title" 
                   :desc="item.desc" 

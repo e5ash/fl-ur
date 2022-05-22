@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <Case>
+    <Case class="case_sm">
       <Breadcrumb class="card__breadcrumb" />
       <div class="card__inner row">
         <div class="card__data">
@@ -22,13 +22,13 @@
           </div>
           <H3 class="card__title card__name">{{ name }}</H3>
           <div class="card__controls row">
-            <div class="card__price">Цена: <var>{{ toPriceFormat(price) }}</var> ₽</div>
+            <div class="card__price">Цена: <var>{{ toPriceFormat(price.current) }}</var> ₽</div>
             <div class="card__actions row">
               <div class="card__action"><Icon name="bookmark" /></div>
               <div class="card__action"><Icon name="scale" /></div>
             </div>
           </div>
-          <Button class="card__button-add" mods="md, bg-red, shadow-black">Добавить в корзину</Button>
+          <Button class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">{{ isAdded ? 'Убрать из корзины' : 'Добавить в корзину' }}</Button>
           <div class="card__sets">
             <div class="card__sets-title">Максимальное занижение</div>
             <div class="card__sets-list">
@@ -102,20 +102,14 @@
               </div>
               <div class="card__tabs-item" v-if="tabs.current == tabs.list[1]">
                 <div class="card__analogs">
-                  <div class="card__analog" v-for="analog in analogs" :key="analog.id">
-                    <div class="card__analog-img">
-                      <img :src="analog.img" alt="">
-                    </div>
-                    <div class="card__analog-content">
-                      <div class="card__analog-name">{{ analog.title }}</div>
-                      <div class="card__analog-controls">
-                        <div class="card__analog-price"><b>₽</b> {{ toPriceFormat(analog.price.current) }}</div>
-                        <div class="card__analog-add">
-                          <Icon name="cart-add" class="f-red" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Product 
+                    v-for="item in analogs"
+                    :key="item.title"
+                    class="product_row card__analog"
+                    :UID="item.UID"
+                    :img="item.img"
+                    :title="item.title" 
+                    :price="item.price" />
                 </div>
               </div>
               <div class="card__tabs-item" v-if="tabs.current == tabs.list[2]">

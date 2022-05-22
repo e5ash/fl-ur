@@ -10,7 +10,8 @@
             <Product 
               v-for="item in list"
               :key="item.title"
-              class="catalog__item"
+              class="product_col catalog__item"
+              :UID="item.UID"
               :img="item.img"
               :title="item.title" 
               :desc="item.desc" 

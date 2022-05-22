@@ -1,5 +1,6 @@
 export let Products = [
   {
+    UID: 100,
     title: "Винтовая подвеска BCR",
     desc: "Уникальное решение для точной настройки хода подвела меня тут",
     price: {
@@ -9,6 +10,7 @@ export let Products = [
     img: "/assets/images/actual/1.png"
   },
   {
+    UID: 200,
     title: "Даунпайп для",
     desc: "7880 collection for the earth and human environment",
     price: {

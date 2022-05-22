@@ -1,13 +1,24 @@
-import { toPriceFormat } from '~/utils';
+import { toPriceFormat, addProduct, removeProduct } from '~/utils';
 import Swiper, { Thumbs } from 'swiper';
 import { Products } from '~/data/products';
 
 export default {
   name: 'Card',
+  setup() {
+    let products = useState('products');
+    return {
+      products
+    }
+  },
   data() {
     return {
+      isAdded: false,
+      UID: 100,
       name: 'Комплект винтовой подвески BC Racing серия BR тип RA',
-      price: 2750,
+      price: {
+        current: 2750
+      },
+      count: 1,
       text: 'Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и полноту реализации выбранного вами уровня усовершенствования.Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и ',
       complect: 'Болты 5х10, еще какие-то болты, сам товар, куча пупырки, воздух немецкий, коробка, ненужный болт из-за которого вы потом все снимите и соберете заново, инструкция по сборке шкафа икея',
       images: [
@@ -219,6 +230,8 @@ export default {
   },
   methods: {
     toPriceFormat,
+    addProduct,
+    removeProduct,
     setCurrentMark(mark) {
       this.selects.current.mark = mark;
       this.selects.step++;
@@ -245,9 +258,25 @@ export default {
       }
 
       return value + ' ' + text;
+    },
+    toggleProduct() {
+      this.isAdded = !this.isAdded;
+      if (this.isAdded) {
+        this.addProduct(this.product);
+      } else {
+        this.removeProduct(this.product);
+      }
     }
   },
   created() {
+    this.product = {
+      UID: this.UID,
+      img: this.images[0],
+      title: this.name,
+      price: this.price,
+      count: this.count
+    }
+
     this.tabs.current = this.tabs.list[0];
 
     let counter = 0;
@@ -255,8 +284,13 @@ export default {
       this.analogs.push(Products[counter]);
       counter = counter == 0 ? 1 : 0;
     }
+
   },
   mounted() {
+    let findElement = this.products.find(el => el.UID == this.product.UID);
+    if (findElement) {
+      this.isAdded = true;
+    }
 
     let pagination = new Swiper(this.$refs.pagination, {
       slidesPerView: 'auto',

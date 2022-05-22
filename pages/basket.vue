@@ -6,11 +6,11 @@
 <script>
   export default {
     head: {
-      title: ''
+      title: 'Корзина'
     },
     setup() {
       definePageMeta({
-        title: ''
+        title: 'Корзина'
       });
     }
   }

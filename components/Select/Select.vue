@@ -1,5 +1,6 @@
 <template>
   <div class="select" :class="[modsBEM, isOpen ? classOpen : null]" @click="toggleSelect">
+    <div class="select__title" v-if="title">{{ title }}</div>
     <div class="select__area">
       <div class="select__icon" v-if="value.icon"><img :src="value.icon" :alt="value.name"></div>
       <div class="select__value" v-if="value && value == val">{{ value.name }}</div>

@@ -1,36 +1,97 @@
 @import '~styles/vars';
 
 .product {
-  padding: 20px 18px 16px;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 45px rgba(41, 41, 41, 0.15);
-  border-radius: 4px;
+  position: relative;
+  &_col {
+    padding: 20px 18px 16px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 45px rgba(41, 41, 41, 0.15);
+    border-radius: 4px;
+    .product {
+      &__img {
+        height: 221px;
+        box-shadow: 0px 10px 13px 0px rgba(50, 50, 50, 0.35);
+      }
+      &__title {
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: -0.005em;
+        margin-top: 22px;
+        color: $black-dark;
+      }
+      &__desc {
+        line-height: 1.4;
+        letter-spacing: -0.005em;
+        margin-top: 8px;
+        height: 40px;
+        color: #8A8E85;
+        display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      &__data {
+        display: flex;
+        margin-top: 13px;
+      }
+
+    }
+  }
+  &_row {
+    padding: 6px 20px 6px 6px;
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #F1F1F1;
+    box-shadow: 0px 0px 50px rgba(41, 41, 41, 0.15);
+    border-radius: 4px;
+    .product {
+      &__img {
+        width: 103px;
+        min-width: 103px;
+        height: 103px;
+      }
+      &__content {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 103px);
+        padding-left: 12px;
+      }
+      &__data {
+        margin-top: auto;
+        display: flex;
+        padding-bottom: 4px;
+      }
+      &__title {
+        font-size: 18px;
+        line-height: 25px;
+        color: $black-dark;
+      }
+      &__button-remove {
+        position: absolute;
+        top: 16px;
+        right: 18px;
+        width: 18px;
+        height: 18px;
+        svg {
+          fill: #999999;
+        }
+      }
+    }
+  }
+  &_has-remove {
+    .product {
+      &__title {
+        padding-right: 20px;
+      }
+    }
+  }
   &__img {
-    height: 221px;
     overflow: hidden;
     border-radius: 4px;
-    box-shadow:         0px 10px 13px 0px rgba(50, 50, 50, 0.35);
-  }
-  &__title {
-    font-size: 18px;
-    line-height: 25px;
-    letter-spacing: -0.005em;
-    margin-top: 22px;
-    color: $black-dark;
-  }
-  &__desc {
-    line-height: 1.4;
-    letter-spacing: -0.005em;
-    margin-top: 8px;
-    height: 40px;
-    color: #8A8E85;
-    display: inline-block;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  &__foot {
-    display: flex;
-    margin-top: 13px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   &__price {
     display: flex;
@@ -56,11 +117,52 @@
         background-color: rgba(79,79,79,.6);
       }
     }
+    &-total {
+      font-size: 16px;
+      font-weight: 600;
+      color: $red;
+      margin-left: 25px;
+    }
   }
   &__button-add {
+    position: relative;
     width: 21px;
     height: 21px;
     margin-left: auto;
     margin-right: -2px;
+    svg {
+      fill: $red;
+    }
+    &:before {
+      opacity: 0;
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 30px;
+      background: $red;
+      left: 50%;
+      top: 50%;
+      transition: .3s;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    &_added {
+      &:before {
+        opacity: 1;
+        background: #999999;
+      }
+      svg {
+        fill: #999999;
+      }
+    }
+  }
+  &__button-remove {
+    &:hover {
+      svg {
+        fill: $red;
+      }
+    }
+  }
+  &__incdec {
+    margin-left: auto;
   }
 }

@@ -4,7 +4,7 @@
   </NuxtLayout>
 </template>
 <script>
-import { scrollTop } from '~/utils';
+import { scrollTop, getProducts } from '~/utils';
 
 export default {
   setup() {
@@ -13,6 +13,7 @@ export default {
     const isNavShow = useState('isNavShow', ()=> false);
     const isSelectOpen = useState('isSelectOpen', () => null);
     const currentDD = useState('currentDD', () => null);
+    const products = useState('products', () => []);
 
     useHead({
       title: `${title}`,
@@ -27,7 +28,8 @@ export default {
     return {
       isNavShow,
       isSelectOpen,
-      currentDD
+      currentDD,
+      products
     }
 
   },
@@ -35,6 +37,9 @@ export default {
     scrollTop
   },
   mounted() {
+    this.products = getProducts();
+    // console.log(this.products);
+
     let bodyClassNav = 'body-nav-open';
 
     document.addEventListener('click', (event)=>{
@@ -63,6 +68,6 @@ export default {
         // document.body.style.marginRight = 0;
       }
     });
-  }
+  },
 }
 </script>
