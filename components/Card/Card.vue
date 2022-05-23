@@ -32,6 +32,12 @@
               <div class="card__action"><Icon name="scale" /></div>
             </div>
           </div>
+          <div class="card__counts">
+            <div class="card__count" v-for="count in counts" :key="count.id">
+              <div class="card__count-key">{{ count.key }}:</div>
+              <div class="card__count-value">{{ count.value }} шт.</div>
+            </div>
+          </div>
           <Button class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">{{ isAdded ? 'Убрать из корзины' : 'Добавить в корзину' }}</Button>
           <div class="card__sets">
             <div class="card__sets-title">Максимальное занижение</div>
