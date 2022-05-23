@@ -2,6 +2,7 @@ export default {
   name: 'Filter',
   data() {
     return {
+      isVisible: false,
       max: {
         name: 'max',
         list: [

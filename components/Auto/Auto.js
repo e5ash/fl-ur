@@ -1,3 +1,5 @@
+import { toLink } from '~/utils';
+
 export default {
   name: 'Auto',
   data() {
@@ -5,6 +7,10 @@ export default {
       currentMark: '',
       currentModel: '',
       currentMode: '',
+      classSelectError: 'auto__select_error',
+      classSelectMarks: null,
+      classSelectModels: null,
+      classSelectMods: null,
       marks: [
         {
           name: 'Volkswagen',
@@ -158,19 +164,60 @@ export default {
     }
   },
   methods: {
+    toLink,
     clickToModels($event) {
       if (!this.currentMark) {
         $event.preventDefault();
+        this.classSelectMarks = this.classSelectError; 
+        setTimeout(()=>{
+          this.classSelectMarks = ''; 
+        }, 2000);
+      }
+    },
+    clickToMods($event) {
+      if (!this.currentMark) {
+        $event.preventDefault();
+        this.classSelectMarks = this.classSelectError; 
+        setTimeout(()=>{
+          this.classSelectMarks = ''; 
+        }, 2000);
+
+        return false;
+      }
+
+      if (!this.currentModel) {
+        $event.preventDefault();
+        this.classSelectModels = this.classSelectError; 
+        setTimeout(()=>{
+          this.classSelectModels = ''; 
+        }, 2000);
       }
     },
     scrollToBlock() {
-      this.$refs.selection.scrollIntoView({behavior: 'smooth', block: 'start'});
+      if (document.body >= 768) {
+        this.$refs.selection.scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+    },
+    clickToButton($event) {
+      if (!this.currentMark) {
+        $event.preventDefault();
+
+        this.classSelectMarks = this.classSelectError; 
+        setTimeout(()=>{
+          this.classSelectMarks = ''; 
+        }, 2000);
+
+        return false;
+      }
+      
+      this.toLink('/categories/catalog');
     }
   },
   props: {
     isPage: Boolean,
     classSelect: String,
     classButton: String,
+    selectBg: Boolean,
     showButton: Boolean
   }
 }

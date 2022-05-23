@@ -27,3 +27,13 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .pagination {
+    &__item {
+      width: 34px;
+      height: 34px;
+      font-size: 12px;
+    }
+  }
+}

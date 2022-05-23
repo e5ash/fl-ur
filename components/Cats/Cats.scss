@@ -149,6 +149,9 @@
 @media screen and (max-width: 1200px) {
   .cats {
     padding-top: 50px;
+    &__breadcrumb {
+      margin-top: -30px;
+    }
     &__inner {
       width: 100%;
       margin-top: 40px;
@@ -174,6 +177,17 @@
   .cats {
     position: static;
     padding-top: 0;
+    &_page {
+      padding-top: 77px;
+      .cats {
+        &__content {
+          display: none;
+        }
+        &__inner {
+          margin-top: 0;
+        }
+      }
+    }
     &__content {
       width: 100%;
       padding-right: 0;
@@ -204,8 +218,14 @@
     &__btop {
       margin-bottom: 15px;
     }
+    &__return {
+      margin-bottom: 5px;
+    }
     &__inner {
       margin-top: 28px;
+      &:first-child {
+        margin-top: 0;
+      }
     }
     &__list_hidden-xs {
       .cats {

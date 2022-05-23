@@ -12,7 +12,7 @@
     </div>
     <div class="select__drop" :class="classesDrop">
       <div class="select__list">
-        <div v-for="option in options" :key="option.id" class="select__item" :class="value == option.name ? classItemCurrent : null" @click="value = option">
+        <div v-for="option in options" :key="option.id" class="select__item" :class="val.name == option.name ? classItemCurrent : null" @click="value = option">
           <div class="select__item-icon" v-if="option.icon"><img :src="option.icon" :alt="option.name"></div>
           <div class="select__item-title">{{ option.name }}</div>
           <div class="select__item-check">

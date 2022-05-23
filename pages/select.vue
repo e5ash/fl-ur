@@ -1,7 +1,7 @@
 <template>
   <main class="main">
-    <Selection class="selection_pb-more hidden-xs" :isPage="true" />
-    <Actual class="actual_mt-minus" />
+    <Selection class="selection_pb-more" :isPage="true" />
+    <Actual class="actual_mt-minus hidden-xs" />
     <Questions class="questions_mt-minus hidden-xs"/>
   </main>
 </template>

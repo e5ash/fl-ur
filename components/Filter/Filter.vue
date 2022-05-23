@@ -1,6 +1,11 @@
 <template>
-  <div class="filter">
+  <div class="filter" :class="isVisible ? 'filter_show' : null">
+    <div class="filter__toggle" @click="isVisible = !isVisible">
+      <span>Фильтр</span>
+      <Icon name="filter" class="f-red" />
+    </div>
     <div class="filter__inner">
+      <Return class="filter__return hidden show-xs-flex" @click="isVisible = !isVisible" />
       <H3 class="filter__main-title">Фильтр</H3>
       <div class="filter__list">
         <div class="filter__item">
@@ -67,6 +72,7 @@
               class="filter__check check_md check_gray" 
               :value="item.title" 
               :group="checks.name" 
+              :selectBg="false"
               v-model:checked="item.checked" />
           </div>
         </div>

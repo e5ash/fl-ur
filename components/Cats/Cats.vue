@@ -1,7 +1,8 @@
 <template>
-  <div class="cats">
+  <div class="cats" :class="isPage ? 'cats_page' : null">
     <Case>
-      <Breadcrumb v-if="isPage" class="cats__breadcrumb" />
+      <Breadcrumb v-if="isPage" class="cats__breadcrumb hidden-xs" />
+      <Return v-if="isPage" class="cats__return hidden show-xs-flex" />
       <div class="cats__wrap row">
         <div class="cats__content">
           <H2 class="cats__title c-red hidden-xs">Категории товаров</H2>
@@ -32,8 +33,8 @@
           </div>
         </div>
         <div class="cats__inner">
-          <Btop class="cats__btop hidden show-xs-flex" @click="openModal" :link="{ title: 'Показать все', href: '#', event: openModal}">Категории</Btop>
-          <div class="cats__list cats__list_hidden-xs row">
+          <Btop class="cats__btop hidden show-xs-flex" @click="!isPage ? openModal : false" :link="!isPage ? { title: 'Показать все', href: '#', event: openModal} : null">Категории</Btop>
+          <div class="cats__list row" :class="!isPage ? 'cats__list_hidden-xs' : null">
             <a v-for="cat in list" :key="cat.title" class="cats__item" href="/categories/catalog" @click.prevent="toLink('/categories/catalog')">
               <div class="cats__item-img">
                 <img :src="cat.img" :alt="cat.title">

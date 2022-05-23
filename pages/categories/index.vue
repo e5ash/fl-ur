@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <Cats :isPage="true" />
-    <Actual class="actual_mt-minus" />
+    <Actual class="actual_mt-minus hidden-xs" />
     <Questions class="questions_mt-minus hidden-xs"/>
   </main>
 </template>

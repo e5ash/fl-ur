@@ -1,7 +1,8 @@
 <template>
   <div ref="selection" class="selection">
     <Case>
-      <Breadcrumb v-if="isPage" class="selection__breadcrumb" />
+      <Breadcrumb v-if="isPage" class="selection__breadcrumb hidden-xs" />
+      <Return v-if="isPage" class="selection__return hidden show-xs-flex" />
       <div class="selection__wrap row">
         <div class="selection__content">
           <H2 class="selection__title c-red">Подбор по автомобилю</H2>
@@ -11,8 +12,9 @@
         </div>
         <form class="selection__form">
           <Auto class="selection__list row"
-            classSelect="selection__select" 
+            classSelect="selection__select select_drop-mt" 
             classButton="selection__button"
+            :selectBg="true"
             :showButton="true"
             @click="scrollToBlock" />
         </form>

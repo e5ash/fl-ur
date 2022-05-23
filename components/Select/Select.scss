@@ -13,12 +13,14 @@
     align-items: center;
     color: $black-dark;
     background: #fff;
+    transition: .3s;
   }
   &__value {
     margin-right: auto;
   }
   &__placeholder {
-    color: $black;
+    // color: $black;
+    color: #999999;
   }
   &__icon {
     svg {
@@ -65,16 +67,14 @@
     transition: .3s;
     padding: 8px 0;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 20px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 0 0 2px 2px;
+    border-radius: 0 0 4px 4px;
     border: 1px solid rgba(17, 17, 17, 0.32);
     overflow-y: auto;
-    &_mt {
-      margin-top: 16px;
-    }
   }
   &__item {
     display: flex;
     align-items: center;
+    transition: .3s;
     &-check {
       .icon {
         &_hide {
@@ -83,6 +83,10 @@
           transform: scale(0);
         }
       }
+    }
+    &_current {
+      cursor: default;
+      pointer-events: none;
     }
   }
   &__bg {
@@ -170,10 +174,10 @@
   &_md {
     .select {
       &__area {
-        font-size: 16px;
+        // font-size: 16px;
         font-weight: 600;
         letter-spacing: -0.3px;
-        border-radius: 2px;
+        border-radius: 4px;
         padding-left: 15px;
         padding-right: 15px;
         height: 44px;
@@ -217,7 +221,7 @@
           margin-right: 17px;
         }
         &-title {
-          font-size: 16px;
+          // font-size: 16px;
           font-weight: 600;
           color: $black-dark;
           margin-right: auto;
@@ -240,6 +244,27 @@
       &__area {
         border: 1px solid #D9D9D9;
       }
+      &__item {
+        &:hover {
+          background: #eee;
+        }
+      }
+    }
+  }
+  &_drop-mt {
+    .select {
+      &__drop {
+        margin-top: 16px;
+      }
+    }
+    &.select_open {
+      .select {
+        &__area {
+          border-radius: 4px;
+          border: 1px solid rgba(17, 17, 17, 0.64);
+          border-bottom-color:  hsla(0,0%,7%,.64);
+        }
+      }
     }
   }
   &_open {
@@ -248,7 +273,9 @@
       &__area {
         position: relative;
         // z-index: 7;
-        border: 1px solid rgba(17, 17, 17, 0.64);
+        border: 1px solid hsla(0,0%,7%,.32);
+        border-bottom-color: transparent;
+        border-radius: 4px 4px 0 0;
       }
       &__chevron {
         transform: rotate(180deg);
@@ -257,7 +284,7 @@
         opacity: 1;
         visibility: visible;
         transform: translateY(0px);
-
+        // box-shadow: none !important;
       }
       &__bg {
         opacity: 1;

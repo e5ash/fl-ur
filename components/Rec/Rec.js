@@ -1,16 +1,19 @@
 import { Products } from '~/data/products';
 
 export default {
-  name: 'Catalog',
+  name: 'Rec',
   data() {
     return {
-      elements: Products,
       list: []
     }
   },
   created() {
-    for(let i = 0; i < 12; i++) {
+    for(let i = 1; i <= this.length; i++) {
       this.list.push(Products[i]);
     }
+  },
+  props: {
+    title: String,
+    length: Number
   }
 }

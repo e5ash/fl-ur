@@ -20,7 +20,7 @@ export default {
       },
       count: 1,
       text: 'Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и полноту реализации выбранного вами уровня усовершенствования.Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и ',
-      complect: 'Болты 5х10, еще какие-то болты, сам товар, куча пупырки, воздух немецкий, коробка, ненужный болт из-за которого вы потом все снимите и соберете заново, инструкция по сборке шкафа икея',
+      complect: 'Болты 5х10, еще какие-то болты, сам товар, <br>куча пупырки, воздух немецкий, коробка, <br>ненужный болт из-за которого вы потом все <br>снимите и соберете заново, инструкция по <br>сборке шкафа икея',
       images: [
         '/assets/images/product.jpg',
         '/assets/images/product.jpg',
@@ -29,7 +29,7 @@ export default {
         '/assets/images/product.jpg',
         '/assets/images/product.jpg',
         '/assets/images/product.jpg',
-        '/assets/images/product.jpg',
+        // '/assets/images/product.jpg',
       ],
       sets: [
         { title: '10 мм', checked: true }, 
@@ -108,6 +108,7 @@ export default {
         }
       ],
       analogs: [],
+      rec: [],
       selects: {
         step: 0,
         current: {
@@ -282,6 +283,12 @@ export default {
     let counter = 0;
     for(let i = 0; i < 3; i++) {
       this.analogs.push(Products[counter]);
+      counter = counter == 0 ? 1 : 0;
+    }
+
+    counter = 0;
+    for(let i = 0; i < 2; i++) {
+      this.rec.push(Products[counter]);
       counter = counter == 0 ? 1 : 0;
     }
 

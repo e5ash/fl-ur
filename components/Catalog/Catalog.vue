@@ -1,7 +1,8 @@
 <template>
   <div class="catalog">
     <Case>
-      <Breadcrumb class="catalog__breadcrumb" />
+      <Breadcrumb class="catalog__breadcrumb hidden-xs" />
+      <Return class="catalog__return hidden show-xs-flex" />
       <H2 class="catalog__title">Каталог запчатей для VW Tiguan 1</H2>
       <div class="catalog__wrap row">
         <Filter class="catalog__filter" />

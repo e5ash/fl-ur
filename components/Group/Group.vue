@@ -1,7 +1,7 @@
 <template>
   <div class="group bgw">
     <Case>
-      <Btop class="group__btop" :link="{ title: 'Показать все', href: '#' }" >{{ title ? title : 'Главное' }}</Btop>
+      <Btop class="group__btop" :link="link ? { title: 'Показать все', href: '#' } : null" >{{ title ? title : 'Главное' }}</Btop>
       <div class="group__inner">
         <div class="group__nav">
           <div class="group__nav-list">

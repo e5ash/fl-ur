@@ -161,6 +161,9 @@
 
 @media screen and (max-width: 450px) {
   .actual {
+    &__slider {
+      overflow: visible !important;
+    }
     &__list {
       flex-direction: column;
       height: auto;

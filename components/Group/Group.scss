@@ -104,6 +104,38 @@
   }
 }
 
+@media screen and (max-width: 1700px) and (min-width: 768px){
+  .group {
+    &_sm {
+      .case {
+        padding-left: 425px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1430px) and (min-width: 768px) {
+  .group {
+    &_sm {
+      .case {
+        max-width: 100%;
+        padding-left: 10px;
+        // padding-left: 425px;
+      }
+      .group__inner {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .group {
+    .group__slider {
+      overflow: visible;
+    }
+  }
+
+}
 @media screen and (max-width: 370px) {
   .group__nav-item {
     padding-left: 14px;

@@ -1,6 +1,7 @@
 <template>
   <main class="main">
     <Cart />
+    <Questions class="hidden-xs"/>
   </main>
 </template>
 <script>

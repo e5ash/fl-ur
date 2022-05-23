@@ -2,6 +2,7 @@
   <div class="card">
     <Case class="case_sm">
       <Breadcrumb class="card__breadcrumb" />
+      <Return class="card__return hidden" />
       <div class="card__inner row">
         <div class="card__data">
           <div class="card__gallery">
@@ -18,6 +19,9 @@
                   <img :src="item" alt="">
                 </div>
               </div>
+              <div class="card__pagination-logo">
+                <img src="~/assets/images/bbs.svg" alt="">
+              </div>
             </div>
           </div>
           <H3 class="card__title card__name">{{ name }}</H3>
@@ -32,10 +36,10 @@
           <div class="card__sets">
             <div class="card__sets-title">Максимальное занижение</div>
             <div class="card__sets-list">
-              <div v-for="set in sets" :key="set.title" class="card__sets-item" :class="set.checked ? 'card__sets-item_checked': null">{{ set.title }}</div>
+              <div v-for="set in sets" :key="set.title" class="card__sets-item" :class="set.checked ? 'card__sets-item_checked': null" @click="set.checked = !set.checked">{{ set.title }}</div>
             </div>
           </div>
-          <div class="card__selection">
+          <div class="card__selection hidden-xs">
             <H3 class="card__selection-title">Подходит для</H3>
             <div class="card__selection-list" v-if="selects.step == 0">
               <div v-for="select in selects.marks" :key="select.id" class="card__selection-item" :class="!select.models ? 'card__selection-item_disabled' : null" @click="setCurrentMark(select)">
@@ -123,6 +127,59 @@
           <div class="card__video">
             <H3 class="card__video-title">Видео обзор</H3>
             <Video class="card__video-wrap" poster="/assets/images/video-poster.jpg" video="LtAgXMsXOxk"></Video>
+          </div>
+          <div class="card__rec hidden show-xs">
+            <H3 class="card__rec-title">Рекомендуем к установке</h3>
+            <div class="card__rec-list">
+              <Product 
+                v-for="item in rec"
+                :key="item.title"
+                class="product_col card__rec-item"
+                :UID="item.UID"
+                :img="item.img"
+                :title="item.title" 
+                :price="item.price" />
+            </div>
+          </div>
+          <div class="card__selection hidden show-xs">
+            <H3 class="card__selection-title">Подходит для</H3>
+            <div class="card__selection-list" v-if="selects.step == 0">
+              <div v-for="select in selects.marks" :key="select.id" class="card__selection-item" :class="!select.models ? 'card__selection-item_disabled' : null" @click="setCurrentMark(select)">
+                <div class="card__selection-mark">
+                  <img :src="select.icon" :alt="select.name">
+                </div>
+                <div class="card__selection-name">{{ select.name }}</div>
+                <div class="card__selection-count">{{ getModelWord(select.models?.length) }}</div>
+                <div class="card__selection-plus" v-if="select.models"></div>
+              </div>
+            </div>
+            <div class="card__selection-sub" v-if="selects.step == 1 && selects.current.mark">
+              <div v-for="model in selects.current.mark.models" :key="model.id" class="card__selection-item" @click="setCurrentModel(model)">
+                <div class="card__selection-mark">
+                  <img :src="selects.current.mark.icon" :alt="selects.current.mark.name">
+                </div>
+                <div class="card__selection-name">{{ model.name }}</div>
+                <div class="card__selection-count">{{ getModelWord(model.mods?.length) }}</div>
+                <div class="card__selection-icon">
+                  <Icon name="arrow" />
+                </div>
+              </div>
+            </div>
+            <div class="card__selection-sub" v-if="selects.step == 2 && selects.current.model">
+              <div v-for="mode in selects.current.model.mods" :key="mode.id" class="card__selection-item card__selection-item_disabled">
+                <div class="card__selection-mark">
+                  <img :src="selects.current.mark.icon" :alt="selects.current.mark.name">
+                </div>
+                <div class="card__selection-name">{{ mode.name }}</div>
+              </div>
+            </div>
+            <div class="card__selection-item card__selection-return" v-if="selects.step > 0" @click="goBack">
+              <div class="card__selection-count">Назад</div>
+              <div class="card__selection-icon card__selection-icon_reverse">
+                <Icon name="arrow" />
+              </div>
+              <span></span>
+            </div>
           </div>
         </div>
       </div>

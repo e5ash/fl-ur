@@ -1,7 +1,8 @@
 <template>
   <div class="cart">
     <Case class="case_sm">
-      <Breadcrumb class="cart__breadcrumb" v-if="step == 1" />
+      <Breadcrumb class="cart__breadcrumb hidden-xs" v-if="step == 1" />
+      <Return class="cart__return hidden show-xs-flex" v-if="step == 1" />
       <div class="cart__return" v-if="step == 2" @click="prevStep">
         <Icon name="chevron" class="f-red" />
         <span>Назад</span>
@@ -23,9 +24,12 @@
               :disabled="isProductDisabled"
               @click="calcTotalSum" />
           </div>
-          <div class="cart__empty" v-else>
-            <img src="~/assets/images/empty.png" alt="">
-          </div>
+          <template v-else>
+            <div class="cart__empty">
+              <img src="~/assets/images/empty.png" alt="">
+              <span>Ой, а тут пусто...</span>
+            </div>
+          </template>
         </div>
         <div class="cart__right">
           <div class="cart__info" v-if="step == 1">
@@ -61,6 +65,8 @@
           <div class="cart__price" v-if="products.length > 0">Итого: <var>{{ toPriceFormat(total) }}</var> ₽</div>
           <Button class="cart__button-order" mods="md, bg-red" @click="nextStep">{{ products.length == 0 ? 'Перейти в каталог' : 'Оформить заказ'}}</Button>
         </div>
+
+        <Rec class="cart__rec hidden show-xs" v-if="products.length == 0" title="Может что-то такое?" :length="4" />
       </div>
     </Case>
   </div>

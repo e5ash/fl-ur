@@ -1,0 +1,9 @@
+.rec {
+  padding-top: 30px;
+  &__title {
+    margin-bottom: 15px;
+  }
+  .rec__item {
+    width: calc(100% / 2 - 10px);
+  }
+}

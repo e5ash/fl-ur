@@ -3,7 +3,7 @@
     <Intro />
     <Selection class="hidden-xs" />
     <Choiser class="hidden show-xs" />
-    <Group class="hidden show-xs" />
+    <Group class="hidden show-xs" :link="true" />
     <Questions class="hidden-xs" />
     <Utp class="hidden show-xs" />
     <Text class="hidden show-xs" />
