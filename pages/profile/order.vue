@@ -1,15 +1,17 @@
 <template>
   <main class="main">
+    <Ord />
+    <Questions class="hidden-xs"/>
   </main>
 </template>
 <script>
   export default {
     head: {
-      title: ''
+      title: 'Заказ'
     },
     setup() {
       definePageMeta({
-        title: ''
+        title: 'Заказ'
       });
     }
   }

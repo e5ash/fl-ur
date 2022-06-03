@@ -1,15 +1,17 @@
 <template>
   <main class="main">
+    <Comp />
+    <Questions class="hidden-xs" />
   </main>
 </template>
 <script>
   export default {
     head: {
-      title: ''
+      title: 'Сравнение'
     },
     setup() {
       definePageMeta({
-        title: ''
+        title: 'Сравнение'
       });
     }
   }

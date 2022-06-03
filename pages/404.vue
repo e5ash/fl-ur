@@ -1,15 +1,17 @@
 <template>
   <main class="main">
+    <Error />
+    <Questions class="hidden-xs" />
   </main>
 </template>
 <script>
   export default {
     head: {
-      title: ''
+      title: 'Ошибка 404'
     },
     setup() {
       definePageMeta({
-        title: ''
+        title: 'Ошибка 404'
       });
     }
   }

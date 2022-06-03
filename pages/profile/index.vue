@@ -1,15 +1,17 @@
 <template>
   <main class="main">
+    <Profile />
+    <Questions class="hidden-xs"/>
   </main>
 </template>
 <script>
   export default {
     head: {
-      title: ''
+      title: 'Профиль'
     },
     setup() {
       definePageMeta({
-        title: ''
+        title: 'Профиль'
       });
     }
   }

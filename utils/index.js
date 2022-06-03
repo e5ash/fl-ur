@@ -45,7 +45,6 @@ export function addMode(_this, name) {
 }
 
 
-
 export function getStorage(key) {
   let ls = localStorage.getItem(key);
   ls = JSON.parse(ls);
@@ -56,14 +55,22 @@ export function setStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
-export function getProducts() {
-  let products = getStorage('products');
+export function getProducts(type = 'products') {
+  let products = getStorage(type);
 
   if (!products) {
     products = [];
   }
 
   return products;
+}
+
+export function getCompares() {
+  return getProducts('compares');
+}
+
+export function getFavorits() {
+  return getProducts('favorits');
 }
 
 export function findProduct(product) {
@@ -78,29 +85,30 @@ export function findProduct(product) {
   }
 }
 
-export function addProduct(product) {
+export function addProduct(product, type = 'products') {
   if (!product) {
     return false;
   }
 
-  let findElement = this.products.find(el => el.UID == product.UID);
+  let findElement = this[type].find(el => el.UID == product.UID);
 
   if (!findElement) {
-    this.products.push(this.product);
-    setStorage('products', this.products);
+    this[type].push(this.product);
+    setStorage(type, this[type]);
   }
 }
 
-export function removeProduct(product) {
+
+export function removeProduct(product, type = 'products') {
   if (!product) {
     return false;
   }
   
-  this.products = this.products.filter(el => {
+  this[type] = this[type].filter(el => {
     if (el.UID != product.UID) {
       return el;
     }
   });
 
-  setStorage('products', this.products);
+  setStorage(type, this[type]);
 }

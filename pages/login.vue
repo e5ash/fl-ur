@@ -1,17 +1,17 @@
 <template>
   <main class="main">
-    <Sup />
+    <Auth title="Вход" text="Введите логин и пароль для авторизации" />
     <Questions class="hidden-xs"/>
   </main>
 </template>
 <script>
   export default {
     head: {
-      title: 'Поставщики'
+      title: 'Вход'
     },
     setup() {
       definePageMeta({
-        title: 'Поставщики'
+        title: 'Вход'
       });
     }
   }

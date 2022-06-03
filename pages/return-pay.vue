@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <Inf :rec="true">
-      <template #title>Доставка</template>
+      <template #title>Обмен и возврат</template>
       <template #desc-top>
         <p>Добро пожаловать в в интернет-магазин комплектующих для тюнинга «CARCAINE»</p>
       </template>
@@ -18,11 +18,11 @@
 <script>
   export default {
     head: {
-      title: 'Доставка'
+      title: 'Обмен и возврат'
     },
     setup() {
       definePageMeta({
-        title: 'Доставка'
+        title: 'Обмен и возврат'
       });
     }
   }

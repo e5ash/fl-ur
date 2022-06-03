@@ -5,11 +5,11 @@
 <script>
   export default {
     head: {
-      title: ''
+      title: 'Статьи'
     },
     setup() {
       definePageMeta({
-        title: ''
+        title: 'Статьи'
       });
     }
   }

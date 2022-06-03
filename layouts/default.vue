@@ -3,4 +3,6 @@
   <Header/>
   <slot />
   <Footer />
+  <Modal />
+  <Alert />
 </template>
