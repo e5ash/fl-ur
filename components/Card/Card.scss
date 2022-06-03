@@ -106,7 +106,7 @@
     height: 44px;
     padding: 12px;
     cursor: pointer;
-    &:hover {
+    &_selected, &:hover {
       svg {
         fill: $red;
       }

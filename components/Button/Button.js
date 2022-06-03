@@ -2,6 +2,12 @@ import { toLink } from "~/utils";
 
 export default {
   name: 'Button',
+  setup() {
+    let isShowModal = useState('isShowModal');
+    return {
+      isShowModal
+    }
+  },
   data() {
     return {
       name: 'button',
@@ -20,6 +26,10 @@ export default {
   methods: {
     toLink,
     handleClick() {
+      if (this.modal) {
+        this.isShowModal = true;
+      }
+
       if (this.href) {
         this.toLink(this.href);
       }
@@ -27,6 +37,7 @@ export default {
   },
   props: {
     mods: String,
-    href: String
+    href: String,
+    modal: Boolean
   }
 }

@@ -6,12 +6,22 @@ export default {
   name: 'Card',
   setup() {
     let products = useState('products');
+    let compares = useState('compares');
+    let favorits = useState('favorits');
+    let isShowAlert = useState('isShowAlert');
+    let alertValue = useState('alertValue');
     return {
-      products
+      products,
+      compares,
+      favorits,
+      isShowAlert,
+      alertValue,
     }
   },
   data() {
     return {
+      isFavorit: false,
+      isComp: false,
       isAdded: false,
       UID: 100,
       name: 'Комплект винтовой подвески BC Racing серия BR тип RA',
@@ -270,11 +280,36 @@ export default {
 
       return value + ' ' + text;
     },
+    toggleFavorit() {
+      this.isFavorit = !this.isFavorit;
+      this.isShowAlert = true;
+      if (this.isFavorit) {
+        this.alertValue = 'Товар "' + this.name + '" успешно добавлен в избранное';
+        this.addProduct(this.product, 'favorits');
+      } else {
+        this.alertValue = 'Товар "' + this.name + '" удалён из избранного';
+        this.removeProduct(this.product, 'favorits');
+      }
+    },
+    toggleComp() {
+      this.isComp = !this.isComp;
+      this.isShowAlert = true;
+      if (this.isComp) {
+        this.alertValue = 'Товар "' + this.name + '" успешно добавлен в сравнение';
+        this.addProduct(this.product, 'compares');
+      } else {
+        this.alertValue = 'Товар "' + this.name + '" удалён из сравнения';
+        this.removeProduct(this.product, 'compares');
+      }
+    },
     toggleProduct() {
       this.isAdded = !this.isAdded;
+      this.isShowAlert = true;
       if (this.isAdded) {
+        this.alertValue = 'Товар "' + this.name + '" успешно добавлен в корзину';
         this.addProduct(this.product);
       } else {
+        this.alertValue = 'Товар "' + this.name + '" удалён из корзины';
         this.removeProduct(this.product);
       }
     }
@@ -285,7 +320,8 @@ export default {
       img: this.images[0],
       title: this.name,
       price: this.price,
-      count: this.count
+      count: this.count,
+      chars: this.chars
     }
 
     this.tabs.current = this.tabs.list[0];
@@ -307,6 +343,16 @@ export default {
     let findElement = this.products.find(el => el.UID == this.product.UID);
     if (findElement) {
       this.isAdded = true;
+    }
+
+    findElement = this.compares.find(el => el.UID == this.product.UID);
+    if (findElement) {
+      this.isComp = true;
+    }
+
+    findElement = this.favorits.find(el => el.UID == this.product.UID);
+    if (findElement) {
+      this.isFavorit = true;
     }
 
     let pagination = new Swiper(this.$refs.pagination, {

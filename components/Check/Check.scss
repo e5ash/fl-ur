@@ -1,3 +1,5 @@
+@import '~styles/vars';
+
 .check {
   display: flex;
   align-items: center;
@@ -10,6 +12,14 @@
     svg {
       transition: .3s;
       transform: scale(0);
+    }
+  }
+  &__wrap {
+    a {
+      color: $red;
+      &:hover {
+        border-color: $red;
+      }
     }
   }
   &_md {
@@ -30,6 +40,20 @@
     .check {
       &__box {
         border: 1px solid #D1D1D6;
+      }
+    }
+  }
+  &_round {
+    .check {
+      &__box {
+        background: $red;
+        border: none;
+        border-radius: 50%;
+        padding: 4px;
+        margin-right: 25px;
+        svg {
+          fill: #fff;
+        }
       }
     }
   }

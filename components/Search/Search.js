@@ -1,4 +1,4 @@
-import { toLink, toPriceFormat } from '~/utils';
+import { toLink, toPriceFormat, getStorage, setStorage } from '~/utils';
 
 export default {
   name: 'Search',
@@ -16,6 +16,7 @@ export default {
         'Супер кит для моего тигуана',
         'REVO',
       ],
+      last: [],
       results: [
         'GAZ 311055',
         'BWM model 3321',
@@ -35,6 +36,8 @@ export default {
   methods: {
     toLink,
     toPriceFormat,
+    setStorage,
+    getStorage,
     sortResults() {
       let value = String(this.value).toLowerCase();
       this.sortedResults = [];
@@ -48,10 +51,29 @@ export default {
       });
       this.sortedResults = this.sortedResults.splice(0, 5);
     },
+    setValue(value) {
+      this.last.push(value);
+      setStorage('search-last', this.last);
+      this.toLink('/search');
+    },
+    submitForm() {
+      if (this.value) {
+        this.last.push(this.value);
+        setStorage('search-last', this.last);
+        this.toLink('/search');
+      }
+    }
   },
   watch: {
     value() {
       this.sortResults();
+    }
+  },
+  mounted() {
+    let lsLast = getStorage('search-last');
+
+    if (lsLast) {
+      this.last = lsLast.splice(0, 3).sort();
     }
   }
 }

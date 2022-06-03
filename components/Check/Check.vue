@@ -4,7 +4,10 @@
     <div class="check__box">
       <Icon name="check" class="f-red" />
     </div>
-    <div class="check__wrap">{{ value }}</div>
+    <div class="check__wrap">
+      <slot v-if="$slots.wrap" name="wrap" />
+      <template v-else>{{ value }}</template>
+    </div>
   </div>
 </template>
 <script src="./Check.js"></script>

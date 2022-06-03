@@ -1,0 +1,43 @@
+body.body-modal-is-show {
+  overflow-y: hidden;
+}
+
+.modal {
+  opacity: 0;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  visibility: hidden;
+  padding: 30px 15px;
+  overflow-y: auto;
+  &_show {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__inner {
+    width: 100%;
+    max-width: 485px;
+    .form {
+      opacity: 1;
+      width: 100%;
+      visibility: visible;
+    }
+  }
+  &__bg {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(196, 196, 196, 0.6)
+  }
+}

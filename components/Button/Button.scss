@@ -140,6 +140,28 @@
       }
     }
   }
+  &_bg-blue-dark {
+    .button {
+      &__text {
+        color: #fff;
+        background: #30475E;
+      }
+    }
+    &:hover {
+      .button {
+        &__text {
+          background: darken(#30475E, 5%);
+        }
+      }
+    }
+    &:active {
+      .button {
+        &__text {
+          background: darken(#30475E, 10%);
+        }
+      }
+    }
+  }
   &_bg-red {
     .button {
       &__text {

@@ -9,8 +9,26 @@
   &__breadcrumb {
     margin-bottom: 16px;
   }
-  &__title {
-    margin-bottom: 35px;
+  &__result {
+    width: 375px;
+    &_full {
+      width: 100%;
+      min-height: 250px;
+    }
+    &-title {
+      font-size: 35px;
+      line-height: 22px;
+      color: $red;
+      font-weight: 700;
+      margin-bottom: 46.5px;
+    }
+    &-value {
+      font-size: 24px;
+      line-height: 38px;
+    }
+  }
+  &__wrap {
+    padding-top: 35px;
   }
   &__filter {
     width: 375px;
@@ -59,6 +77,15 @@
     }
     &__wrap {
       // position: relative;
+      padding-top: 0;
+    }
+    &__result {
+      width: 100%;
+      padding-top: 30px;
+      margin-bottom: 30px;
+      &-title {
+        margin-bottom: 20px;
+      }
     }
     &__filter {
       // width: 100%;
@@ -155,6 +182,19 @@
       color: $black-dark;
       padding-right: 0;
     }
+    &__result {
+      padding-top: 0;
+      margin-bottom: 20px;
+      &-title {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      }
+      &-value {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
     &__filter {
       top: 0;
       &.filter_show {
@@ -238,10 +278,12 @@
     &__item {
       width: calc(100% / 3 - 10px);
       margin: 0 5px 10px;
-      padding: 6px;
       .product {
         &__img {
           height: 100px;
+        }
+        &__inner {
+          padding: 6px;
         }
         &__content {
           padding-top: 9px;

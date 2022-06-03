@@ -24,6 +24,12 @@
       display: none;
     }
   }
+  &__last {
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   &__inner {
     padding-top: 14px;
   }

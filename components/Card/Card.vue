@@ -28,8 +28,8 @@
           <div class="card__controls row">
             <div class="card__price">Цена: <var>{{ toPriceFormat(price.current) }}</var> ₽</div>
             <div class="card__actions row">
-              <div class="card__action"><Icon name="bookmark" /></div>
-              <div class="card__action"><Icon name="scale" /></div>
+              <div class="card__action" :class="isFavorit ? 'card__action_selected' : null" @click="toggleFavorit"><Icon name="bookmark" /></div>
+              <div class="card__action" :class="isComp ? 'card__action_selected' : null" @click="toggleComp"><Icon name="scale" /></div>
             </div>
           </div>
           <div class="card__counts">
@@ -126,7 +126,10 @@
                 <div class="card__reviews">
                   <Review v-for="review in reviews" :key="review.id" class="card__review" :img="review.img" :title="review.title" :text="review.text" />
                 </div>
-                <Button class="card__button-review" mods="md, bg-white, c-red, shadow-black">Оставить отзыв</Button>
+                <Button class="card__button-review" mods="md, bg-white, c-red, shadow-black" :modal="true">Оставить отзыв</Button>
+                <Teleport to="#modal__inner">
+                  <Form title="Оставьте отзыв" :close="true" type="review" />
+                </Teleport>
               </div>
             </div>
           </div>

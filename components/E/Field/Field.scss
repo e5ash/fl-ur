@@ -325,6 +325,14 @@
       }
     }
   }
+  &_textarea {
+    .field {
+      &__area {
+        overflow: hidden;
+        resize: none;
+      }
+    }
+  }
   &_error {
     .field {
       &__valid {

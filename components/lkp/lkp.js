@@ -17,7 +17,7 @@ export default {
       list: {
         true: [
           {
-            link: '/cabinet/',
+            link: '/profile/',
             title: 'Личный кабинет'
           },
           {

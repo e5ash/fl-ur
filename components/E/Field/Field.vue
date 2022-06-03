@@ -1,5 +1,5 @@
 <template>
-  <div class="field" :class="[mods, isFocus ? 'field_focus' : null, isFilled ? 'field_filled' : null, errorValue > 0 ? 'field_error-type-' + errorValue : null]" @click="handleClick">
+  <div class="field" :class="[mods, isFocus ? 'field_focus' : null, isFilled ? 'field_filled' : null, errorValue > 0 ? 'field_error-type-' + errorValue : null, type == 'textarea' ? 'field_textarea' : null]" @click="handleClick">
     <div v-if="$slots.title || $slots.headBefore || $slots.headAfter" class="field__head">
       <slot v-if="$slots.headBefore" name="headBefore"></slot>
       <div v-if="$slots.title" class="field__title"><slot name="title"></slot></div>
