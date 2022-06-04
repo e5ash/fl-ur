@@ -1,4 +1,4 @@
-import Swiper, { Pagination } from 'swiper';
+import Swiper, { Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
 
 export default {
@@ -36,13 +36,14 @@ export default {
   }, 
   mounted() {
     new Swiper(this.$refs.slider, {
+      autoplay: true,
       loop: true,
       loopAdditionalSlides: 1,
       pagination: {
         el: this.$refs.pagination,
         clickable: true
       },
-      modules: [Pagination]
+      modules: [Autoplay, Pagination]
     });
   }
 }
