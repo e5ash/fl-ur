@@ -40,19 +40,16 @@
       <div class="inf__rec" v-if="rec">
         <div class="inf__rec-head">
           <H3 class="inf__rec-title inf__subtitle">Рекомендуем к установке</H3>
-          <!-- <div class="inf__rec-add-all">Добавить все в корзину</div> -->
+          <div class="inf__rec-add-all">Добавить все в корзину</div>
         </div>
         <div class="inf__rec-list row">
           <Product 
             v-for="item in recs"
             :key="item.title"
             class="product_col inf__rec-item"
-            :UID="item.UID"
-            :img="item.img"
-            :title="item.title" 
-            :desc="item.desc" 
-            :price="item.price" />
+            :element="item" />
         </div>
+        <Button class="super" mods="md, bg-red, shadow-black" href="/basket">Создать заказ</Button>
       </div>
     </Case>
   </div>

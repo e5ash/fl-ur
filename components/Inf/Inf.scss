@@ -128,6 +128,13 @@
       margin-top: 20px;
     }
     &__rec {
+      &-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      &-add-all {
+        margin-left: 0;
+      }
       &-list {
         margin-bottom: -20px;
       }
@@ -217,6 +224,9 @@
       margin-top: 30px;
       &-head {
         margin-bottom: 13px;
+      }
+      &-add-all {
+        display: none;
       }
     }
     &__video {

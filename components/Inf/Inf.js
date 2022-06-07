@@ -17,12 +17,19 @@ export default {
       recs: []
     }
   },
-  created() {
-    // for(let i = 1; i <= 4; i++) {
-    //   this.recs.push(Products[i]);
-    // }
+  methods: {
+    async getProducts(params) {
+      params = params ? '?' + params : '';
+      let response = await fetch('/data/products.json' + params);
+      return await response.json();
+    }
   },
-  mounted() {
+  async mounted() {
+    this.recs = await this.getProducts();
+    this.recs = this.recs.splice(0, 4);
+
+    console.log(this);
+
     let pagination = new Swiper(this.$refs.pagination, {
       slidesPerView: 'auto',
       spaceBetween: 10,
