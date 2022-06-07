@@ -1,0 +1,203 @@
+[
+  {
+    "UID": 1,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325,
+      "old": 22759
+    },
+    "images": [
+      "/assets/images/products/product-1.jpg",
+      "/assets/images/products/product-1.jpg",
+      "/assets/images/products/product-1.jpg",
+      "/assets/images/products/product-1.jpg",
+      "/assets/images/products/product-1.jpg"
+    ],
+    "video": "LtAgXMsXOxk",
+    "text": "Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и полноту реализации выбранного вами уровня усовершенствования.Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и ",
+    "complect": "Болты 5х10, еще какие-то болты, сам товар, <br>куча пупырки, воздух немецкий, коробка, <br>ненужный болт из-за которого вы потом все <br>снимите и соберете заново, инструкция по <br>сборке шкафа икея",
+    "sets": [
+      { "title": "10 мм" }, 
+      { "title": "15 мм" },
+      { "title": "20 мм" },
+      { "title": "32 мм" },
+      { "title": "35 мм" },
+      { "title": "40 мм" },
+      { "title": "50 мм" }
+    ],
+    "chars": [
+      {
+        "title": "Артикул",
+        "value": "H-04-2638"
+      },
+      {
+        "title": "Артикул производителя",
+        "value": "H-04-2638"
+      },
+      {
+        "title": "Вид товара",
+        "value": "Винтовая подвеска"
+      },
+      {
+        "title": "Гарантия",
+        "value": "1 год"
+      },
+      {
+        "title": "Максимальное занижение, мм",
+        "value": "100"
+      },
+      {
+        "title": "Материал опор",
+        "value": "Алюминий 6016"
+      },
+      {
+        "title": "Материал пружин",
+        "value": "SAE9254"
+      },
+      {
+        "title": "Минимальное занижение, мм",
+        "value": "5"
+      },
+      {
+        "title": "Производитель",
+        "value": "BC Racing"
+      },
+      {
+        "title": "Страна производства",
+        "value": "Тайвань"
+      },
+      {
+        "title": "Оригинальный номер по vin",
+        "value": "12344124124weq"
+      }
+    ]
+  },
+  {
+    "UID": 2,
+    "title": "Даунпайп для",
+    "desc": "7880 collection for the earth and human environment",
+    "price": {
+      "current": 25940,
+      "old": 52499
+    },
+    "images": [
+      "/assets/images/products/product-2.png"
+    ]
+  },
+  {
+    "UID": 3,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325
+    },
+    "images": [
+      "/assets/images/products/product-3.jpg"
+    ]
+  },
+  {
+    "UID": 4,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325
+    },
+    "images": [
+      "/assets/images/products/product-4.jpg"
+    ]
+  },
+  {
+    "UID": 5,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325,
+      "old": 22759
+    },
+    "images": [
+      "/assets/images/products/product-5.jpg"
+    ]
+  },
+  {
+    "UID": 6,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325,
+      "old": 22759
+    },
+    "images": [
+      "/assets/images/products/product-6.jpg"
+    ]
+  },
+  {
+    "UID": 7,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325
+    },
+    "images": [
+      "/assets/images/products/product-7.jpg"
+    ]
+  },
+  {
+    "UID": 8,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325,
+      "old": 22759
+    },
+    "images": [
+      "/assets/images/products/product-8.jpg"
+    ]
+  },
+  {
+    "UID": 9,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325
+    },
+    "images": [
+      "/assets/images/products/product-9.jpg"
+    ]
+  },
+  {
+    "UID": 10,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325,
+      "old": 22759
+    },
+    "images": [
+      "/assets/images/products/product-10.jpg"
+    ]
+  },
+  {
+    "UID": 110,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325,
+      "old": 22759
+    },
+    "images": [
+      "/assets/images/products/product-11.jpg"
+    ]
+  },
+  {
+    "UID": 12,
+    "title": "Винтовая подвеска BCR",
+    "desc": "Уникальное решение для точной настройки хода подвела меня тут",
+    "price": {
+      "current": 12325
+    },
+    "images": [
+      "/assets/images/products/product-12.jpg"
+    ]
+  }
+]

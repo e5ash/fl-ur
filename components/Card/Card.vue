@@ -24,7 +24,7 @@
               </div>
             </div>
           </div>
-          <H3 class="card__title card__name">{{ name }}</H3>
+          <H3 class="card__title card__name">{{ title }}</H3>
           <div class="card__controls row">
             <div class="card__price">Цена: <var>{{ toPriceFormat(price.current) }}</var> ₽</div>
             <div class="card__actions row">
@@ -39,7 +39,7 @@
             </div>
           </div>
           <Button class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">{{ isAdded ? 'Убрать из корзины' : 'Добавить в корзину' }}</Button>
-          <div class="card__sets">
+          <div class="card__sets" v-if="sets?.length > 0">
             <div class="card__sets-title">Максимальное занижение</div>
             <div class="card__sets-list">
               <div v-for="set in sets" :key="set.title" class="card__sets-item" :class="set.checked ? 'card__sets-item_checked': null" @click="set.checked = !set.checked">{{ set.title }}</div>
@@ -95,7 +95,7 @@
             </div>
             <div class="card__tabs-list">
               <div class="card__tabs-item" v-if="tabs.current == tabs.list[0]">
-                <div class="card__block">
+                <div class="card__block" v-if="chars?.length > 0">
                   <h3>Характеристики</h3>
                   <ul>
                     <li v-for="char in chars" :key="char.id">{{ char.title }}: <b>{{ char.value }}</b></li>
@@ -105,7 +105,7 @@
                   <Icon name="doc" class="f-red" />
                   <span>Инструкция</span>
                 </a>
-                <div class="card__block">
+                <div class="card__block" v-if="complect">
                   <h3>Комплектация</h3>
                   <p v-html="complect"></p>
                 </div>
@@ -115,11 +115,8 @@
                   <Product 
                     v-for="item in analogs"
                     :key="item.title"
-                    class="product_row card__analog"
-                    :UID="item.UID"
-                    :img="item.img"
-                    :title="item.title" 
-                    :price="item.price" />
+                    :element="item"
+                    class="product_row card__analog" />
                 </div>
               </div>
               <div class="card__tabs-item" v-if="tabs.current == tabs.list[2]">
@@ -135,7 +132,7 @@
           </div>
           <div class="card__video">
             <H3 class="card__video-title">Видео обзор</H3>
-            <Video class="card__video-wrap" poster="/assets/images/video-poster.jpg" video="LtAgXMsXOxk"></Video>
+            <Video class="card__video-wrap" poster="/assets/images/video-poster.jpg" :video="video"></Video>
           </div>
           <div class="card__rec hidden show-xs">
             <H3 class="card__rec-title">Рекомендуем к установке</h3>
@@ -143,11 +140,8 @@
               <Product 
                 v-for="item in rec"
                 :key="item.title"
-                class="product_col card__rec-item"
-                :UID="item.UID"
-                :img="item.img"
-                :title="item.title" 
-                :price="item.price" />
+                :element="item"
+                class="product_col card__rec-item" />
             </div>
           </div>
           <div class="card__selection hidden show-xs">

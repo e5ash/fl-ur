@@ -2,6 +2,12 @@ import { toLink } from '~/utils';
 
 export default {
   name: 'Cats',
+  setup() {
+    let isShowModal = useState('isShowModal');
+    return {
+      isShowModal
+    }
+  },
   data() {
     return {
       isModalShow: false,
@@ -12,14 +18,14 @@ export default {
         {
           title: 'Показать все товары',
           desc: 'Перейти в каталог',
-          href: '/cat',
+          href: '/catalog',
           bg: '/assets/images/cats/actions/1-bg.png',
           cls: 'hidden-xs'
         },
         {
           title: 'Не знаете что выбрать?',
           desc: 'Получить консультацию',
-          href: '/cat',
+          href: null,
           img: '/assets/images/cats/actions/2.png',
           bg: '/assets/images/cats/actions/2-bg.png',
           cls: ''
@@ -111,6 +117,17 @@ export default {
         document.body.classList.add('body-cats-open');
       } else {
         document.body.classList.remove('body-cats-open');
+      }
+    },
+    showModal() {
+      this.isShowModal = true;
+    },
+    handleClick(href) {
+      console.log(href);
+      if (href) {
+        this.toLink(href);
+      } else {
+        this.showModal();
       }
     }
   },

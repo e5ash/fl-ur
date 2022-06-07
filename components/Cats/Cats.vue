@@ -11,7 +11,7 @@
           </T1>
           <div class="cats__actions">
             <div class="cats__actions-list">
-              <a v-for="action in actions" :key="action.title" class="cats__action" :class="action.cls" :href="action.href" @click.prevent="toLink(action.href)">
+              <div v-for="action in actions" :key="action.title" class="cats__action" :class="action.cls" @click.prevent="handleClick(action.href)">
                 <div class="cats__action-text">
                   <div class="cats__action-title">{{ action.title }}</div>
                   <div class="cats__action-desc">
@@ -25,7 +25,10 @@
                 <div class="cats__action-bg" v-if="action.bg">
                   <img :src="action.bg" alt="">
                 </div>
-              </a>
+                <Teleport to="#modal__inner">
+                  <Form v-if="!action.href" title="Связаться с нами" desc="Мы знаем о тюнинге больше чем вы думаете." type="callback" :close="true"></Form>
+                </Teleport>
+              </div>
             </div>
             <div class="cats__actions-bg">
               <img src="~/assets/images/cats/bg.png" alt="">
@@ -35,7 +38,7 @@
         <div class="cats__inner">
           <Btop class="cats__btop hidden show-xs-flex" @click="!isPage ? openModal : false" :link="!isPage ? { title: 'Показать все', href: '#', event: openModal} : null">Категории</Btop>
           <div class="cats__list row" :class="!isPage ? 'cats__list_hidden-xs' : null">
-            <a v-for="cat in list" :key="cat.title" class="cats__item" href="/categories/catalog" @click.prevent="toLink('/categories/catalog')">
+            <a v-for="cat in list" :key="cat.title" class="cats__item" href="/catalog" @click.prevent="toLink('/catalog')">
               <div class="cats__item-img">
                 <img :src="cat.img" :alt="cat.title">
               </div>

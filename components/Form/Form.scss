@@ -111,6 +111,21 @@
   &__file {
     margin-bottom: 15px;
   }
+  &__sets {
+    &-title {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    &-list {
+      margin: 0 -3px -11px;
+    }
+    &-item {
+      margin: 0 3px 11px;
+    }
+    &-button {
+      margin-top: 25px;
+    }
+  }
 
   &__successful {
     display: flex;

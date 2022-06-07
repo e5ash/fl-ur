@@ -1,5 +1,3 @@
-import { Products } from '~/data/products';
-
 export default {
   name: 'Ord',
   data() {
@@ -34,8 +32,8 @@ export default {
     }
   },
   created() {
-    for(let i = 0; i < 4; i++) {
-      this.list.push(Products[i]);
-    }
+    // for(let i = 0; i < 4; i++) {
+    //   this.list.push(Products[i]);
+    // }
   }
 }

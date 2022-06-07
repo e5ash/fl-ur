@@ -14,11 +14,8 @@
             <Product 
               v-for="item in products"
               :key="item.title"
+              :element="item"
               class="product_row cart__item"
-              :UID="item.UID"
-              :img="item.img"
-              :title="item.title" 
-              :price="item.price" 
               :incdec="true"
               :remove="true"
               :disabled="isProductDisabled"

@@ -17,12 +17,22 @@ export default {
   },
   data() {
     return {
+      UID: 0,
+      img: '',
+      title: '',
+      desc: '',
+      price: { },
+      count: 1,
+      chars: [],
+      sets: [],
       isFavorit: false,
       isComp: false,
       isAdded: false,
+      isShowModal: false,
+      isSetsError: false,
       count: 1,
-      product: null,
-      href: '/categories/catalog/item'
+      dir: '/catalog/',
+      product: null
     }
   },
   methods: {
@@ -54,7 +64,22 @@ export default {
         this.removeProduct(this.product, 'compares');
       }
     },
-    toggleProduct() {
+    toggleProduct($event) {
+      if (this.sets && !this.isAdded) {
+        if (!$event.target.closest('.product__sets-button')) {
+          this.isShowModal = true;
+          return false;
+        } 
+
+        if (!this.sets.find(el => el.checked == true)) {
+          this.isSetsError = true;
+          setTimeout(()=>{
+            this.isSetsError = false;
+          }, 3000);
+          return false;
+        }
+      }
+
       this.isAdded = !this.isAdded;
       this.isShowAlert = true;
       if (this.isAdded) {
@@ -63,6 +88,12 @@ export default {
       } else {
         this.alertValue = 'Товар "' + this.title + '" удалён из корзины';
         this.removeProduct(this.product);
+
+        if (this.sets?.length > 0) {
+          this.sets.forEach((set)=>{
+            set.checked = false;
+          });
+        }
       }
     },
     handleClick($event) {
@@ -71,6 +102,7 @@ export default {
       if (!$event.target.closest('.nk')) {
         this.toLink(this.href);
       } 
+
     },
     change() {
       for (let i = 0; i < this.products.length; i++) {
@@ -83,17 +115,38 @@ export default {
       this.setStorage('products', this.products);
     }
   },
-  created() {
-    this.product = {
-      UID: this.UID,
-      img: this.img,
-      title: this.title,
-      price: this.price,
-      count: this.count,
-      chars: this.chars
+  computed: {
+    href() {
+      return this.dir + this.UID;
     }
   },
-  mounted() {
+  created() {
+    if (!this.element) 
+      return false;
+
+    console.log(this.element);
+    this.UID   = this.element.UID;
+    this.img   = this.element.images[0];
+    this.title = this.element.title;
+    this.desc  = this.element.desc;
+    this.price = this.element.price;
+    this.count = this.element.count;
+    this.chars = this.element.chars;
+    this.sets  = this.element.sets ? Object.assign(this.element.sets) : null;
+
+    console.log(this.element);
+    this.product = {
+      UID: this.element.UID,
+      count: this.count,
+      sets: this.sets,
+      img: this.element.images[0],
+      price: this.element.price.current,
+      chars: this.element.chars ? this.element.chars : null,
+      sets: this.element.sets ? Object.assign(this.element.sets) : null
+    };
+  },
+  async mounted() {
+    console.log(this.products, this.product.UID);
     let findElement = this.products.find(el => el.UID == this.product.UID);
     if (findElement) {
       this.isAdded = true;
@@ -110,19 +163,24 @@ export default {
       this.isFavorit = true;
     }
   },
+  watch: {
+    isShowModal() {
+      if (this.isShowModal) {
+        document.body.classList.add('body-modal-is-show');
+      } else {
+        document.body.classList.remove('body-modal-is-show');
+      }
+    }
+  },
   props: {
-    UID: Number,
-    img: String,
-    title: String,
-    desc: String,
-    price: Object,
+    element: Object,
     incdec: Boolean,
     remove: Boolean,
     disabled: Boolean,
     hide_old_price: Boolean,
     compare: Boolean,
     favorit: Boolean,
-    chars: Array,
-    chars_show: Boolean
+    chars_show: Boolean,
+    index: Number
   },
 }

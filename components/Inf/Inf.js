@@ -1,4 +1,4 @@
-import { Products } from '~/data/products';
+// import { Products } from '~/data/products';
 import Swiper, { Thumbs } from 'swiper';
 
 export default {
@@ -18,9 +18,9 @@ export default {
     }
   },
   created() {
-    for(let i = 1; i <= 4; i++) {
-      this.recs.push(Products[i]);
-    }
+    // for(let i = 1; i <= 4; i++) {
+    //   this.recs.push(Products[i]);
+    // }
   },
   mounted() {
     let pagination = new Swiper(this.$refs.pagination, {

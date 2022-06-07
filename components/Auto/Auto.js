@@ -210,7 +210,7 @@ export default {
         return false;
       }
       
-      this.toLink('/categories/catalog');
+      this.toLink('/catalog');
     }
   },
   props: {

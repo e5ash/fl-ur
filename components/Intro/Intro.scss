@@ -8,6 +8,16 @@
     z-index: 3;
     width: 595px;
     padding-right: 23px;
+    &:before {
+      z-index: -1;
+      content: '';
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      width: 1000%;
+      background: #fff;
+    }
   }
   &__title {
     text-shadow: 0px 2px 0px rgba(34, 34, 34, 0.1);

@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <Catalog />
+    <Cat />
     <Group title="Специальное предложение" />
     <Questions class="questions_mt-minus hidden-xs"/>
   </main>

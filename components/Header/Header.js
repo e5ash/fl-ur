@@ -20,7 +20,7 @@ export default {
         },
         {
           title: 'каталог',
-          href: '/categories'
+          href: '/catalog'
         },
         {
           title: 'информация',

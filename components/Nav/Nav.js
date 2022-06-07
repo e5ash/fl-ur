@@ -18,7 +18,7 @@ export default {
       list: [
         {
           title: 'Каталог',
-          href: '/categories',
+          href: '/catalog',
           subtitle: 'Выберите категорию',
           sub: [
             {
@@ -86,21 +86,21 @@ export default {
           sub: [
             {
               title: 'О компании',
-              href: ''
+              href: '/about'
             },
             {
               title: 'Доставка и оплата',
-              href: ''
+              href: '/delivery'
             },
           ]
         },
         {
           title: 'Блоги и статьи',
-          href: '',
+          href: '/news',
         },
         {
           title: 'Контакты',
-          href: '',
+          href: '/contacts',
         },
         {
           title: 'Распродажи',
@@ -108,7 +108,7 @@ export default {
         },
         {
           title: 'Информация',
-          href: '',
+          href: '/info',
         },
         {
           title: 'Корзина',

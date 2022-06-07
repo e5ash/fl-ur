@@ -1,5 +1,4 @@
 import Swiper from 'swiper';
-import { Products } from '~/data/products';
 
 export default {
   name: 'group',
@@ -23,17 +22,27 @@ export default {
         },
       ],
       currentTab: null,
-      items: Products
+      items: []
+    }
+  },
+  methods: {
+    async getProducts(params) {
+      params = params ? '?' + params : '';
+      let response = await fetch('/data/products.json' + params);
+      return await response.json();
     }
   },
   created() {
-    this.currentTab = this.tabs[0];
+
+  },
+  async mounted() {
+    this.items = await this.getProducts('?type=popular');
 
     this.tabs[0].list.push(this.items[0], this.items[1], this.items[0], this.items[1], this.items[0], this.items[1], this.items[0], this.items[1]);
     this.tabs[1].list.push(this.items[1], this.items[0], this.items[1], this.items[0], this.items[1], this.items[0], this.items[1], this.items[0], this.items[1]);
     this.tabs[2].list.push(this.items[0], this.items[1], this.items[0], this.items[1], this.items[0], this.items[1], this.items[0], this.items[1]);
-  },
-  mounted() {
+
+    this.currentTab = this.tabs[0];
     this.tabs.forEach((tab)=>{
       new Swiper(this.$refs[tab.ref], {
         slidesPerView: 'auto',

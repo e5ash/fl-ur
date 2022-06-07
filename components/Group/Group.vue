@@ -15,11 +15,8 @@
                 <Product 
                   v-for="item in tab.list"
                   :key="item.title"
-                  class="product_col group__item swiper-slide"
-                  :img="item.img"
-                  :title="item.title" 
-                  :desc="item.desc" 
-                  :price="item.price" />
+                  :element="item" 
+                  class="product_col group__item swiper-slide" />
               </div>
             </div>
           </div>

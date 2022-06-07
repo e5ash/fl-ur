@@ -110,6 +110,9 @@
           color: $black-dark;
         }
         &__inner {
+          position: absolute;
+          top: 0;
+          right: 0;
           opacity: 0;
           visibility: hidden;
           background: #FFFFFF;

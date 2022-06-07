@@ -1,6 +1,5 @@
 import { toPriceFormat, addProduct, removeProduct } from '~/utils';
 import Swiper, { Thumbs } from 'swiper';
-import { Products } from '~/data/products';
 
 export default {
   name: 'Card',
@@ -23,11 +22,9 @@ export default {
       isFavorit: false,
       isComp: false,
       isAdded: false,
-      UID: 100,
-      name: 'Комплект винтовой подвески BC Racing серия BR тип RA',
-      price: {
-        current: 2750
-      },
+      UID: 0,
+      title: '',
+      price: {},
       count: 1,
       counts: [
         {
@@ -39,73 +36,12 @@ export default {
           value: 10
         },
       ],
-      text: 'Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и полноту реализации выбранного вами уровня усовершенствования.Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и ',
-      complect: 'Болты 5х10, еще какие-то болты, сам товар, <br>куча пупырки, воздух немецкий, коробка, <br>ненужный болт из-за которого вы потом все <br>снимите и соберете заново, инструкция по <br>сборке шкафа икея',
-      images: [
-        '/assets/images/product.jpg',
-        '/assets/images/product.jpg',
-        '/assets/images/product.jpg',
-        '/assets/images/product.jpg',
-        '/assets/images/product.jpg',
-        '/assets/images/product.jpg',
-        '/assets/images/product.jpg',
-        // '/assets/images/product.jpg',
-      ],
-      sets: [
-        { title: '10 мм', checked: true }, 
-        { title: '15 мм' },
-        { title: '20 мм' },
-        { title: '32 мм' },
-        { title: '35 мм' },
-        { title: '40 мм' },
-        { title: '50 мм' }
-      ],
-      chars: [
-        {
-          title: 'Артикул',
-          value: 'H-04-2638'
-        },
-        {
-          title: 'Артикул производителя',
-          value: 'H-04-2638'
-        },
-        {
-          title: 'Вид товара',
-          value: 'Винтовая подвеска'
-        },
-        {
-          title: 'Гарантия',
-          value: '1 год'
-        },
-        {
-          title: 'Максимальное занижение, мм',
-          value: '100'
-        },
-        {
-          title: 'Материал опор',
-          value: 'Алюминий 6016'
-        },
-        {
-          title: 'Материал пружин',
-          value: 'SAE9254'
-        },
-        {
-          title: 'Минимальное занижение, мм',
-          value: '5'
-        },
-        {
-          title: 'Производитель',
-          value: 'BC Racing'
-        },
-        {
-          title: 'Страна производства',
-          value: 'Тайвань'
-        },
-        {
-          title: 'Оригинальный номер по vin',
-          value: '12344124124weq'
-        },
-      ],
+      text: '',
+      complect: '',
+      video: '',
+      images: [],
+      sets: [],
+      chars: [],
       tabs: {
         current: null,
         list: [
@@ -120,132 +56,14 @@ export default {
           },
         ],
       },
-      reviews: [
-        {
-          img: '/assets/images/product.jpg',
-          title: 'Иванов Иван Иванович',
-          text: 'Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и полноту.'
-        }
-      ],
+      elements: [],
+      reviews: [],
       analogs: [],
       rec: [],
       selects: {
         step: 0,
-        current: {
-          mark: null,
-          model: null
-        },
-        marks: [
-          {
-            name: 'Volkswagen',
-            icon: '/assets/images/marks/volkswagen.svg',
-          },
-          {
-            name: 'Porsche',
-            icon: '/assets/images/marks/porsche.svg',
-            models: [
-              {
-                name: '911',
-                mods: [
-                  { name: '911' },
-                  { name: '911 Carrera' },
-                  { name: '911 R' },
-                  { name: '911 Turbo' },
-                  { name: '911 Turbo S' },
-                ]
-              },
-              {
-                name: 'Cayenne',
-                mods: [
-                  { name: 'Cayenne' },
-                  { name: 'Cayenne Diesel' },
-                  { name: 'Cayenne S' },
-                  { name: 'Cayenne Turbo' },
-                ]
-              }
-            ]
-          },
-          {
-            name: 'Audi',
-            icon: '/assets/images/marks/audi.svg',
-            models: [
-              {
-                name: '100',
-                mods: [
-                  { name: '100' },
-                  { name: '100 S4' },
-                ]
-              },
-              {
-                name: 'A5',
-                mods: [
-                  { name: 'A5' },
-                  { name: 'A5 g-tron' },
-                ]
-              },
-
-            ]
-          },
-          {
-            name: 'BMW',
-            icon: '/assets/images/marks/bmw.svg',
-            models: [
-              {
-                name: 'X1',
-                mods: [
-                  { name: 'X1' },
-                  { name: 'X1 16d' },
-                  { name: 'X1 18d' },
-                  { name: 'X1 18i' },
-                  { name: 'X1 20d' },
-                  { name: 'X1 20i' },
-                  { name: 'X1 23d' },
-                  { name: 'X1 28i' },
-                ]
-              },
-              {
-                name: 'X2',
-                mods: [
-                  { name: 'X2' },
-                  { name: 'X2 16d' },
-                  { name: 'X2 18d' },
-                  { name: 'X2 18i' },
-                  { name: 'X2 20d' },
-                  { name: 'X2 20i' },
-                  { name: 'X2 23d' },
-                  { name: 'X2 28i' },
-                ]
-              },
-              {
-                name: 'X3',
-                mods: [
-                  { name: 'X3' },
-                  { name: 'X3 16d' },
-                  { name: 'X3 18d' },
-                  { name: 'X3 18i' },
-                  { name: 'X3 20d' },
-                  { name: 'X3 20i' },
-                  { name: 'X3 23d' },
-                  { name: 'X3 28i' },
-                ]
-              },
-            ]
-          },
-          {
-            name: 'Mini',
-            icon: '/assets/images/marks/mini.svg',
-            models: [
-              {
-                name: 'Cabrio',
-                mods: [
-                  { name: 'Cabrio Cooper' },
-                  { name: 'Cabrio Cooper D' },
-                  { name: 'Cabrio Cooper S' },
-                ]
-              }
-            ]
-          },
-        ]
+        current:  {},
+        marks: []
       }
     }
   },
@@ -284,10 +102,10 @@ export default {
       this.isFavorit = !this.isFavorit;
       this.isShowAlert = true;
       if (this.isFavorit) {
-        this.alertValue = 'Товар "' + this.name + '" успешно добавлен в избранное';
+        this.alertValue = 'Товар "' + this.title + '" успешно добавлен в избранное';
         this.addProduct(this.product, 'favorits');
       } else {
-        this.alertValue = 'Товар "' + this.name + '" удалён из избранного';
+        this.alertValue = 'Товар "' + this.title + '" удалён из избранного';
         this.removeProduct(this.product, 'favorits');
       }
     },
@@ -295,10 +113,10 @@ export default {
       this.isComp = !this.isComp;
       this.isShowAlert = true;
       if (this.isComp) {
-        this.alertValue = 'Товар "' + this.name + '" успешно добавлен в сравнение';
+        this.alertValue = 'Товар "' + this.title + '" успешно добавлен в сравнение';
         this.addProduct(this.product, 'compares');
       } else {
-        this.alertValue = 'Товар "' + this.name + '" удалён из сравнения';
+        this.alertValue = 'Товар "' + this.title + '" удалён из сравнения';
         this.removeProduct(this.product, 'compares');
       }
     },
@@ -306,51 +124,82 @@ export default {
       this.isAdded = !this.isAdded;
       this.isShowAlert = true;
       if (this.isAdded) {
-        this.alertValue = 'Товар "' + this.name + '" успешно добавлен в корзину';
+        this.alertValue = 'Товар "' + this.title + '" успешно добавлен в корзину';
         this.addProduct(this.product);
       } else {
-        this.alertValue = 'Товар "' + this.name + '" удалён из корзины';
+        this.alertValue = 'Товар "' + this.title + '" удалён из корзины';
         this.removeProduct(this.product);
       }
+    },
+    async getProduct(params) {
+      params = params ? '?' + params : '';
+      let response = await fetch('/data/products.json' + params);
+      let json = await response.json();
+      return await json.find(el => el.UID == this.UID);
+    },
+    async getProducts(params) {
+      params = params ? '?' + params : '';
+      let response = await fetch('/data/products.json' + params);
+      return await response.json();
+    },
+    async getProducts(params) {
+      params = params ? '?' + params : '';
+      let response = await fetch('/data/products.json' + params);
+      return await response.json();
+    },
+    async getReviews(params) {
+      params = params ? '?' + params : '';
+      let response = await fetch('/data/reviews.json' + params);
+      return await response.json();
+    },
+    async getSelects(params) {
+      params = params ? '?' + params : '';
+      let response = await fetch('/data/autos.json' + params);
+      return await response.json();
     }
   },
-  created() {
+  async mounted() {
+    this.UID = this.$router.currentRoute.value.params.id;
+    this.dataProduct = await this.getProduct('id=' + this.UID);
+    Object.entries(this.dataProduct).forEach((el)=>{
+      this[el[0]] = el[1];
+    });
+
+    this.reviews = await this.getReviews('id=' + this.UID);
+    this.selects.marks = await this.getSelects('id=' + this.UID);
+    
+    console.log(this.images[0]);
     this.product = {
       UID: this.UID,
-      img: this.images[0],
-      title: this.name,
-      price: this.price,
+      title: this.title,
+      desc: this.desc,
       count: this.count,
-      chars: this.chars
+      sets: this.sets,
+      images: this.images,
+      price: this.price,
+      chars: this.chars ? this.chars : null,
     }
 
     this.tabs.current = this.tabs.list[0];
+    this.elements = await this.getProducts();
 
-    let counter = 0;
-    for(let i = 0; i < 3; i++) {
-      this.analogs.push(Products[counter]);
-      counter = counter == 0 ? 1 : 0;
-    }
+    this.analogs = this.elements.splice(0, 3);
+    this.rec = this.elements.splice(0, 2);
 
-    counter = 0;
-    for(let i = 0; i < 2; i++) {
-      this.rec.push(Products[counter]);
-      counter = counter == 0 ? 1 : 0;
-    }
-
-  },
-  mounted() {
-    let findElement = this.products.find(el => el.UID == this.product.UID);
+    let findElement = this.products.find(el => el.UID == this.UID);
     if (findElement) {
       this.isAdded = true;
+      if (findElement.sets) {
+        this.sets = findElement.sets;
+      }
     }
 
-    findElement = this.compares.find(el => el.UID == this.product.UID);
+    findElement = this.compares.find(el => el.UID == this.UID);
     if (findElement) {
       this.isComp = true;
     }
 
-    findElement = this.favorits.find(el => el.UID == this.product.UID);
+    findElement = this.favorits.find(el => el.UID == this.UID);
     if (findElement) {
       this.isFavorit = true;
     }

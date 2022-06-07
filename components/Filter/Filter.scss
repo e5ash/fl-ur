@@ -25,6 +25,7 @@
     background: #fff;
     border-radius: 4px;
     transition: .3s;
+    pointer-events: none;
   }
   &__main-title {
     color: $red;
@@ -96,6 +97,7 @@
       &__inner {
         opacity: 1 !important;
         visibility: visible !important;
+        pointer-events: auto;
       }
     }
   }

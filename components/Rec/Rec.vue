@@ -6,12 +6,8 @@
         <Product 
           v-for="item in list"
           :key="item.title"
-          class="product_col catalog__item rec__item"
-          :UID="item.UID"
-          :img="item.img"
-          :title="item.title" 
-          :desc="item.desc" 
-          :price="item.price" />
+          :element="item"
+          class="product_col catalog__item rec__item" />
       </div>
     </Case>
   </div>

@@ -58,6 +58,7 @@
           </div>
         </template>
       </template>
+      <template v-else-if="type == 'custom'"><slot /> </template>
     </div>
   </div>
 </template>

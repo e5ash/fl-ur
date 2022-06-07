@@ -41,6 +41,29 @@
         </div>
       </div>
     </div>
+    <div class="product__modal nk" :class="isShowModal ? 'product__modal_show' : null" v-if="sets">
+      <div class="product__modal-inner">
+        <div class="product__modal-head">
+          <div class="product__modal-title">Выберите свойства</div>
+          <div class="product__modal-arrow"><Icon name="arrow" /></div>
+        </div>
+        <div class="product__sets">
+          <div class="product__sets-title">Максимальное занижение</div>
+          <div class="product__sets-list row">
+            <Plus 
+              v-for="item in sets" 
+              :key="item.id" 
+              class="form__sets-item plus_md plus_gray" 
+              :value="item.title" 
+              group="sets" 
+              v-model:checked="item.checked" />
+          </div>
+          <div class="product__sets-error" v-show="isSetsError">Выберите хотя бы одно свойство</div>
+          <Button class="product__sets-button" mods="md, bg-red, shadow-black" @click="toggleProduct">{{ isAdded ? 'Убрать из корзины' : 'Добавить в корзину' }}</Button>
+        </div>
+      </div>
+      <div class="product__modal-bg" @click="isShowModal = false"></div>
+    </div>
   </a>
 </template>
 <script src="./Product.js"></script>

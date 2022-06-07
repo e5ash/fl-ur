@@ -72,7 +72,7 @@ export default {
     nextStep() {
       console.log(this.products.length);
       if (this.products.length == 0) {
-        this.toLink('/categories');
+        this.toLink('/catalog');
         return false;
       }
 

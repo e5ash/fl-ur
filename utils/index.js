@@ -112,3 +112,4 @@ export function removeProduct(product, type = 'products') {
 
   setStorage(type, this[type]);
 }
+

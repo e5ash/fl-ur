@@ -1,5 +1,3 @@
-import { Products } from '~/data/products';
-
 export default {
   name: 'Rec',
   data() {
@@ -7,10 +5,15 @@ export default {
       list: []
     }
   },
-  created() {
-    for(let i = 1; i <= this.length; i++) {
-      this.list.push(Products[i]);
+  methods: {
+    async getProducts(params) {
+      params = params ? '?' + params : '';
+      let response = await fetch('/data/products.json' + params);
+      return await response.json();
     }
+  },
+  async mounted() {
+    this.list = await this.getProducts();
   },
   props: {
     title: String,

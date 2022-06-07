@@ -18,9 +18,11 @@ body.body-modal-is-show {
   visibility: hidden;
   padding: 30px 15px;
   overflow-y: auto;
+  pointer-events: none;
   &_show {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
   &__inner {
     width: 100%;
