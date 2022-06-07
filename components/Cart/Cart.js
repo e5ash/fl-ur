@@ -18,6 +18,7 @@ export default {
       total: 0,
       step: 1,
       isProductDisabled: false,
+      buttonText: 'Оформить заказ',
       fields: {
         email: '',
         phone: '',
@@ -62,10 +63,12 @@ export default {
         case 1:
           this.title = this.titles.cart;
           this.isProductDisabled = false;
+          this.buttonText = 'Оформить заказ';
           break;
         case 2:
           this.title = this.titles.order;
           this.isProductDisabled = true;
+          this.buttonText = 'Оплатить';
           break;
       }
     },
@@ -75,8 +78,10 @@ export default {
         return false;
       }
 
-      this.step++;
-      this.setStorage('cart-step', this.step);
+      if (this.step < 2) {
+        this.step++;
+        this.setStorage('cart-step', this.step);
+      }
     },
     prevStep() {
       this.step--;

@@ -5,7 +5,7 @@
       <Icon name="filter" class="f-red" />
     </div>
     <div class="filter__inner">
-      <Return class="filter__return hidden show-xs-flex" @click="isVisible = !isVisible" />
+      <Return class="filter__return hidden show-xs-flex" :disable="true" @click="isVisible = !isVisible" />
       <H3 class="filter__main-title">Фильтр</H3>
       <div class="filter__list">
         <div class="filter__item">

@@ -25,7 +25,7 @@ export default {
         {
           title: 'Не знаете что выбрать?',
           desc: 'Получить консультацию',
-          href: null,
+          href: '/contacts',
           img: '/assets/images/cats/actions/2.png',
           bg: '/assets/images/cats/actions/2-bg.png',
           cls: ''

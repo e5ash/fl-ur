@@ -11,6 +11,7 @@ export default {
     }
   },
   props: {
-    share: Boolean
+    share: Boolean,
+    disable: Boolean,
   }
 }

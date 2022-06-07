@@ -163,6 +163,10 @@ img, svg, path, circle, rect, line {
   display: none !important;
 }
 
+.super {
+  display: none !important;
+}
+
 @media screen and (max-width: 767px) {
   .hidden-xs {
     display: none !important;
@@ -172,5 +176,13 @@ img, svg, path, circle, rect, line {
   }
   .show-xs-flex {
     display: flex !important;
+  }
+  .super {
+    z-index: 50 !important;
+    display: flex !important;
+    position: fixed !important;
+    left: 10px;
+    right: 10px;
+    bottom: 25px;
   }
 }

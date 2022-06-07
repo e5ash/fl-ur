@@ -10,6 +10,7 @@
     <Cats />
     <Actual class="actual_mt-minus" />
     <Questions class="questions_mt-minus hidden-xs"/>
+    <Button class="super" mods="md, bg-red, shadow-black" href="/categories">Категории</Button>
   </main>
 </template>
 <script>

@@ -24,6 +24,7 @@
       <div class="catalog__bg">
         <img src="~/assets/tires.png" alt="">
       </div>
+      <Button class="super" mods="md, bg-red, shadow-black" @click="isVisible = true">Фильтр</Button>
     </Case>
   </div>
 </template>

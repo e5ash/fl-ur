@@ -201,6 +201,7 @@
     }
     &__filter {
       top: 0;
+      z-index: 52;
       &.filter_show {
         .filter {
           &__inner {
@@ -210,6 +211,7 @@
       }
       .filter {
         &__toggle {
+          display: none;
           top: 8px;
           span {
             font-size: 16px;

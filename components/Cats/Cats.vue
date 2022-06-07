@@ -25,9 +25,9 @@
                 <div class="cats__action-bg" v-if="action.bg">
                   <img :src="action.bg" alt="">
                 </div>
-                <Teleport to="#modal__inner" :disabled="!action.href">
-                  <Form title="Связаться с нами" desc="Мы знаем о тюнинге больше чем вы думаете." type="callback" :close="true"></Form>
-                </Teleport>
+                <!-- <Teleport to="#modal__inner"> -->
+                <!--   <Form title="Связаться с нами" desc="Мы знаем о тюнинге больше чем вы думаете." type="callback" :close="true"></Form> -->
+                <!-- </Teleport> -->
               </div>
             </div>
             <div class="cats__actions-bg">
@@ -68,6 +68,7 @@
       </div>
       <Button class="cats__button" mods="md, bg-red, shadow-black">Продолжить</Button>
     </div>
+    <Button v-if="isPage" class="super" mods="md, bg-red, shadow-black" href="/catalog">Продолжить</Button>
   </div>
 </template>
 <script src="./Cats.js"></script>

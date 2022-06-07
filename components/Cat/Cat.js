@@ -2,6 +2,12 @@ import { getStorage } from '~/utils';
 
 export default {
   name: 'Catalog',
+  setup() {
+    let isVisible = useState('isVisibleFilter');
+    return {
+      isVisible
+    }
+  },
   data() {
     return {
       searchValue: '',

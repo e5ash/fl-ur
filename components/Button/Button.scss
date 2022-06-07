@@ -12,8 +12,10 @@
   transition: .3s;
   border: none;
   &__icon {
-    width: 62px;
-    height: 100%;
+    &_left, &_right {
+      width: 62px;
+      height: 100%;
+    }
     &_left {
       padding: 16px 23px 16px 19px;
       margin-right: -8px;

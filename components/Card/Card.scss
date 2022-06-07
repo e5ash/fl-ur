@@ -420,6 +420,15 @@
     &__selection {
       margin-top: 40px;
     }
+    &__button-add {
+      z-index: 50 !important;
+      position: fixed !important;
+      left: 10px;
+      right: 10px;
+      bottom: 25px;
+      max-width: 100%;
+      background: #fff;
+    }
     &__rec {
       margin-top: 30px;
       &-title {

@@ -1,10 +1,10 @@
 <template>
   <div class="return">
-    <div class="return__button" @click="goBack">
+    <div class="return__button" @click="!disable ? goBack : false">
       <Icon name="chevron" class="f-red" />
       <span>Назад</span>
     </div>
-    <Share class="return__share" :share="true" />
+    <Share class="return__share" v-if="share" />
   </div>
 </template>
 <script src="./Return.js"></script>

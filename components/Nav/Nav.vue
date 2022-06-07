@@ -38,10 +38,10 @@
           </div>
         </div>
         <div class="nav__controls row">
-          <Button class="nav__control nav__control_bg">
+          <Button class="nav__control nav__control_bg" href="/cart">
             <template #iconMain><Icon name="cart"/></template>
           </Button>
-          <Button class="nav__control">
+          <Button class="nav__control" href="/profile">
             <template #iconMain><Icon name="user"/></template>
           </Button>
           <Button class="nav__control">

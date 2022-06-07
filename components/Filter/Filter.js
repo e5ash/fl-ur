@@ -1,8 +1,13 @@
 export default {
   name: 'Filter',
+  setup() {
+    let isVisible = useState('isVisibleFilter', false);
+    return {
+      isVisible
+    }
+  },
   data() {
     return {
-      isVisible: false,
       max: {
         name: 'max',
         list: [
