@@ -1,4 +1,4 @@
-import { toPriceFormat, addProduct, removeProduct } from '~/utils';
+import { toPriceFormat, addProduct, removeProduct, toLink } from '~/utils';
 import Swiper, { Thumbs } from 'swiper';
 
 export default {
@@ -68,6 +68,7 @@ export default {
     }
   },
   methods: {
+    toLink,
     toPriceFormat,
     addProduct,
     removeProduct,
@@ -121,15 +122,18 @@ export default {
       }
     },
     toggleProduct() {
-      this.isAdded = !this.isAdded;
+      this.isAdded = true;
       this.isShowAlert = true;
       if (this.isAdded) {
         this.alertValue = 'Товар "' + this.title + '" успешно добавлен в корзину';
         this.addProduct(this.product);
-      } else {
-        this.alertValue = 'Товар "' + this.title + '" удалён из корзины';
-        this.removeProduct(this.product);
-      }
+        this.toLink('/basket');
+      } 
+
+      // else {
+      //   this.alertValue = 'Товар "' + this.title + '" удалён из корзины';
+      //   this.removeProduct(this.product);
+      // }
     },
     async getProduct(params) {
       params = params ? '?' + params : '';
@@ -168,7 +172,6 @@ export default {
     this.reviews = await this.getReviews('id=' + this.UID);
     this.selects.marks = await this.getSelects('id=' + this.UID);
     
-    console.log(this.images[0]);
     this.product = {
       UID: this.UID,
       title: this.title,

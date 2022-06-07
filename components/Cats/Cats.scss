@@ -46,6 +46,9 @@
     margin-bottom: 28px;
     transition: .3s;
     cursor: pointer;
+    .form {
+      display: none !important;
+    }
     &:hover {
       box-shadow: 0 1px 25px rgb(0 0 0 / 15%);
     }

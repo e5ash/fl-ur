@@ -70,7 +70,6 @@ export default {
       }
     },
     nextStep() {
-      console.log(this.products.length);
       if (this.products.length == 0) {
         this.toLink('/catalog');
         return false;
@@ -86,8 +85,6 @@ export default {
     calcTotalSum() {
       this.total = 0;
       this.products.forEach((item)=>{
-        console.log(item);
-        console.log(item.count);
         this.total += item.price.current * item.count;
       });
     }
@@ -98,7 +95,6 @@ export default {
     
     this.switchTitle();
     this.calcTotalSum();
-    console.log(this.products);
 
   },
   watch: {

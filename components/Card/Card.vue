@@ -38,7 +38,11 @@
               <div class="card__count-value">{{ count.value }} шт.</div>
             </div>
           </div>
-          <Button class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">{{ isAdded ? 'Убрать из корзины' : 'Добавить в корзину' }}</Button>
+          <Button class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">
+            Добавить в корзину
+            <!-- {{ isAdded ? 'Убрать из корзины' : 'Добавить в корзину' }} -->
+            <template #iconLeft><Icon :name="isAdded ? 'cart' : 'phone'" /></template>
+          </Button>
           <div class="card__sets" v-if="sets?.length > 0">
             <div class="card__sets-title">Максимальное занижение</div>
             <div class="card__sets-list">
