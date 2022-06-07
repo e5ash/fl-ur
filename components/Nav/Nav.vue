@@ -38,13 +38,13 @@
           </div>
         </div>
         <div class="nav__controls row">
-          <Button class="nav__control nav__control_bg" href="/cart">
+          <Button class="nav__control nav__control_bg" href="/basket" @click="isNavShow = false">
             <template #iconMain><Icon name="cart"/></template>
           </Button>
-          <Button class="nav__control" href="/profile">
+          <Button class="nav__control" href="/profile" @click="isNavShow = false">
             <template #iconMain><Icon name="user"/></template>
           </Button>
-          <Button class="nav__control">
+          <Button class="nav__control" @click="isNavShow = false">
             <template #iconMain><Icon name="phone"/></template>
           </Button>
         </div>

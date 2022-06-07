@@ -55,12 +55,14 @@ export default {
       this.last.push(value);
       setStorage('search-last', this.last);
       this.toLink('/search');
+      this.isSearchOpen = false;
     },
     submitForm() {
       if (this.value) {
         this.last.push(this.value);
         setStorage('search-last', this.last);
         this.toLink('/search');
+        this.isSearchOpen = false;
       }
     }
   },
