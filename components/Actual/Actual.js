@@ -45,7 +45,10 @@ export default {
     }
   },
   methods: {
-    toLink
+    toLink,
+    toSection() {
+      this.toLink('/news');
+    }
   },
   created() {
     this.currentTab = this.tabs[0];

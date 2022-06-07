@@ -61,6 +61,12 @@ export default {
       this.isDisabled = false;
     }
   },
+  // mounted() {
+  //   if (this.val != '') {
+  //     this.value = this.val;
+  //   }
+  //
+  // },
   props: {
     mods: String,
     title: String,

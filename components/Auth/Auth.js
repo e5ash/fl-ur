@@ -12,7 +12,7 @@ export default {
       policy: {
         value: 'yes',
         group: 'policy',
-        checked: false,
+        checked: true,
       }
     }
   },

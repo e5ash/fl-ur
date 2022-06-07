@@ -123,7 +123,6 @@ export default {
       this.isShowModal = true;
     },
     handleClick(href) {
-      console.log(href);
       if (href) {
         this.toLink(href);
       } else {

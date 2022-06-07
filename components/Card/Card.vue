@@ -26,7 +26,7 @@
           </div>
           <H3 class="card__title card__name">{{ title }}</H3>
           <div class="card__controls row">
-            <div class="card__price">Цена: <var>{{ toPriceFormat(price.current) }}</var> ₽</div>
+            <div class="card__price">Цена: <var>{{ toPriceFormat(price.current) }}</var> <span class="r"></span></div>
             <div class="card__actions row">
               <div class="card__action" :class="isFavorit ? 'card__action_selected' : null" @click="toggleFavorit"><Icon name="bookmark" /></div>
               <div class="card__action" :class="isComp ? 'card__action_selected' : null" @click="toggleComp"><Icon name="scale" /></div>

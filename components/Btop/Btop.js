@@ -6,6 +6,6 @@ export default {
     toLink
   },
   props: {
-    link: Object
+    link: Object,
   }
 }

@@ -205,7 +205,8 @@ export default {
 
         this.$refs.area.value = '';
         this.$refs.area.handleFocusout();
-        // this.$refs.area.handleInput();
+      } else {
+        this.toLink('/catalog');
       }
 
     }

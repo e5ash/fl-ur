@@ -213,6 +213,34 @@ export default {
       this.toLink('/catalog');
     }
   },
+  // watch: {
+  //   currentMark() {
+  //     localStorage.setItem('currentMark', JSON.stringify(this.currentMark));
+  //   },
+  //   currentModel() {
+  //     localStorage.setItem('currentModel', JSON.stringify(this.currentModel));
+  //   },
+  //   currentMode() {
+  //     localStorage.setItem('currentMode', JSON.stringify(this.currentMode));
+  //   }
+  // },
+  // mounted() {
+  //   let lsCurrentMark  = localStorage.getItem('currentMark') ? JSON.parse(localStorage.getItem('currentMark')) : null;
+  //   let lsCurrentModel = localStorage.getItem('currentModel') ? JSON.parse(localStorage.getItem('currentModel')) : null;
+  //   let lsCurrentMode  = localStorage.getItem('currentMode') ? JSON.parse(localStorage.getItem('currentMode')) : null;
+  //
+  //   console.log(lsCurrentMark, lsCurrentModel, lsCurrentMode);
+  //
+  //   if (lsCurrentMark) {
+  //     this.currentMark = lsCurrentMark;
+  //   }
+  //   if (lsCurrentModel) {
+  //     this.currentModel = lsCurrentModel;
+  //   }
+  //   if (lsCurrentMode) {
+  //     this.currentMode = lsCurrentMode;
+  //   }
+  // },
   props: {
     isPage: Boolean,
     classSelect: String,

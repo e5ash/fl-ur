@@ -59,7 +59,7 @@
               </div>
             </div>
           </div>
-          <div class="cart__price" v-if="products.length > 0">Итого: <var>{{ toPriceFormat(total) }}</var> ₽</div>
+          <div class="cart__price" v-if="products.length > 0">Итого: <var>{{ toPriceFormat(total) }}</var> <span class="r"></span></div>
           <Button class="cart__button-order" mods="md, bg-red" @click="nextStep">{{ products.length == 0 ? 'Перейти в каталог' : 'Оформить заказ'}}</Button>
         </div>
 

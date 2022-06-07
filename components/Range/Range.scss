@@ -1,6 +1,7 @@
 @import '~styles/vars';
 
 .range {
+  position: relative;
   padding-top: 5px;
   padding-bottom: 45px;
   .noUi {
@@ -48,6 +49,18 @@
     }
     &:nth-last-of-type(1) {
       transform: translateX(-100%);
+    }
+  }
+  &__value {
+    position: absolute;
+    line-height: 19px;
+    font-weight: 700;
+    top: 24px;
+    &_from {
+      left: 0;
+    }
+    &_to {
+      right: 0;
     }
   }
 

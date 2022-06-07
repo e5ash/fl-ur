@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <Return class="contact__return" />
+    <Return class="contact__return" :share="true" />
     <H1 class="contact__title">Контакты</H1>
     <div class="contact__inner">
       <div class="contact__logo">
@@ -15,8 +15,10 @@
         </div>
       </div>
       <Socials class="contact__socials"></Socials>
-      <Button class="contact__button" mods="md, bg-red, shadow-black" @click="isFormShow = !isFormShow">Написать нам</Button>
-      <Form class="contact__form" :class="isFormShow ? 'form_show' : null" title="Связаться с нами" desc="Мы знаем о тюнинге больше чем вы думаете." type="callback"></Form>
+      <Button class="contact__button" mods="md, bg-red, shadow-black" :modal="true">Написать нам</Button>
+      <Teleport to="#modal__inner">
+        <Form title="Связаться с нами" desc="Мы знаем о тюнинге больше чем вы думаете." type="callback" :close="true"></Form>
+      </Teleport>
     </div>
     <div class="contact__map" ref="map"></div>
   </div>

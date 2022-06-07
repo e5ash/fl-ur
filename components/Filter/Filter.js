@@ -14,10 +14,10 @@ export default {
         ]
       },
       price: {
-        start: [134, 200],
+        start: [2000, 8000],
         range: {
-          min: 134,
-          max: 154
+          min: 0,
+          max: 10000 
         },
       },
       select: {

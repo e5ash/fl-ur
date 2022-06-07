@@ -124,7 +124,6 @@ export default {
     if (!this.element) 
       return false;
 
-    console.log(this.element);
     this.UID   = this.element.UID;
     this.img   = this.element.images[0];
     this.title = this.element.title;
@@ -134,7 +133,6 @@ export default {
     this.chars = this.element.chars;
     this.sets  = this.element.sets ? Object.assign(this.element.sets) : null;
 
-    console.log(this.element);
     this.product = {
       UID: this.element.UID,
       count: this.count,
@@ -146,7 +144,6 @@ export default {
     };
   },
   async mounted() {
-    console.log(this.products, this.product.UID);
     let findElement = this.products.find(el => el.UID == this.product.UID);
     if (findElement) {
       this.isAdded = true;

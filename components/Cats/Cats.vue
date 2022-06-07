@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="cats__inner">
-          <Btop class="cats__btop hidden show-xs-flex" @click="!isPage ? openModal : false" :link="!isPage ? { title: 'Показать все', href: '#', event: openModal} : null">Категории</Btop>
+          <Btop class="cats__btop hidden show-xs-flex" @click="openModal" :link="!isPage ? { title: 'Показать все', href: '#', event: openModal} : null">Категории</Btop>
           <div class="cats__list row" :class="!isPage ? 'cats__list_hidden-xs' : null">
             <a v-for="cat in list" :key="cat.title" class="cats__item" href="/catalog" @click.prevent="toLink('/catalog')">
               <div class="cats__item-img">
@@ -48,7 +48,7 @@
         </div>
       </div>
     </Case>
-    <div class="cats__modal" :class="isModalShow ? cls.modalShow : null">
+    <div class="cats__modal" :class="isModalShow ? 'cats__modal_show' : null">
       <div class="cats__controls row">
         <div class="cats__back" @click="openModal">
           <Icon name="chevron" class="f-red" />
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="cats__links">
-        <a v-for="link in links" :key="link.id" class="cats__link" href="/cat" @click.prevent="toLink('/cat')">
+        <a v-for="link in links" :key="link.id" class="cats__link" href="/catalog" @click.prevent="toLink('/catalog')">
           <div class="cats__link-title">{{ link }}</div>
           <div class="cats__link-icon">
             <Icon name="arrow" />

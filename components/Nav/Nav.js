@@ -23,59 +23,59 @@ export default {
           sub: [
             {
               title: 'Двигатель',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Турбины',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Трансмиссии',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Выпускные системы',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Впускные системы',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Охлаждение',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Тормозные системы',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Подвеска',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Топливные системы',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Интерьер и экстерьер',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Шины и диски',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Электрика',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Оригинальные детали',
-              href: ''
+              href: '/catalog'
             },
             {
               title: 'Подарки и мерс',
-              href: ''
+              href: '/catalog'
             },
           ]
         },
@@ -95,7 +95,7 @@ export default {
           ]
         },
         {
-          title: 'Блоги и статьи',
+          title: 'Новости',
           href: '/news',
         },
         {
@@ -104,7 +104,7 @@ export default {
         },
         {
           title: 'Распродажи',
-          href: '',
+          href: '/catalog',
         },
         {
           title: 'Информация',

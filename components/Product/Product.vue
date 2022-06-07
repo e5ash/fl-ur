@@ -9,12 +9,12 @@
         <div v-if="desc" class="product__desc">{{ desc }}</div>
         <div class="product__data">
           <div class="product__price" v-if="!incdec">
-            <div class="product__price-current">{{ toPriceFormat(price.current) }} ₽</div>
-            <div class="product__price-old" v-if="price.old && !hide_old_price">{{ toPriceFormat(price.old) }} ₽</div>
+            <div class="product__price-current">{{ toPriceFormat(price.current) }} <span class="r"></span></div>
+            <div class="product__price-old" v-if="price.old && !hide_old_price">{{ toPriceFormat(price.old) }} <span class="r"></span></div>
           </div>
           <div class="product__price" v-else>
-            <div class="product__price-current">{{ count > 1 ? 'За ' : null }}шт. {{ toPriceFormat(price.current) }} ₽</div>
-            <div class="product__price-total" v-if="count > 1">Итог: {{ toPriceFormat(price.current * count) }} ₽</div>
+            <div class="product__price-current">{{ count > 1 ? 'За ' : null }}шт. {{ toPriceFormat(price.current) }} <span class="r"></span></div>
+            <div class="product__price-total" v-if="count > 1">Итог: {{ toPriceFormat(price.current * count) }} <span class="r"></span></div>
           </div>
           <div class="product__button-remove nk" v-if="!disabled && remove" @click="toggleProduct">
             <Icon name="trash" />

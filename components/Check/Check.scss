@@ -9,9 +9,10 @@
   }
   &__box {
     border-radius: 4px;
+    transform: unset !important;
     svg {
       transition: .3s;
-      transform: scale(0);
+      transform: scale(0) translate3d(0px, 0px, 0px);
     }
   }
   &__wrap {
@@ -61,7 +62,7 @@
     .check {
       &__box {
         svg {
-          transform: scale(1);
+          transform: scale(1) translate3d(0px, 0px, 0px);
         }
       }
     }
