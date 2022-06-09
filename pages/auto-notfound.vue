@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <Partnership title="Стать диллером">
+    <Partnership title="Нет вашего авто?" :auto="true">
       <p>Тут написан текст который дет понять что получит человек заполнивший данную форму обратной связи , он должен понять приференции которые получает при партнерстве с BC racing</p>
     </Partnership>
     <Questions class="hidden-xs"/>
@@ -9,11 +9,11 @@
 <script>
   export default {
     head: {
-      title: 'Стать диллером'
+      title: 'Нет вашего авто?'
     },
     setup() {
       definePageMeta({
-        title: 'Стать диллером'
+        title: 'Нет вашего авто?'
       });
     }
   }

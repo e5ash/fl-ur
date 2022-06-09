@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <Cat />
-    <Group title="Специальное предложение" />
+    <Group class="group_sm group_pt" title="Специальное предложение" />
     <Questions class="questions_mt-minus hidden-xs"/>
   </main>
 </template>

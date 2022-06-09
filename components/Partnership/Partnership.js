@@ -8,6 +8,7 @@ export default {
         name: '', 
         phone: '', 
         email: '', 
+        auto: '', 
       },
       partners: [
         {
@@ -75,6 +76,7 @@ export default {
   props: {
     title: String,
     formTitle: String,
-    choiser: Boolean
+    choiser: Boolean,
+    auto: Boolean
   }
 }

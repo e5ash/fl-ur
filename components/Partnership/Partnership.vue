@@ -26,6 +26,9 @@
               <EField class="partnership__form-field" mode="sm, b-gray" validation="email" placeholder="example@email.com" v-model:val="fields.email">
                 <template #title>Email</template>
               </EField>
+              <EField v-if="auto" class="partnership__form-field" mode="sm, b-gray" placeholder="GOLF IV" v-model:val="fields.auto">
+                <template #title>Марка, модель, год</template>
+              </EField>
               <EField class="partnership__form-field" mode="sm, b-gray" validation="phone" placeholder="+7 888 888 88 88" v-model:val="fields.phone">
                 <template #title>Телефон</template>
               </EField>
