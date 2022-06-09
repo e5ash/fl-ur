@@ -7,7 +7,6 @@ export default {
   },
   methods: {
     sharePage() {
-      if (navigator.share) {
 
         const thisUrl = window.location.href,
               thisTitle = document.title;
@@ -17,7 +16,6 @@ export default {
           url: thisUrl
         });
 
-      }
     }
   },
   mounted() {
