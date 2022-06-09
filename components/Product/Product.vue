@@ -55,8 +55,8 @@
               v-model:checked="item.checked" />
           </div>
           <div class="product__sets-error" v-show="isSetsError">Выберите хотя бы одно свойство</div>
-          <div class="product__sets-true" v-show="isAddedMessage">Успешно добавлено</div>
-          <Button class="product__sets-button" mods="md, bg-red, shadow-black" @click="toggleProduct">{{ isAdded ? 'Убрать из корзины' : 'Добавить в корзину' }}</Button>
+          <Button class="product__sets-button" v-if="!isAdded" mods="md, bg-red, shadow-black" @click="toggleProduct">Добавить в корзину</Button>
+          <Button class="product__sets-button" v-else mods="md, bg-red, shadow-black" href="/basket" @click="isShowModal = false; isSetsShow = false;">Перейти в корзину</Button>
         </div>
       </div>
     </div>

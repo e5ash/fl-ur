@@ -41,6 +41,15 @@
       margin-bottom: 0;
     }
   }
+  &__added {
+    b {
+      font-weight: 700;
+    }
+    u {
+      color: $red;
+    }
+    
+  }
   &__empty {
     display: flex;
     flex-direction: column;
@@ -110,9 +119,29 @@
     max-width: 355px;
     margin-top: 15px;
   }
+  &__bg {
+    width: 1502px;
+    position: absolute;
+    top: -100px;
+    right: -770px;
+  }
+  &_order {
+    min-height: 450px;
+  }
 
 }
 
+@media screen and (max-width: 1150px) {
+  .cart {
+    &__bg {
+      display: none;
+    }
+    &_order {
+      min-height: 1px;
+    }
+  }
+
+}
 @media screen and (max-width: 1080px) {
   .cart {
     .case_sm {

@@ -5,16 +5,6 @@
   overflow: hidden;
   &__wrap {
     position: relative;
-    &:before {
-      z-index: 2;
-      content: '';
-      right: 1090px;
-      top: 0;
-      bottom: 0;
-      position: absolute;
-      width: 1000%;
-      background: #fff;
-    }
   }
   &__content {
     position: relative;
@@ -35,6 +25,7 @@
     overflow: visible;
     width: 790px;
     margin-left: 0;
+    pointer-events: none;
     &:before {
       z-index: 2;
       content: '';
@@ -50,6 +41,7 @@
     align-items: center;
     position: relative;
     height: 405px;
+    pointer-events: none;
   }
   &__pagination {
     margin-top: 15px;
@@ -66,6 +58,7 @@
       transition: .3s;
       margin-left: 2.5px;
       margin-right: 2.5px;
+      pointer-events: auto;
       &-active {
         width: 40px;
       }
@@ -156,7 +149,7 @@
   }
 }
 
-@media screen and (max-width: 1410px) {
+@media screen and (max-width: 1420px) {
   .intro {
     &__slides {
       width: calc(100% - 595px);
@@ -181,6 +174,10 @@
       width: 100%;
       margin-top: 40px;
       overflow: hidden;
+      pointer-events: auto;
+    }
+    &__list {
+      pointer-events: auto;
     }
     &__item {
       pointer-events: auto;

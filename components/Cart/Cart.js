@@ -4,15 +4,18 @@ export default {
   name: 'Cart',
   setup() {
     let products = useState('products');
+    let cartCount = useState('cartCount');
     return {
-      products
+      products,
+      cartCount
     }
   },
   data() {
     return {
       titles: {
         cart: 'Корзина',
-        order: 'Оформление заказа'
+        order: 'Оформление заказа',
+        completed: 'Заказ создан'
       },
       title: 'Корзина',
       total: 0,
@@ -70,6 +73,17 @@ export default {
           this.isProductDisabled = true;
           this.buttonText = 'Оплатить';
           break;
+        case 3:
+          this.title = this.titles.completed;
+          this.isProductDisabled = true;
+          this.buttonText = 'Оплатить';
+          this.setStorage('cart-step', 1);
+          localStorage.removeItem('products');
+          this.cartCount = 0;
+          this.products = [];
+
+
+          break;
       }
     },
     nextStep() {
@@ -78,7 +92,7 @@ export default {
         return false;
       }
 
-      if (this.step < 2) {
+      if (this.step < 3) {
         this.step++;
         this.setStorage('cart-step', this.step);
       }

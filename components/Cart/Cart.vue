@@ -1,16 +1,24 @@
 <template>
-  <div class="cart">
+  <div class="cart" :class="step == 3 ? 'cart_order' : null">
     <Case class="case_sm">
       <Breadcrumb class="cart__breadcrumb hidden-xs" v-if="step == 1" />
       <Return class="cart__return hidden show-xs-flex" v-if="step == 1" />
       <div class="cart__return" v-if="step == 2" @click="prevStep">
         <Icon name="chevron" class="f-red" />
-        <span>Назад</span>
+        <span>Назад к корзине</span>
+      </div>
+      <div class="cart__return" v-if="step == 3" @click="step = 1">
+        <Icon name="chevron" class="f-red" />
+        <span>Назад к корзине</span>
       </div>
       <div class="cart__wrap row">
         <div class="cart__left">
           <H1 class="cart__title">{{ title }}</H1>
-          <div class="cart__list" v-if="products.length > 0">
+          <T1 class="cart__added" v-if="step == 3">
+            <p><b>Заказ <u>#1241234</u></b> создан.</p>
+            <p>В ближайшие время с вами свяжется менеджер и уточнит все подробности вашего заказа. </p>
+          </T1>
+          <div class="cart__list" v-else-if="products.length > 0">
             <Product 
               v-for="item in products"
               :key="item.title"
@@ -35,7 +43,7 @@
               <T2 class="cart__delivery-text">Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и полноту реализации выбранного вами уровня усовершенствования.Представленные предложения ввиду своего комплексного характера сочетают в себе выгоду при затратах времени и средств и </T2>
             </div>
           </div>
-          <div class="cart__order" v-else>
+          <div class="cart__order" v-else-if="step == 2">
             <EField class="cart__field" mode="sm, b-gray" validation="email" placeholder="example@email.com" v-model:val="fields.email">
               <template #title>Email</template>
             </EField>
@@ -59,8 +67,13 @@
               </div>
             </div>
           </div>
-          <div class="cart__price" v-if="products.length > 0">Итого: <var>{{ toPriceFormat(total) }}</var> <span class="r"></span></div>
-          <Button class="cart__button-order" mods="md, bg-red" @click="nextStep">{{ products.length == 0 ? 'Перейти в каталог' : buttonText}}</Button>
+          <template v-if="step < 3">
+            <div class="cart__price" v-if="products.length > 0">Итого: <var>{{ toPriceFormat(total) }}</var> <span class="r"></span></div>
+            <Button class="cart__button-order" mods="md, bg-red" @click="nextStep">{{ products.length == 0 ? 'Перейти в каталог' : buttonText}}</Button>
+          </template>
+          <div v-else class="cart__bg">
+            <img src="~/assets/images/selection-car.png" alt="">
+          </div>
         </div>
 
         <Rec class="cart__rec hidden show-xs" v-if="products.length == 0" title="Может что-то такое?" :length="4" />

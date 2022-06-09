@@ -2,9 +2,11 @@ export default {
   name: 'Contact',
   setup() {
     let isMapLoaded = useState('isMapLoaded');
+    let isCallbackFormShow = useState('isCallbackFormShow');
     return {
       isMapLoaded,
       position: [59.904645, 30.284921],
+      isCallbackFormShow
     }
   },
   data() {

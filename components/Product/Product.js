@@ -75,12 +75,15 @@ export default {
         if (!$event.target.closest('.product__sets-button')) {
           document.setsBlock = this.$refs.product.querySelector('.product__modal ');
 
+          this.isShowModal = this.isSetsShow = true;
+
           let modalSets = document.querySelector('.modal .form__sets');
           let sets = document.setsBlock.querySelector('.product__modal-inner');
 
-          modalSets.append(sets);
+          setTimeout(()=>{
+            modalSets.append(sets);
+          }, 100);
 
-          this.isShowModal = this.isSetsShow = true;
           return false;
         } 
 

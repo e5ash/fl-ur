@@ -15,10 +15,7 @@
         </div>
       </div>
       <Socials class="contact__socials"></Socials>
-      <Button class="contact__button" mods="md, bg-red, shadow-black" :modal="true">Написать нам</Button>
-      <Teleport to="#modal__inner">
-        <Form title="Связаться с нами" desc="Мы знаем о тюнинге больше чем вы думаете." type="callback" :close="true"></Form>
-      </Teleport>
+      <Button class="contact__button" mods="md, bg-red, shadow-black" :modal="true" @click="isCallbackFormShow = true">Написать нам</Button>
     </div>
     <div class="contact__map" ref="map"></div>
   </div>

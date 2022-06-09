@@ -32,11 +32,16 @@ export default {
         }
 
         this.isShow = this.isReviewFormShow = this.isCallbackFormShow = this.isNotAvailableFormShow = this.isSetsShow = false;
+
+        console.log(this.isShow);
       }
     }
   },
   watch: {
     isShow() {
+      let sets = document.querySelector('.modal .form__sets');
+      sets.innerHTML = '';
+
       if (this.isShow) {
         document.body.classList.add(this.classBodyOverflow);
       } else {
