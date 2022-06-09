@@ -11,11 +11,13 @@ export default {
   },
   methods: {
     handeKeyPress(event) {
+      this.getValue();
       if (event.keyCode > 57) {
         event.preventDefault();
       }
     },
     handeOut(event){
+      this.getValue();
       if (this.value < 1) {
         this.value = 1;
       }
@@ -25,14 +27,19 @@ export default {
       }
     },
     plusValue() {
+      this.getValue();
       if (this.value < this.maxValue) {
         this.value++;
       }
     },
     minusValue() {
+      this.getValue();
       if (this.value > 1) {
         this.value--;
       }
+    },
+    getValue() {
+      this.value = this.$refs.input.value;
     }
   },
   watch: {

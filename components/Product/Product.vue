@@ -41,7 +41,7 @@
         </div>
       </div>
     </div>
-    <div class="product__modal nk" ref="modal" v-if="sets">
+    <div class="product__modal nk"  v-if="sets">
       <div class="product__modal-inner" ref="sets">
         <div class="product__sets">
           <div class="product__sets-title">Максимальное занижение</div>

@@ -168,7 +168,7 @@ export default {
       sets: this.element.sets ? Object.assign(this.element.sets) : null
     };
   },
-  async mounted() {
+  mounted() {
     let findElement = this.products.find(el => el.UID == this.product.UID);
     if (findElement) {
       this.isAdded = true;
@@ -183,6 +183,14 @@ export default {
     findElement = this.favorits.find(el => el.UID == this.product.UID);
     if (findElement) {
       this.isFavorit = true;
+    }
+
+    if (this.incdec) {
+      let incdec = document.setsBlock = this.$refs.product.querySelector('.incdec__input');
+      setTimeout(()=>{
+        incdec.value = this.count;
+        console.log(incdec.value);
+      }, 200)
     }
   },
   watch: {
