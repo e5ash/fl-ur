@@ -25,5 +25,19 @@ export default {
     if (navigator.share) {
       this.isShow = true;
     }
+
+    const shareData = {
+      title: document.title,
+      url: window.location.href
+    }
+
+    const shareBtn = document.querySelector('.share');
+    shareBtn.addEventListener('click', async () => {
+      try {
+        await navigator.share(shareData)
+      } catch(err) {
+        console.log('Error: ');
+      }
+    });
   }
 }
