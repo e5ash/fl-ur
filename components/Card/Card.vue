@@ -45,14 +45,14 @@
           <Button v-else-if="isAdded" class="card__button-add" mods="md, bg-red, shadow-black" href="/basket">
             <template #default>Перейти в корзину</template>
           </Button>
-          <Button v-else-if="cartCount == 0" class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">
+          <Button v-else class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">
             <template #default>Добавить в корзину</template>
             <template #iconLeft><Icon name="phone" /></template>
           </Button>
-          <Button v-else class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">
-            <template #default>Добавить в корзину</template>
-            <template #iconLeft><Icon name="cart" /></template>
-          </Button>
+          <!-- <Button v-else class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct"> -->
+          <!--   <template #default>Добавить в корзину</template> -->
+          <!--   <template #iconLeft><Icon name="cart" /></template> -->
+          <!-- </Button> -->
           <div class="card__sets" v-if="sets?.length > 0">
             <div class="card__sets-title">Максимальное занижение</div>
             <div class="card__sets-list">
