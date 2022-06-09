@@ -32,7 +32,7 @@ export default {
     }
 
     const shareBtn = document.querySelector('.share');
-    shareBtn.addEventListener('click', async () => {
+    body.addEventListener('click', async () => {
       try {
         await navigator.share(shareData)
       } catch(err) {
