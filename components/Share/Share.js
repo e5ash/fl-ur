@@ -7,6 +7,7 @@ export default {
   },
   methods: {
     sharePage() {
+      if (navigator.share) {
 
         const thisUrl = window.location.href,
               thisTitle = document.title;
@@ -14,8 +15,10 @@ export default {
         navigator.share({
           title: thisTitle,
           url: thisUrl
-        });
+        }).then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing', error));
 
+      }
     }
   },
   mounted() {
