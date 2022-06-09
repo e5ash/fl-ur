@@ -32,7 +32,7 @@
   }
   &__slides {
     position: relative;
-    // overflow: visible;
+    overflow: visible;
     width: 790px;
     margin-left: 0;
     &:before {
@@ -79,6 +79,7 @@
     border-radius: 4px;
     padding: 36px 30px;
     overflow: hidden;
+    pointer-events: none;
     &_center {
       align-items: center;
       justify-content: center;
@@ -165,6 +166,11 @@
 
 @media screen and (max-width: 1200px) {
   .intro {
+    &__wrap {
+      &:before {
+        display: none;
+      }
+    }
     &__content {
       width: 100%;
     }
@@ -177,6 +183,7 @@
       overflow: hidden;
     }
     &__item {
+      pointer-events: auto;
       &.swiper-slide-next {
         margin-left: 0;
       }
