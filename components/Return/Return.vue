@@ -1,5 +1,6 @@
 <template>
   <div class="return">
+  {{ disable }}
     <div class="return__button" @click="!disable ? goBack : false">
       <Icon name="chevron" class="f-red" />
       <span>Назад</span>
