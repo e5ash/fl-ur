@@ -53,6 +53,7 @@ export default {
     }
   },
   mounted() {
+    // console.log(this.value);
     this.maxValue = this.max ? Number(this.max) : this.maxValue;
   },
   props: {

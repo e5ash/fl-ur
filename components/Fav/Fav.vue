@@ -10,12 +10,13 @@
           <Product 
             v-for="item in list"
             :key="item.title"
-            class="product_col fav__item"
+            class="product_col fav__item swiper-slide"
             :element="item"
             :favorit="true" />
         </div>
       </div>
       <div class="fav__alert" v-else>В избранном ничего не найдено.</div>
+      <Button v-if="list" class="super" mods="md, bg-red, shadow-black" href="/basket">Создать заказ</Button>
     </Case>
   </div>
   

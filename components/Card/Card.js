@@ -9,12 +9,22 @@ export default {
     let favorits = useState('favorits');
     let isShowAlert = useState('isShowAlert');
     let alertValue = useState('alertValue');
+    let isShowModal = useState('isShowModal');
+    let isCallbackFormShow = useState('isCallbackFormShow');
+    let isReviewFormShow = useState('isReviewFormShow');
+    let isNotAvailableFormShow = useState('isNotAvailableFormShow');
+    let cartCount = useState('cartCount');
     return {
       products,
       compares,
       favorits,
       isShowAlert,
       alertValue,
+      isShowModal,
+      isCallbackFormShow,
+      isReviewFormShow,
+      isNotAvailableFormShow,
+      cartCount
     }
   },
   data() {
@@ -26,6 +36,7 @@ export default {
       title: '',
       price: {},
       count: 1,
+      total: 1,
       counts: [
         {
           key: 'В наличии',
@@ -121,19 +132,26 @@ export default {
         this.removeProduct(this.product, 'compares');
       }
     },
-    toggleProduct() {
+    toggleProduct($event) {
+      if (document.querySelector('.card__button-add .icon_phone') && $event.target.closest('.button__icon')) {
+        this.isShowModal = this.isCallbackFormShow = true
+        return false;
+      }
+
       this.isAdded = true;
       this.isShowAlert = true;
       if (this.isAdded) {
         this.alertValue = 'Товар "' + this.title + '" успешно добавлен в корзину';
         this.addProduct(this.product);
-        this.toLink('/basket');
       } 
-
-      // else {
-      //   this.alertValue = 'Товар "' + this.title + '" удалён из корзины';
-      //   this.removeProduct(this.product);
-      // }
+      this.changeCartCount();
+    },
+    notAvailable($event) {
+      if (document.querySelector('.card__button-add .icon_bookmark') && $event.target.closest('.button__icon')) {
+        this.toggleFavorit();
+      } else {
+        this.isShowModal = this.isNotAvailableFormShow = true
+      }
     },
     async getProduct(params) {
       params = params ? '?' + params : '';
@@ -160,6 +178,13 @@ export default {
       params = params ? '?' + params : '';
       let response = await fetch('/data/autos.json' + params);
       return await response.json();
+    },
+    changeCartCount() {
+      let count = 0;
+      for (const prod of this.products) {
+        count += prod.count ? prod.count : 1;
+      }
+      this.cartCount = count < 10 ? count : '9+';
     }
   },
   async mounted() {
@@ -168,6 +193,8 @@ export default {
     Object.entries(this.dataProduct).forEach((el)=>{
       this[el[0]] = el[1];
     });
+
+    this.total = this.countTotal.now + this.countTotal.stock;
 
     this.reviews = await this.getReviews('id=' + this.UID);
     this.selects.marks = await this.getSelects('id=' + this.UID);

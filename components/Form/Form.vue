@@ -17,7 +17,7 @@
           <EField class="form__field" mode="sm, b-gray" validation="phone" placeholder="+7 888 888 88 88" v-model:val="fields.phone">
             <template #title>Телефон</template>
           </EField>
-          <Button class="form__button" mods="md, bg-red, shadow-black" @click="step++">Заказать звонок</Button>
+          <Button class="form__button" mods="md, bg-red, shadow-black" @click="step++">{{ btnText ? btnText : 'Заказать звонок' }}</Button>
         </template>
         <template v-else>
           <div class="form__successful">

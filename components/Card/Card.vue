@@ -32,16 +32,26 @@
               <div class="card__action" :class="isComp ? 'card__action_selected' : null" @click="toggleComp"><Icon name="scale" /></div>
             </div>
           </div>
-          <div class="card__counts">
+          <div class="card__counts" v-if="total > 1">
             <div class="card__count" v-for="count in counts" :key="count.id">
               <div class="card__count-key">{{ count.key }}:</div>
               <div class="card__count-value">{{ count.value }} шт.</div>
             </div>
           </div>
-          <Button class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">
-            Добавить в корзину
-            <!-- {{ isAdded ? 'Убрать из корзины' : 'Добавить в корзину' }} -->
-            <template #iconLeft><Icon :name="isAdded ? 'cart' : 'phone'" /></template>
+          <Button v-if="total < 1" class="card__button-add" mods="md, bg-red, shadow-black" @click="notAvailable">
+            <template #default>Сообщить о поступлении</template>
+            <template #iconLeft><Icon name="bookmark" :class="isFavorit ? 'f-red' : 'f-gray'" /></template>
+          </Button>
+          <Button v-else-if="isAdded" class="card__button-add" mods="md, bg-red, shadow-black" href="/basket">
+            <template #default>Перейти в корзину</template>
+          </Button>
+          <Button v-else-if="cartCount == 0" class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">
+            <template #default>Добавить в корзину</template>
+            <template #iconLeft><Icon name="phone" /></template>
+          </Button>
+          <Button v-else class="card__button-add" mods="md, bg-red, shadow-black" @click="toggleProduct">
+            <template #default>Добавить в корзину</template>
+            <template #iconLeft><Icon name="cart" /></template>
           </Button>
           <div class="card__sets" v-if="sets?.length > 0">
             <div class="card__sets-title">Максимальное занижение</div>
@@ -127,10 +137,7 @@
                 <div class="card__reviews">
                   <Review v-for="review in reviews" :key="review.id" class="card__review" :img="review.img" :title="review.title" :text="review.text" />
                 </div>
-                <Button class="card__button-review" mods="md, bg-white, c-red, shadow-black" :modal="true">Оставить отзыв</Button>
-                <Teleport to="#modal__inner">
-                  <Form title="Оставьте отзыв" :close="true" type="review" />
-                </Teleport>
+                <Button class="card__button-review" mods="md, bg-white, c-red, shadow-black" :modal="true" @click="isReviewFormShow = true">Оставить отзыв</Button>
               </div>
             </div>
           </div>

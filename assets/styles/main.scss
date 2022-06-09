@@ -47,6 +47,18 @@ body {
 }
 
 
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #dfdfdf;
+}
+
 ol, ul {
   list-style: none;
   display: flex;
@@ -168,6 +180,9 @@ img, svg, path, circle, rect, line {
 }
 
 @media screen and (max-width: 767px) {
+  #__nuxt {
+    height: 100%;
+  }
   .hidden-xs {
     display: none !important;
   }

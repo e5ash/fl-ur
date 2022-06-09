@@ -78,7 +78,7 @@
               v-show="level == 2 || currentMode == mode"
               class="choiser__item choiser__item_sub" 
               :class="currentMode == mode ? cls.currentItem : null" 
-              @click="setItem('currentMode', mode, false, '/catalog/')">
+              @click="setItem('currentMode', mode, false, '/catalog')">
               <div class="choiser__item-icon">
                 <img :src="currentMark.icon" :alt="mode.name">
               </div>

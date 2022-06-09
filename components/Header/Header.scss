@@ -36,7 +36,7 @@
     }
   }
   &__button-search {
-    margin-right: 28px;
+    margin-right: 45px;
     &_hidden {
       opacity: 0;
       visibility: hidden;
@@ -58,6 +58,30 @@
       }
     }
   }
+  &__button-favorit {
+    margin-right: 45px;
+  }
+  &__button-cart {
+    margin-right: 25px;
+    .button__text {
+      position: static;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      right: -2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #D9D9D9;
+      font-size: 9px;
+      font-weight: 700;
+      padding-bottom: 2px;
+    }
+  }
   &__button-selection {
     z-index: 10;
     width: 355px;
@@ -77,6 +101,21 @@
   }
 }
 
+@media screen and (max-width: 1400px) {
+  .header {
+    &__button-selection {
+      width: 275px;
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .header {
+    &__button-selection {
+      width: 235px;
+    }
+  }
+}
 @media screen and (max-width: 1200px) {
   .header {
     &__inner {
@@ -96,6 +135,17 @@
     }
   }
 
+}
+
+@media screen and (max-width: 1100px) {
+  .header {
+    &__inner {
+      min-height: 76px;
+    }
+    &__button-selection {
+      display: none;
+    }
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -145,7 +195,7 @@
       }
     }
     &__button {
-      &-search {
+      &-search, &-favorit, &-cart {
         margin-right: 24px;
         svg {
           width: 18px;
@@ -153,8 +203,21 @@
         }
       }
       &-selection {
-        display: none;
+        // display: none;
       }
+      &-cart {
+        .cart-count {
+          width: 10px;
+          height: 10px;
+          font-size: 7px;
+          padding-bottom: 0;
+          top: -2px;
+        }
+        
+      }
+    }
+    &__search {
+      z-index: 5;
     }
   }
 }
@@ -174,6 +237,7 @@
     background: #fff;
     &__inner {
       padding: 10px;
+      min-height: 1px;
     }
     &__button-search {
       margin-right: 27px;

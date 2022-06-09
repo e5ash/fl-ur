@@ -1,4 +1,5 @@
 import { toPriceFormat, toLink, findProduct, addProduct, removeProduct, setStorage } from "~/utils";
+import { Product } from "~~/.nuxt/components";
 export default {
   name: 'Product',
   setup() {
@@ -7,12 +8,14 @@ export default {
     let favorits = useState('favorits');
     let isShowAlert = useState('isShowAlert');
     let alertValue = useState('alertValue');
+    let cartCount = useState('cartCount');
     return {
       products,
       compares,
       favorits,
       isShowAlert,
       alertValue,
+      cartCount
     }
   },
   data() {
@@ -22,7 +25,6 @@ export default {
       title: '',
       desc: '',
       price: { },
-      count: 1,
       chars: [],
       sets: [],
       isFavorit: false,
@@ -82,6 +84,7 @@ export default {
 
       this.isAdded = !this.isAdded;
       this.isShowAlert = true;
+
       if (this.isAdded) {
         this.alertValue = 'Товар "' + this.title + '" успешно добавлен в корзину';
         this.addProduct(this.product);
@@ -95,6 +98,8 @@ export default {
           });
         }
       }
+
+      this.changeCartCount();
     },
     handleClick($event) {
       this.change();
@@ -111,8 +116,15 @@ export default {
           item.count = this.count;
         }
       }
-
       this.setStorage('products', this.products);
+      this.changeCartCount();
+    },
+    changeCartCount() {
+      let count = 0;
+      for (const prod of this.products) {
+        count += prod.count ? prod.count : 1;
+      }
+      this.cartCount = count < 10 ? count : '9+';
     }
   },
   computed: {
@@ -124,21 +136,23 @@ export default {
     if (!this.element) 
       return false;
 
+
     this.UID   = this.element.UID;
     this.img   = this.element.images[0];
     this.title = this.element.title;
     this.desc  = this.element.desc;
     this.price = this.element.price;
-    this.count = this.element.count;
     this.chars = this.element.chars;
     this.sets  = this.element.sets ? Object.assign(this.element.sets) : null;
 
     this.product = {
       UID: this.element.UID,
+      title: this.element.title,
+      desc: this.element.desc,
       count: this.count,
       sets: this.sets,
-      img: this.element.images[0],
-      price: this.element.price.current,
+      images: this.element.images,
+      price: this.element.price,
       chars: this.element.chars ? this.element.chars : null,
       sets: this.element.sets ? Object.assign(this.element.sets) : null
     };

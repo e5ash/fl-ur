@@ -7,6 +7,10 @@
       "current": 12325,
       "old": 22759
     },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
+    },
     "images": [
       "/assets/images/products/product-1.jpg",
       "/assets/images/products/product-1.jpg",
@@ -81,6 +85,10 @@
       "current": 25940,
       "old": 52499
     },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
+    },
     "images": [
       "/assets/images/products/product-2.png"
     ]
@@ -92,6 +100,10 @@
     "price": {
       "current": 12325
     },
+    "countTotal": {
+      "now": 0,
+      "stock": 0
+    },
     "images": [
       "/assets/images/products/product-3.jpg"
     ]
@@ -102,6 +114,10 @@
     "desc": "Уникальное решение для точной настройки хода подвела меня тут",
     "price": {
       "current": 12325
+    },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
     },
     "images": [
       "/assets/images/products/product-4.jpg"
@@ -115,6 +131,10 @@
       "current": 12325,
       "old": 22759
     },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
+    },
     "images": [
       "/assets/images/products/product-5.jpg"
     ]
@@ -127,6 +147,10 @@
       "current": 12325,
       "old": 22759
     },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
+    },
     "images": [
       "/assets/images/products/product-6.jpg"
     ]
@@ -137,6 +161,10 @@
     "desc": "Уникальное решение для точной настройки хода подвела меня тут",
     "price": {
       "current": 12325
+    },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
     },
     "images": [
       "/assets/images/products/product-7.jpg"
@@ -150,6 +178,10 @@
       "current": 12325,
       "old": 22759
     },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
+    },
     "images": [
       "/assets/images/products/product-8.jpg"
     ]
@@ -160,6 +192,10 @@
     "desc": "Уникальное решение для точной настройки хода подвела меня тут",
     "price": {
       "current": 12325
+    },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
     },
     "images": [
       "/assets/images/products/product-9.jpg"
@@ -173,6 +209,10 @@
       "current": 12325,
       "old": 22759
     },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
+    },
     "images": [
       "/assets/images/products/product-10.jpg"
     ]
@@ -185,6 +225,10 @@
       "current": 12325,
       "old": 22759
     },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
+    },
     "images": [
       "/assets/images/products/product-11.jpg"
     ]
@@ -195,6 +239,10 @@
     "desc": "Уникальное решение для точной настройки хода подвела меня тут",
     "price": {
       "current": 12325
+    },
+    "countTotal": {
+      "now": 10,
+      "stock": 20
     },
     "images": [
       "/assets/images/products/product-12.jpg"

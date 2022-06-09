@@ -44,7 +44,7 @@
           <Button class="nav__control" href="/profile" @click="isNavShow = false">
             <template #iconMain><Icon name="user"/></template>
           </Button>
-          <Button class="nav__control" @click="isNavShow = false">
+          <Button class="nav__control" href="tel:+78126484385" :phone="true" @click="isNavShow = false">
             <template #iconMain><Icon name="phone"/></template>
           </Button>
         </div>

@@ -16,6 +16,7 @@ export default {
     const products = useState('products', () => []);
     const compares = useState('compares', () => []);
     const favorits = useState('favorits', () => []);
+    const cartCount = useState('cartCount', ()=> 0);
 
     useHead({
       title: `${title}`,
@@ -33,7 +34,8 @@ export default {
       currentDD,
       products,
       compares,
-      favorits
+      favorits,
+      cartCount
     }
 
   },
@@ -73,6 +75,12 @@ export default {
         // document.body.style.marginRight = 0;
       }
     });
+
+    let count = 0;
+    for (const product of this.products) {
+      count += product.count ? product.count : 1;
+    }
+    this.cartCount = count < 10 ? count : '9+';
   },
 }
 </script>

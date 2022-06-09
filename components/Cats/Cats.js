@@ -4,8 +4,10 @@ export default {
   name: 'Cats',
   setup() {
     let isShowModal = useState('isShowModal');
+    let isCallbackFormShow = useState('isCallbackFormShow', false);
     return {
-      isShowModal
+      isShowModal,
+      isCallbackFormShow
     }
   },
   data() {
@@ -25,7 +27,7 @@ export default {
         {
           title: 'Не знаете что выбрать?',
           desc: 'Получить консультацию',
-          href: '/contacts',
+          href: null,
           img: '/assets/images/cats/actions/2.png',
           bg: '/assets/images/cats/actions/2-bg.png',
           cls: ''
@@ -121,6 +123,7 @@ export default {
     },
     showModal() {
       this.isShowModal = true;
+      this.isCallbackFormShow = true;
     },
     handleClick(href) {
       if (href) {

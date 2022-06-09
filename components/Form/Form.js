@@ -25,5 +25,6 @@ export default {
     title: String,
     desc: String,
     type: String,
+    btnText: String
   }
 }

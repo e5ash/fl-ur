@@ -25,9 +25,6 @@
                 <div class="cats__action-bg" v-if="action.bg">
                   <img :src="action.bg" alt="">
                 </div>
-                <!-- <Teleport to="#modal__inner"> -->
-                <!--   <Form title="Связаться с нами" desc="Мы знаем о тюнинге больше чем вы думаете." type="callback" :close="true"></Form> -->
-                <!-- </Teleport> -->
               </div>
             </div>
             <div class="cats__actions-bg">

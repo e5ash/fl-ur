@@ -5,10 +5,12 @@ export default {
   setup() {
     let isSearchOpen = useState('isSearchOpen', ()=> false);
     let isNavShow = useState('isNavShow');
+    let cartCount = useState('cartCount');
 
     return {
       isSearchOpen,
-      isNavShow
+      isNavShow,
+      cartCount
     }
   },
   data() {

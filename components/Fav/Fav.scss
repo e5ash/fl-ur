@@ -13,12 +13,11 @@
     max-width: 450px;
     margin-bottom: 28px;
   }
-  &__slider {
+  .fav__slider {
     overflow: visible;
   }
-  &__item {
+  .fav__item {
     width: 261px;
-    margin-right: 20px;
   }
   &__alert {
     font-size: 18px;
@@ -38,6 +37,7 @@
   .fav {
     padding-top: 77px;
     padding-bottom: 0;
+    min-height: 100vh;
     &__title {
       font-size: 18px;
       line-height: 24px;
@@ -46,7 +46,12 @@
     }
     &__desc {
       display: none;
-      // margin-bottom: 15px;
+    }
+    &__list {
+      flex-wrap: nowrap;
+    }
+    &__item {
+      min-width: 261px;
     }
   }
 }

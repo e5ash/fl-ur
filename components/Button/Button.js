@@ -38,6 +38,7 @@ export default {
   props: {
     mods: String,
     href: String,
-    modal: Boolean
+    modal: Boolean,
+    phone: Boolean
   }
 }
