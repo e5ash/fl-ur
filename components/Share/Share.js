@@ -2,18 +2,22 @@ export default {
   name: 'Share',
   data() {
     return {
-      isShow: true,
+      isShow: false,
     }
   },
   methods: {
     sharePage() {
-      const thisUrl = window.location.href,
-            thisTitle = document.title;
+      if (navigator.share) {
 
-      navigator.share({
-        title: thisTitle,
-        url: thisUrl
-      })
+        const thisUrl = window.location.href,
+              thisTitle = document.title;
+
+        navigator.share({
+          title: thisTitle,
+          url: thisUrl
+        });
+
+      }
     }
   },
   mounted() {

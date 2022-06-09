@@ -1,6 +1,6 @@
 <template>
   <div class="share" v-show="isShow">
-    <div class="share__button">
+    <div class="share__button" @click="sharePage">
       <span>Поделиться</span>
       <Icon name="union" />
     </div>
