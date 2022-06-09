@@ -23,7 +23,7 @@
         <div class="nav__right">
           <H3 class="nav__title">Выберите быстрое действие</H3>
           <div class="nav__actions">
-            <a class="nav__action" v-for="action in actions" :key="action.title" :href="action.href" @click.prevent="toLink(action.href)">
+            <a class="nav__action" v-for="action in actions" :key="action.title" :href="action.href" @click.prevent="toLink(action.href, isNavShow = false)">
               <div class="nav__action-icon"><Icon :name="action.icon" /></div>
               <div class="nav__action-wrap">
                 <div class="nav__action-title">

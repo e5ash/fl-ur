@@ -120,13 +120,13 @@ export default {
           title: 'Подбор по авто',
           text: 'Подберите для вашего авто',
           icon: 'filter-color',
-          href: '/selection'
+          href: '/select'
         },
         {
           title: 'Войти',
           text: 'Войти или зарегистрироваться',
           icon: 'settings-color',
-          href: '/auth'
+          href: '/login'
         }
       ]
     }
