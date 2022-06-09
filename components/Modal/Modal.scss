@@ -19,6 +19,13 @@ body.body-modal-is-show {
   padding: 30px 15px;
   overflow-y: auto;
   pointer-events: none;
+  &_sm {
+    .modal {
+      &__inner {
+        max-width: 355px;
+      }
+    }
+  }
   &_show {
     opacity: 1;
     visibility: visible;

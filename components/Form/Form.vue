@@ -58,6 +58,11 @@
           </div>
         </template>
       </template>
+      <template v-else-if="type == 'sets'">
+        <div class="form__sets">
+
+        </div>
+      </template>
       <template v-else-if="type == 'custom'"><slot /> </template>
     </div>
   </div>

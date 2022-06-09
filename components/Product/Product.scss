@@ -325,13 +325,6 @@
       pointer-events: auto;
     }
     &-inner {
-      z-index: 10;
-      position: relative;
-      width: 100%;
-      max-width: 335px;
-      background: #fff;
-      border-radius: 4px;
-      padding: 16px;
     }
     &-head {
       display: flex;

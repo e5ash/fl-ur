@@ -130,6 +130,7 @@
 
 @media screen and (max-width: 767px) {
   .group {
+    z-index: 60;
     .group__slider {
       overflow: visible;
     }

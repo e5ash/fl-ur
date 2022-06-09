@@ -9,11 +9,15 @@ export default {
     let isShowAlert = useState('isShowAlert');
     let alertValue = useState('alertValue');
     let cartCount = useState('cartCount');
+    let isShowModal = useState('isShowModal');
+    let isSetsShow = useState('isSetsShow');
     return {
       products,
       compares,
       favorits,
       isShowAlert,
+      isShowModal,
+      isSetsShow,
       alertValue,
       cartCount
     }
@@ -69,7 +73,14 @@ export default {
     toggleProduct($event) {
       if (this.sets && !this.isAdded) {
         if (!$event.target.closest('.product__sets-button')) {
-          this.isShowModal = true;
+          document.setsBlock = this.$refs.product.querySelector('.product__modal ');
+
+          let modalSets = document.querySelector('.modal .form__sets');
+          let sets = document.setsBlock.querySelector('.product__modal-inner');
+
+          modalSets.append(sets);
+
+          this.isShowModal = this.isSetsShow = true;
           return false;
         } 
 

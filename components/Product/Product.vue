@@ -1,5 +1,5 @@
 <template>
-  <a class="product" :class="[remove ? 'product_has-remove' : null, disabled ? 'product_disabled': null]" :href="href" @click.prevent="handleClick">
+  <a class="product" :class="[remove ? 'product_has-remove' : null, disabled ? 'product_disabled': null]" :href="href" @click.prevent="handleClick" ref="product">
     <div class="product__inner">
       <div class="product__img img">
         <img :src="img" :alt="title">
@@ -41,12 +41,8 @@
         </div>
       </div>
     </div>
-    <div class="product__modal nk" :class="isShowModal ? 'product__modal_show' : null" v-if="sets">
-      <div class="product__modal-inner">
-        <div class="product__modal-head">
-          <div class="product__modal-title">Выберите свойства</div>
-          <div class="product__modal-arrow"><Icon name="arrow" /></div>
-        </div>
+    <div class="product__modal nk" ref="modal" v-if="sets">
+      <div class="product__modal-inner" ref="sets">
         <div class="product__sets">
           <div class="product__sets-title">Максимальное занижение</div>
           <div class="product__sets-list row">
@@ -59,10 +55,10 @@
               v-model:checked="item.checked" />
           </div>
           <div class="product__sets-error" v-show="isSetsError">Выберите хотя бы одно свойство</div>
+          <div class="product__sets-true" v-show="isAddedMessage">Успешно добавлено</div>
           <Button class="product__sets-button" mods="md, bg-red, shadow-black" @click="toggleProduct">{{ isAdded ? 'Убрать из корзины' : 'Добавить в корзину' }}</Button>
         </div>
       </div>
-      <div class="product__modal-bg" @click="isShowModal = false"></div>
     </div>
   </a>
 </template>
