@@ -23,6 +23,49 @@
   &__myauto {
     margin-top: 40px;
   }
+  &__links {
+    margin-top: 20px;
+    &-title {
+      font-size: 18px;
+      font-family: $ff2;
+      line-height: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: $black-dark;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 52px;
+    padding: 0 23px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 45px rgba(41, 41, 41, 0.15);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    transition: .3s;
+    &:hover {
+      box-shadow: 0px 0px 45px rgba(41, 41, 41, 0.25);
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 19px;
+      height: 19px;
+      margin-right: 18px;
+    }
+    &-title {
+      font-family: $ff2;
+      line-height: 17px;
+      font-weight: 500;
+      color: $black-dark;
+      letter-spacing: 0.2px;
+    }
+  }
   &__right {
     width: calc(100% - 455px);
     padding-left: 25px;

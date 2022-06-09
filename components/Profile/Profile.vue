@@ -18,6 +18,23 @@
               <template #title>Пароль</template>
             </EField>
             <Button class="profile__button" mods="md, bg-red, shadow-black">Сохранить</Button>
+            <div class="profile__links">
+              <div class="profile__links-title">Сохраненные товары</div>
+              <div class="profile__links-list">
+                <a class="profile__link" href="/profile/compare" @click.prevent="toLink('/profile/compare')">
+                  <div class="profile__link-icon">
+                    <Icon name="scale" class="f-red" />
+                  </div>
+                  <div class="profile__link-title">Сравнение</div>
+                </a>
+                <a class="profile__link" href="/profile/favorit" @click.prevent="toLink('/profile/favorit')">
+                  <div class="profile__link-icon">
+                    <Icon name="bookmark" class="f-red" />
+                  </div>
+                  <div class="profile__link-title">Избранное</div>
+                </a>
+              </div>
+            </div>
             <Myauto 
               class="profile__myauto" 
               :add="true"
