@@ -2,7 +2,7 @@ export default {
   name: 'Share',
   data() {
     return {
-      isShow: false,
+      isShow: true,
     }
   },
   methods: {
