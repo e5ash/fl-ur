@@ -85,8 +85,13 @@
     padding-bottom: 157px;
     &__nav {
       display: inline-block;
-      background: #FCFCFC;
+      // background: #FCFCFC;
       border-radius: 4px;
+      &-item {
+        &:before {
+          color: #fff;
+        }
+      }
     }
     &__bg {
       display: block;
