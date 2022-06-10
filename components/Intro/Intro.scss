@@ -41,6 +41,7 @@
     align-items: center;
     position: relative;
     height: 405px;
+    -webkit-transform-style: preserve-3d;
     // pointer-events: none;
   }
   &__pagination {
@@ -72,6 +73,8 @@
     border-radius: 4px;
     padding: 36px 30px;
     overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
     // pointer-events: none;
     &_center {
       align-items: center;
