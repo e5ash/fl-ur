@@ -36,6 +36,7 @@ export default {
   }, 
   mounted() {
     new Swiper(this.$refs.slider, {
+      allowTouchMove: false,
       autoplay: true,
       loop: true,
       loopAdditionalSlides: 1,
@@ -43,7 +44,15 @@ export default {
         el: this.$refs.pagination,
         clickable: true
       },
-      modules: [Autoplay, Pagination]
+      breakpoints: {
+        0: {
+          allowTouchMove: true,
+        },
+        1200: {
+          allowTouchMove: false,
+        }
+      },
+      modules: [Autoplay, Pagination ]
     });
   }
 }

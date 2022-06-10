@@ -25,7 +25,7 @@
     overflow: visible;
     width: 790px;
     margin-left: 0;
-    pointer-events: none;
+    // pointer-events: none;
     &:before {
       z-index: 2;
       content: '';
@@ -41,7 +41,7 @@
     align-items: center;
     position: relative;
     height: 405px;
-    pointer-events: none;
+    // pointer-events: none;
   }
   &__pagination {
     margin-top: 15px;
@@ -72,7 +72,7 @@
     border-radius: 4px;
     padding: 36px 30px;
     overflow: hidden;
-    pointer-events: none;
+    // pointer-events: none;
     &_center {
       align-items: center;
       justify-content: center;
