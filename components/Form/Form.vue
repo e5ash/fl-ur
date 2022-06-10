@@ -2,7 +2,7 @@
   <div class="form" :class="'form_step-' + step">
     <div class="form__head" v-if="title">
       <div class="form__title" v-if="title">{{ title }}</div>
-      <div class="form__close modal__close" v-if="close" @click="isShowModal = false"></div>
+      <div class="form__close modal__close" v-if="close" @click="closeModal"></div>
     </div>
     <div class="form__desc" v-if="desc">{{ desc }}</div>
     <div class="form__inner">

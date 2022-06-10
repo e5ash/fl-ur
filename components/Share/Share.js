@@ -32,12 +32,14 @@ export default {
     }
 
     const shareBtn = document.querySelector('.share');
-    shareBtn.body.addEventListener('click', async () => {
-      try {
-        await navigator.share(shareData)
-      } catch(err) {
-        console.log('Error: ');
-      }
-    });
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        try {
+          await navigator.share(shareData)
+        } catch(err) {
+          console.log('Error: ');
+        }
+      });
+    }
   }
 }

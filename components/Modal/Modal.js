@@ -32,8 +32,6 @@ export default {
         }
 
         this.isShow = this.isReviewFormShow = this.isCallbackFormShow = this.isNotAvailableFormShow = this.isSetsShow = false;
-
-        console.log(this.isShow);
       }
     }
   },
