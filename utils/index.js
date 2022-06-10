@@ -4,7 +4,9 @@ export function toPriceFormat(value) {
 }
 
 export function scrollTop() {
-  // window.scrollTo(0,0);
+  if (document.body.offsetWidth < 768) {
+    window.scrollTo(0,0);
+  }
   document.body.scrollIntoView({behavior: 'smooth', block: 'start'});
 }
 
