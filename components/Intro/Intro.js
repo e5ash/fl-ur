@@ -36,7 +36,7 @@ export default {
   }, 
   mounted() {
     new Swiper(this.$refs.slider, {
-      allowTouchMove: false,
+      // allowTouchMove: false,
       autoplay: true,
       loop: true,
       loopAdditionalSlides: 1,

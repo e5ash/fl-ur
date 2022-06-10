@@ -38,9 +38,8 @@
   &__slides {
     z-index: 1;
     position: relative;
-    overflow: visible;
     width: 790px;
-    margin-left: 0;
+    margin-left: 100px;
     pointer-events: none;
     &:before {
       z-index: 2;
@@ -165,6 +164,12 @@
   }
 }
 
+@media screen and (max-width: 1520px) {
+  .intro__slides {
+    margin-left: 0;
+  }
+
+}
 @media screen and (max-width: 1420px) {
   .intro {
     &__slides {
