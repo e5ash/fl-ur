@@ -114,9 +114,11 @@
       margin-right: 6px;
     }
     .r {
-      position: relative;
-      top: 2px;
-      line-height: 17px;
+      font-family: $ffMain;
+      &:before {
+        content: '₽';
+        display: inline-block;
+      }
     }
   }
   &__button-order {
