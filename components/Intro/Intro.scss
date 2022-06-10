@@ -38,7 +38,7 @@
   &__slides {
     z-index: 1;
     position: relative;
-    width: calc(100% - 595px - 150px);
+    width: calc(100% - 595px);
     pointer-events: none;
     margin-left: auto;
     margin-right: auto;
@@ -56,7 +56,7 @@
   &__list {
     align-items: center;
     position: relative;
-    height: 405px;
+    height: 495px;
     pointer-events: none;
   }
   &__pagination {
@@ -83,7 +83,7 @@
   &__item {
     position: relative;
     display: flex;
-    height: 366px;
+    height: 495px;
     transition: .5s;
     border-radius: 4px;
     padding: 36px 30px;
@@ -154,7 +154,7 @@
     }
     &.swiper-slide-active {
       z-index: 2;
-      height: 405px;
+      // height: 405px;
       .intro {
         &__item-content {
           opacity: 1;
