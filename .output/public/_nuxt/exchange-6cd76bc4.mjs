@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./entry-f900561f.mjs";const s={head:{title:""},setup(){}},c={class:"main"};function o(n,r,_,p,i,d){return t(),a("main",c)}var l=e(s,[["render",o]]);export{l as default};

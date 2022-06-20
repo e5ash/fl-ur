@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as s}from"./entry-f900561f.mjs";const a={head:{title:"\u0421\u0442\u0430\u0442\u044C\u0438"},setup(){}},o={class:"main"};function c(n,r,_,i,p,d){return t(),s("main",o)}var l=e(a,[["render",c]]);export{l as default};

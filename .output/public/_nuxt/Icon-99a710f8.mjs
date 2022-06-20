@@ -1,0 +1,1 @@
+import{_ as n,o as a,c as o,b as s,n as r,g as t}from"./entry-f900561f.mjs";var c={name:"Icon",props:{name:String}};const m=["xlink:href"];function _(e,i,l,p,f,u){return e.name?(a(),o("svg",{key:0,class:r(["icon","icon_"+e.name])},[s("use",{"xlink:href":"#icon-"+e.name},null,8,m)],2)):t("",!0)}var k=n(c,[["render",_]]);export{k as default};
